@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>In the Path of Love - Attract Screen</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;600;700&amp;family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#ffb77f",
+                        "inverse-primary": "#924c00",
+                        "on-error-container": "#ffdad6",
+                        "on-primary-container": "#4c2500",
+                        "on-primary-fixed": "#2f1500",
+                        "surface-tint": "#ffb77f",
+                        "secondary": "#e9c349",
+                        "on-secondary-fixed": "#241a00",
+                        "secondary-container": "#af8d11",
+                        "surface-container-high": "#2c2927",
+                        "on-secondary-fixed-variant": "#574500",
+                        "surface-dim": "#151311",
+                        "primary-fixed": "#ffdcc4",
+                        "tertiary-container": "#b18f89",
+                        "surface-variant": "#373432",
+                        "secondary-fixed-dim": "#e9c349",
+                        "on-tertiary-container": "#412925",
+                        "tertiary-fixed": "#ffdad4",
+                        "on-secondary": "#3c2f00",
+                        "on-tertiary-fixed": "#2b1613",
+                        "surface-bright": "#3c3936",
+                        "primary-container": "#e27d18",
+                        "on-surface-variant": "#dcc2b0",
+                        "outline": "#a38c7c",
+                        "error-container": "#93000a",
+                        "inverse-surface": "#e8e1dd",
+                        "on-tertiary": "#422a26",
+                        "surface-container": "#221f1d",
+                        "secondary-fixed": "#ffe088",
+                        "surface": "#151311",
+                        "on-primary": "#4e2600",
+                        "error": "#ffb4ab",
+                        "inverse-on-surface": "#33302d",
+                        "surface-container-highest": "#373432",
+                        "on-secondary-container": "#342800",
+                        "surface-container-lowest": "#100e0c",
+                        "surface-container-low": "#1d1b19",
+                        "background": "#151311",
+                        "on-surface": "#e8e1dd",
+                        "on-error": "#690005",
+                        "outline-variant": "#554336",
+                        "tertiary": "#e3beb8",
+                        "primary-fixed-dim": "#ffb77f",
+                        "on-primary-fixed-variant": "#6f3800",
+                        "on-tertiary-fixed-variant": "#5b403c",
+                        "on-background": "#e8e1dd",
+                        "tertiary-fixed-dim": "#e3beb8"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "32px",
+                        "touch-target-min": "64px",
+                        "stack-gap": "24px",
+                        "margin-edge": "48px",
+                        "unit": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Noto Serif"],
+                        "button-text": ["Inter"],
+                        "display-lg": ["Noto Serif"],
+                        "label-lg": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Noto Serif"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["48px", { "lineHeight": "56px", "fontWeight": "600" }],
+                        "button-text": ["20px", { "lineHeight": "24px", "fontWeight": "600" }],
+                        "display-lg": ["72px", { "lineHeight": "84px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-lg": ["18px", { "lineHeight": "24px", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "body-lg": ["24px", { "lineHeight": "36px", "fontWeight": "400" }],
+                        "body-md": ["20px", { "lineHeight": "30px", "fontWeight": "400" }],
+                        "headline-md": ["32px", { "lineHeight": "40px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        /* Entrance Crossfade */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        body {
+            animation: fadeIn 1.5s ease-in-out;
+            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.8s ease-out;
+        }
+
+        /* Slide-Left Transition */
+        .slide-left-exit {
+            transform: translateX(-100%);
+            opacity: 0;
+        }
+
+        /* Marquee Animation */
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .marquee-container {
+            display: flex;
+            width: 200%;
+            animation: marquee 30s linear infinite;
+        }
+        
+        /* Central Orb Glow and Pulse */
+        @keyframes pulseGlow {
+            0%, 100% { 
+                box-shadow: 0 0 40px rgba(233, 195, 73, 0.2), inset 0 0 20px rgba(255, 183, 127, 0.1);
+                transform: scale(1);
+            }
+            50% { 
+                box-shadow: 0 0 80px rgba(233, 195, 73, 0.5), inset 0 0 40px rgba(255, 183, 127, 0.3);
+                transform: scale(1.02);
+            }
+        }
+        .ambient-glow {
+            animation: pulseGlow 4s ease-in-out infinite;
+        }
+
+        /* Full Screen Inactivity Ripple */
+        @keyframes fullScreenRipple {
+            0% {
+                transform: scale(0);
+                opacity: 0.8;
+            }
+            100% {
+                transform: scale(1.5);
+                opacity: 0;
+            }
+        }
+        .inactivity-ripple-overlay {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 50;
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+        .inactivity-ripple-overlay.active {
+            display: flex;
+        }
+        .ripple-circle {
+            width: 100vmax;
+            height: 100vmax;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(233, 195, 73, 0.4) 0%, rgba(233, 195, 73, 0) 70%);
+            animation: fullScreenRipple 4s cubic-bezier(0.1, 0.8, 0.3, 1) infinite;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background h-screen w-screen overflow-hidden relative cursor-pointer select-none" onclick="initiateTransition()">
+<!-- Cinematic Background -->
+<div class="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat transition-transform duration-[20s] ease-out scale-105" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAn-_Xm330NDI7jpidKjPr9x8QFWAJ4NLHeEj2cbDco3jeH94uuMVDUx2kl32zCQO-GkHw5MnPOUMBp4m9cGasenN7CMNDUf0xqKCD_ey2VVM9h6LQG_GZ3XW9mS2iHNsY5FnGOXyer3oWJMgu7ATxIMk_f_tB1JefXYjXgDUualWEILfxxze1hlx0omYNjBFRzL2jbZz5g_yQsBADYWnF9OsN7GQ6ypnztgq7W5F7cYx5p-5w1hfqykR25ZRtuDh-PNuvH-64aa0E');"></div>
+<!-- Scrim / Gradient Overlays for Legibility -->
+<div class="absolute inset-0 bg-gradient-to-b from-background/90 via-background/40 to-background/90 z-0 mix-blend-multiply"></div>
+<!-- Top Marquee -->
+<div class="absolute top-0 w-full overflow-hidden z-10 py-6 pointer-events-none opacity-80 mix-blend-screen">
+<div class="marquee-container">
+<span class="font-headline-lg text-headline-lg text-secondary px-8 whitespace-nowrap">
+                Hare Rama Hare Rama Rama Rama Hare Hare, Hare Krishna Hare Krishna Krishna Krishna Hare Hare
+            </span>
+<span class="font-headline-lg text-headline-lg text-secondary px-8 whitespace-nowrap">
+                Hare Rama Hare Rama Rama Rama Hare Hare, Hare Krishna Hare Krishna Krishna Krishna Hare Hare
+            </span>
+</div>
+</div>
+<!-- Centerpiece -->
+<div class="relative z-20 flex flex-col items-center justify-center h-full w-full pointer-events-none">
+<div class="relative flex items-center justify-center w-[500px] h-[500px] rounded-full bg-surface/20 backdrop-blur-md border border-secondary/30 ambient-glow pointer-events-auto" id="central-orb">
+<!-- Pulsing Rings -->
+<div class="absolute inset-0 rounded-full border-2 border-secondary/10 animate-[ping_4s_cubic-bezier(0,0,0.2,1)_infinite]"></div>
+<div class="absolute inset-8 rounded-full border border-secondary/20 bg-secondary/5"></div>
+<!-- Content -->
+<div class="relative flex flex-col items-center justify-center text-center p-12">
+<span class="material-symbols-outlined text-[80px] text-primary mb-6 drop-shadow-[0_0_20px_rgba(255,183,127,0.5)]" style="font-variation-settings: 'FILL' 1;">
+                    touch_app
+                </span>
+<h1 class="font-display-lg text-display-lg text-on-surface mb-2 leading-tight drop-shadow-xl">
+                    Touch to Explore
+                </h1>
+<h2 class="font-headline-md text-headline-md text-secondary tracking-wide uppercase opacity-90">
+                    The Path of Love
+                </h2>
+</div>
+</div>
+</div>
+<!-- Bottom Marquee -->
+<div class="absolute bottom-0 w-full overflow-hidden z-10 py-6 pointer-events-none opacity-80 mix-blend-screen">
+<div class="marquee-container" style="animation-direction: reverse;">
+<span class="font-headline-lg text-headline-lg text-secondary px-8 whitespace-nowrap">
+                Hare Rama Hare Rama Rama Rama Hare Hare, Hare Krishna Hare Krishna Krishna Krishna Hare Hare
+            </span>
+<span class="font-headline-lg text-headline-lg text-secondary px-8 whitespace-nowrap">
+                Hare Rama Hare Rama Rama Rama Hare Hare, Hare Krishna Hare Krishna Krishna Krishna Hare Hare
+            </span>
+</div>
+</div>
+<!-- Inactivity Ripple Overlay -->
+<div class="inactivity-ripple-overlay" id="inactivity-overlay">
+<div class="ripple-circle"></div>
+</div>
+<script>
+        // Transition Logic
+        function initiateTransition() {
+            // Provide immediate tactile feedback
+            const orb = document.getElementById('central-orb');
+            orb.style.transform = 'scale(0.95)';
+            orb.style.backgroundColor = 'rgba(233, 195, 73, 0.3)';
+            
+            // Trigger slide left exit
+            setTimeout(() => {
+                document.body.classList.add('slide-left-exit');
+                
+                // Simulate navigation and reset for demo purposes
+                setTimeout(() => {
+                    console.log("Navigation complete. Resetting for demo.");
+                    document.body.classList.remove('slide-left-exit');
+                    orb.style.transform = '';
+                    orb.style.backgroundColor = '';
+                    resetInactivityTimers(); // Ensure timers are reset after fake navigation
+                }, 1000);
+            }, 150);
+        }
+
+        // Global Inactivity Hook Logic
+        let rippleTimer;
+        let resetTimer;
+        
+        const RIPPLE_DELAY = 60000; // 60 seconds
+        const RESET_DELAY = 90000;  // 90 seconds
+        
+        function resetInactivityTimers() {
+            clearTimeout(rippleTimer);
+            clearTimeout(resetTimer);
+            
+            const overlay = document.getElementById('inactivity-overlay');
+            if(overlay) overlay.classList.remove('active');
+            
+            // Set 60s full-screen ripple trigger
+            rippleTimer = setTimeout(() => {
+                console.log("60s Inactivity: Showing full-screen ripple overlay");
+                if(overlay) overlay.classList.add('active');
+            }, RIPPLE_DELAY);
+            
+            // Set 90s full reset
+            resetTimer = setTimeout(() => {
+                console.log("90s Inactivity: Resetting Attract Screen");
+                window.location.reload();
+            }, RESET_DELAY);
+        }
+
+        // Global listeners for any touch/click to reset timers
+        ['touchstart', 'click', 'mousemove', 'keypress'].forEach(evt => {
+            window.addEventListener(evt, () => {
+                resetInactivityTimers();
+            }, { capture: true, passive: true });
+        });
+
+        // Initialize on load
+        window.onload = resetInactivityTimers;
+    </script>
+</body></html>

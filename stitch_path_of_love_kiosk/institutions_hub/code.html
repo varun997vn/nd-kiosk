@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Institutions - In the Path of Love</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Noto+Serif:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-primary": "#924c00",
+                        "background": "#151311",
+                        "primary": "#ffb77f",
+                        "surface-dim": "#151311",
+                        "surface-variant": "#373432",
+                        "error-container": "#93000a",
+                        "on-secondary": "#3c2f00",
+                        "primary-container": "#e27d18",
+                        "outline": "#a38c7c",
+                        "surface-container-high": "#2c2927",
+                        "on-tertiary-fixed": "#2b1613",
+                        "tertiary": "#e3beb8",
+                        "tertiary-fixed-dim": "#e3beb8",
+                        "on-secondary-fixed": "#241a00",
+                        "on-primary-container": "#4c2500",
+                        "on-error": "#690005",
+                        "on-background": "#e8e1dd",
+                        "surface-container-low": "#1d1b19",
+                        "on-primary-fixed": "#2f1500",
+                        "tertiary-container": "#b18f89",
+                        "on-tertiary-fixed-variant": "#5b403c",
+                        "inverse-on-surface": "#33302d",
+                        "surface-container-lowest": "#100e0c",
+                        "secondary-fixed-dim": "#e9c349",
+                        "on-secondary-fixed-variant": "#574500",
+                        "error": "#ffb4ab",
+                        "surface-bright": "#3c3936",
+                        "surface-tint": "#ffb77f",
+                        "secondary": "#e9c349",
+                        "primary-fixed-dim": "#ffb77f",
+                        "on-secondary-container": "#342800",
+                        "inverse-surface": "#e8e1dd",
+                        "surface-container-highest": "#373432",
+                        "outline-variant": "#554336",
+                        "surface": "#151311",
+                        "on-surface-variant": "#dcc2b0",
+                        "on-error-container": "#ffdad6",
+                        "on-primary-fixed-variant": "#6f3800",
+                        "secondary-fixed": "#ffe088",
+                        "secondary-container": "#af8d11",
+                        "primary-fixed": "#ffdcc4",
+                        "tertiary-fixed": "#ffdad4",
+                        "on-surface": "#e8e1dd",
+                        "on-tertiary-container": "#412925",
+                        "surface-container": "#221f1d",
+                        "on-primary": "#4e2600",
+                        "on-tertiary": "#422a26"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "touch-target-min": "64px",
+                        "stack-gap": "24px",
+                        "margin-edge": "48px",
+                        "gutter": "32px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Noto Serif"],
+                        "headline-md": ["Noto Serif"],
+                        "display-lg": ["Noto Serif"],
+                        "label-lg": ["Inter"],
+                        "button-text": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["24px", { "lineHeight": "36px", "fontWeight": "400" }],
+                        "headline-lg": ["48px", { "lineHeight": "56px", "fontWeight": "600" }],
+                        "headline-md": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "display-lg": ["72px", { "lineHeight": "84px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-lg": ["18px", { "lineHeight": "24px", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "button-text": ["20px", { "lineHeight": "24px", "fontWeight": "600" }],
+                        "body-md": ["20px", { "lineHeight": "30px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        /* Smooth scrolling and transitions */
+        html { scroll-behavior: smooth; }
+        body { 
+            background-color: theme('colors.background'); 
+            color: theme('colors.on-background');
+            transition: background-color 0.4s ease-in-out, color 0.4s ease-in-out;
+        }
+        
+        /* Slide Right Transition for Back Action */
+        .slide-right-out {
+            animation: slideRightOut 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+        @keyframes slideRightOut {
+            0% { transform: translateX(0); opacity: 1; }
+            100% { transform: translateX(100%); opacity: 0; }
+        }
+        
+        /* Fade in for page load */
+        .fade-in {
+            animation: fadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: scale(0.98); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
+        /* Glassmorphism utility */
+        .glass-panel {
+            background: rgba(44, 41, 39, 0.6); /* surface-container-high with opacity */
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(163, 140, 124, 0.2); /* outline with opacity */
+        }
+        
+        /* Ambient Glow Focus */
+        .glow-focus:focus-visible {
+            outline: none;
+            box-shadow: 0 0 24px rgba(233, 195, 73, 0.4); /* secondary color glow */
+        }
+        
+        /* Hide scrollbar for sweeping horizontal scrolls */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col font-body-lg text-body-lg fade-in">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-edge h-touch-target-min bg-transparent transition-all duration-400" id="topAppBar">
+<div class="font-headline-md text-headline-md text-primary">In the Path of Love</div>
+<div class="flex items-center gap-unit hidden md:flex">
+<!-- Full Nav Cluster for Web -->
+<button class="h-touch-target-min px-4 text-on-surface-variant active:scale-95 transition-transform hover:text-primary glow-focus rounded-lg font-label-lg text-label-lg">Ashrams</button>
+<button class="h-touch-target-min px-4 text-on-surface-variant active:scale-95 transition-transform hover:text-primary glow-focus rounded-lg font-label-lg text-label-lg">Temples</button>
+<button class="h-touch-target-min px-4 text-on-surface-variant active:scale-95 transition-transform hover:text-primary glow-focus rounded-lg font-label-lg text-label-lg">Mandapams</button>
+<button aria-label="contrast" class="w-touch-target-min h-touch-target-min flex items-center justify-center text-primary active:scale-95 transition-transform glow-focus rounded-full ml-4">
+<span class="material-symbols-outlined text-[32px]">contrast</span>
+</button>
+</div>
+<!-- Trailing Action for Mobile -->
+<button aria-label="contrast" class="md:hidden w-touch-target-min h-touch-target-min flex items-center justify-center text-primary active:scale-95 transition-transform glow-focus rounded-full">
+<span class="material-symbols-outlined text-[32px]">contrast</span>
+</button>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-32 pb-40 px-margin-edge flex flex-col gap-16 w-full max-w-7xl mx-auto">
+<!-- Page Header -->
+<section class="text-center mb-8">
+<h1 class="font-display-lg text-display-lg text-primary mb-4">Sacred Institutions</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl mx-auto">Discover the sanctuaries, temples, and gathering spaces dedicated to devotion and spiritual learning across the globe.</p>
+</section>
+<!-- Bento Grid Layout -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-stack-gap">
+<!-- Ashrams Featured Card (Large Span) -->
+<button aria-label="Explore Ashrams" class="group relative md:col-span-2 lg:col-span-2 h-[400px] rounded-xl overflow-hidden active:scale-95 transition-all duration-400 glow-focus text-left flex flex-col justify-end">
+<div class="absolute inset-0 bg-surface-container-high">
+<img alt="A serene, ancient stone ashram nestled in a lush, misty green valley at dawn. Soft, golden morning light filters through ancient banyan trees, casting long shadows across the courtyard. The mood is deeply tranquil, reverent, and cinematic. The aesthetic aligns with a dark, earthy umber palette with saffron highlights, inviting a sense of spiritual retreat." class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100" data-alt="A serene, ancient stone ashram nestled in a lush, misty green valley at dawn. Soft, golden morning light filters through ancient banyan trees, casting long shadows across the courtyard. The mood is deeply tranquil, reverent, and cinematic. The aesthetic aligns with a dark, earthy umber palette with saffron highlights, inviting a sense of spiritual retreat." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAx_4DHjC9VXfGM1cyy1eYUg7cU0DhGDUGoCVoOqfeKuvIln-zjzVa50uX5vOOxFhDv5aQwu5K3RCPFPAuQnDEdPYp8erssqFdUa9oAdYK2XGOQrdOFCM0XXgmcUz77Tt7_W4ynbIH6jcqX8Kh0MMUp3Eerp690l3_SWJMsoq1H1Afw2DQwB-sGf7YNiTuVyAb2rMxbpk8U28JmJIsdVrZOZcI_kgvjRLka6Y6ctP2_lCee5wqHcMnO6v1WhdAa2RrK-7NtbXTKZOE"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent"></div>
+</div>
+<div class="relative p-gutter z-10 w-full glass-panel border-b-0 rounded-b-none border-x-0 mx-0 mt-auto backdrop-blur-md bg-background/40">
+<div class="flex items-center gap-2 mb-2 text-secondary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">eco</span>
+<span class="font-label-lg text-label-lg uppercase tracking-wider">Ashrams</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-background mb-2">Sanctuaries of Stillness</h2>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">Retreat centers dedicated to intensive spiritual practice, meditation, and living in harmony with nature's rhythm.</p>
+</div>
+</button>
+<!-- Temples Card -->
+<button aria-label="Explore Temples" class="group relative h-[400px] rounded-xl overflow-hidden active:scale-95 transition-all duration-400 glow-focus text-left flex flex-col justify-end">
+<div class="absolute inset-0 bg-surface-container-high">
+<img alt="An intricately carved stone temple illuminated by warm, flickering oil lamps against a deep night sky. The glowing saffron light contrasts with the dark, moody shadows of the architecture. The scene feels epic, ancient, and highly tactile. The visual style embodies a cinematic devotional aesthetic with rich umber and gold tones." class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100" data-alt="An intricately carved stone temple illuminated by warm, flickering oil lamps against a deep night sky. The glowing saffron light contrasts with the dark, moody shadows of the architecture. The scene feels epic, ancient, and highly tactile. The visual style embodies a cinematic devotional aesthetic with rich umber and gold tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCSkq7tBXEgUQ6M4AAb3FhNcoImsaxAAcX1q7PW67yeGKaxp2Rp7K9lVAk-BKanh2e1dJx1c9jQFL-GPB1T5TawWu-RGI4SqbiV-ZY6DzN__SyJm6LFpQGDv81U_qTRyYLPd1DQSiT_p-7IZieohue7k7FJdnohbbSSye5d8SqYVXQSQOfvAiVxBgtlU0fG88xyIO8fCwe_4Ad4ATlGpWDx3gdXjPbpIh8MnAb5hX3kWUGE_ZLd__cpVrnHGbQx6_8WQoKAh0N0K4"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent"></div>
+</div>
+<div class="relative p-gutter z-10 w-full glass-panel border-b-0 border-x-0 rounded-b-none mx-0 mt-auto backdrop-blur-md bg-background/40">
+<div class="flex items-center gap-2 mb-2 text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">temple_hindu</span>
+<span class="font-label-lg text-label-lg uppercase tracking-wider">Temples</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-background mb-2">Pillars of Faith</h2>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">Sacred architecture housing ancient deities and daily rituals.</p>
+</div>
+</button>
+<!-- Mandapams Card -->
+<button aria-label="Explore Mandapams" class="group relative h-[400px] md:col-span-2 lg:col-span-1 rounded-xl overflow-hidden active:scale-95 transition-all duration-400 glow-focus text-left flex flex-col justify-end">
+<div class="absolute inset-0 bg-surface-container-high">
+<img alt="A grand, pillared Mandapam hall filled with soft, diffused sunlight casting long architectural shadows. Devotees are gathered in quiet reflection on the cool stone floor. The mood is warm, expansive, and inviting. The aesthetic uses a high-contrast dark mode palette with earthy browns and subtle glowing amber accents." class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100" data-alt="A grand, pillared Mandapam hall filled with soft, diffused sunlight casting long architectural shadows. Devotees are gathered in quiet reflection on the cool stone floor. The mood is warm, expansive, and inviting. The aesthetic uses a high-contrast dark mode palette with earthy browns and subtle glowing amber accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZccU5pGfNPaOUZt7vxppXp7LnjIPVOARmID2YvTnOrsBLnhaeTckccu6Xay6-GsRINA0fD0E-VuejNlt0jEid0qO--vJn8IneJ6JuYBoj8iBpslJE-SWydCUFr_Pfot7kCjpioxFQzBYy8Le9VMAYbZ2OQHDboqA_fd_K1OLBCCkN5bVgvHFnPuDjfCuuKlIVEoBlfB9uDw_B_kk5xmSSCn0cQOfkq2d3OBei7FDYlD4nAzlBvJmu1oFAPtpwzTeluO3dkqT6Aqw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent"></div>
+</div>
+<div class="relative p-gutter z-10 w-full glass-panel border-b-0 border-x-0 rounded-b-none mx-0 mt-auto backdrop-blur-md bg-background/40">
+<div class="flex items-center gap-2 mb-2 text-tertiary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">groups</span>
+<span class="font-label-lg text-label-lg uppercase tracking-wider">Mandapams</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-background mb-2">Halls of Gathering</h2>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">Expansive pavilions for communal singing, discourse, and celebration.</p>
+</div>
+</button>
+<!-- Global Directory List Placeholder (Feature Strip) -->
+<div class="md:col-span-1 lg:col-span-2 flex flex-col justify-center">
+<button class="w-full h-touch-target-min min-h-[96px] bg-surface-container-low hover:bg-surface-container-high rounded-xl px-gutter flex items-center justify-between active:scale-95 transition-all duration-400 glow-focus group border border-outline/20">
+<div class="flex items-center gap-6">
+<div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined text-[32px]">public</span>
+</div>
+<div class="text-left">
+<h3 class="font-headline-md text-headline-md text-on-background">Global Directory</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Locate an institution near you</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors text-[32px]">arrow_forward</span>
+</button>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Only visible on mobile as per logic, though the JSON implies it's a primary nav pattern for this Kiosk UI) -->
+<!-- Applying Mobile responsiveness: shown on md:hidden to respect standard pattern, but given Kiosk context, we keep it visible globally if needed. Following strictly "On MOBILE (md:hidden)..." from prompt -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 h-24 flex justify-around items-center px-margin-edge pb-unit bg-surface/80 backdrop-blur-3xl rounded-t-xl bg-surface-container-high flat with saffron ambient glow fluid scale-up transition-all duration-400">
+<!-- 'Home' is the logical active state for a 'Hub' page if it's the main entry point, but it's Institutions. Assuming this is a top-level hub, but not Home. Let's make none active or infer from JSON. The JSON labels are Home, Back, Contrast. The user is on 'Institutions'. Since there is no Institutions tab, and they requested 'slide-right' for Back button, let's just render the nav as inactive except maybe Home if it's the main root. Let's keep all inactive based on exact match priority. -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant h-16 w-32 active:bg-surface-bright transition-colors rounded-xl glow-focus">
+<span class="material-symbols-outlined text-[32px] mb-1">home</span>
+<span class="font-label-lg text-label-lg">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant h-16 w-32 active:bg-surface-bright transition-colors rounded-xl glow-focus" id="backNavBtn">
+<span class="material-symbols-outlined text-[32px] mb-1">arrow_back</span>
+<span class="font-label-lg text-label-lg">Back</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant h-16 w-32 active:bg-surface-bright transition-colors rounded-xl glow-focus">
+<span class="material-symbols-outlined text-[32px] mb-1">contrast</span>
+<span class="font-label-lg text-label-lg">Contrast</span>
+</button>
+</nav>
+<!-- Edge fading for scroll indication -->
+<div class="fixed bottom-0 w-full h-32 pointer-events-none bg-gradient-to-t from-background to-transparent z-40 hidden md:block"></div>
+<script>
+        // Handle Back button slide-right transition
+        document.getElementById('backNavBtn')?.addEventListener('click', function() {
+            document.body.classList.add('slide-right-out');
+            setTimeout(() => {
+                // In a real app, this would navigate. 
+                // window.history.back();
+                console.log('Navigating back...');
+                // Reset for demo purposes
+                document.body.classList.remove('slide-right-out');
+            }, 400);
+        });
+
+        // Top nav scroll effect (optional enhancement for cinematic feel)
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('topAppBar');
+            if (window.scrollY > 50) {
+                header.classList.add('bg-surface/80', 'backdrop-blur-xl', 'border-b', 'border-outline/10');
+            } else {
+                header.classList.remove('bg-surface/80', 'backdrop-blur-xl', 'border-b', 'border-outline/10');
+            }
+        });
+    </script>
+</body></html>

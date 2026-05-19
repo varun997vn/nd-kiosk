@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Activity Detail - Protection of Heritage &amp; Culture</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;600;700&amp;family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary": "#4e2600",
+                        "on-secondary-fixed": "#241a00",
+                        "on-secondary": "#3c2f00",
+                        "outline": "#a38c7c",
+                        "surface-tint": "#ffb77f",
+                        "primary-container": "#e27d18",
+                        "on-primary-fixed": "#2f1500",
+                        "error": "#ffb4ab",
+                        "surface-container": "#221f1d",
+                        "surface-bright": "#3c3936",
+                        "on-secondary-fixed-variant": "#574500",
+                        "background": "#151311",
+                        "surface-dim": "#151311",
+                        "on-surface-variant": "#dcc2b0",
+                        "surface-container-low": "#1d1b19",
+                        "error-container": "#93000a",
+                        "on-error-container": "#ffdad6",
+                        "inverse-on-surface": "#33302d",
+                        "primary-fixed": "#ffdcc4",
+                        "on-surface": "#e8e1dd",
+                        "primary-fixed-dim": "#ffb77f",
+                        "tertiary-container": "#b18f89",
+                        "on-tertiary": "#422a26",
+                        "surface-container-high": "#2c2927",
+                        "tertiary-fixed": "#ffdad4",
+                        "secondary": "#e9c349",
+                        "tertiary-fixed-dim": "#e3beb8",
+                        "secondary-fixed-dim": "#e9c349",
+                        "inverse-primary": "#924c00",
+                        "surface-variant": "#373432",
+                        "surface": "#151311",
+                        "secondary-fixed": "#ffe088",
+                        "on-primary-fixed-variant": "#6f3800",
+                        "on-primary-container": "#4c2500",
+                        "surface-container-lowest": "#100e0c",
+                        "on-tertiary-fixed-variant": "#5b403c",
+                        "surface-container-highest": "#373432",
+                        "on-background": "#e8e1dd",
+                        "primary": "#ffb77f",
+                        "on-error": "#690005",
+                        "inverse-surface": "#e8e1dd",
+                        "tertiary": "#e3beb8",
+                        "on-tertiary-fixed": "#2b1613",
+                        "outline-variant": "#554336",
+                        "on-tertiary-container": "#412925",
+                        "on-secondary-container": "#342800",
+                        "secondary-container": "#af8d11"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "margin-edge": "48px",
+                        "touch-target-min": "64px",
+                        "stack-gap": "24px",
+                        "gutter": "32px"
+                    },
+                    "fontFamily": {
+                        "label-lg": ["Inter"],
+                        "button-text": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Noto Serif"],
+                        "headline-lg": ["Noto Serif"],
+                        "body-lg": ["Inter"],
+                        "display-lg": ["Noto Serif"]
+                    },
+                    "fontSize": {
+                        "label-lg": ["18px", {"lineHeight": "24px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "button-text": ["20px", {"lineHeight": "24px", "fontWeight": "600"}],
+                        "body-md": ["20px", {"lineHeight": "30px", "fontWeight": "400"}],
+                        "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                        "headline-lg": ["48px", {"lineHeight": "56px", "fontWeight": "600"}],
+                        "body-lg": ["24px", {"lineHeight": "36px", "fontWeight": "400"}],
+                        "display-lg": ["72px", {"lineHeight": "84px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: theme('colors.background'); color: theme('colors.on-background'); overflow-x: hidden; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .filled-icon { font-variation-settings: 'FILL' 1; }
+        
+        /* Smooth cinematic transitions */
+        .page-transition {
+            animation: fadeInScale 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+        }
+        @keyframes fadeInScale {
+            0% { opacity: 0; transform: scale(0.98); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
+        /* Gallery scroll hide */
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+        /* Saffron ambient glow */
+        .glow-ambient {
+            box-shadow: 0 0 60px -15px rgba(226, 125, 24, 0.15);
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col page-transition">
+<!-- Top Navigation Placeholder (Hidden for this specific layout to maximize canvas, using custom back button) -->
+<!-- Main Content Canvas (50/50 Split) -->
+<main class="flex-grow flex flex-col md:flex-row w-full h-[calc(100vh-96px)]">
+<!-- Left Side: Image Gallery -->
+<section class="w-full md:w-1/2 h-1/2 md:h-full relative overflow-hidden bg-surface-container-low">
+<!-- Custom Back Button -->
+<button class="absolute top-margin-edge left-margin-edge z-40 h-touch-target-min px-6 rounded-full bg-surface/40 backdrop-blur-md border border-outline/30 flex items-center gap-unit text-on-surface hover:bg-surface/60 transition-colors active:scale-95 duration-400">
+<span class="material-symbols-outlined text-[32px]">arrow_back</span>
+<span class="font-button-text text-button-text">Back to Activities</span>
+</button>
+<!-- Swipeable Gallery -->
+<div class="flex w-full h-full overflow-x-auto snap-x snap-mandatory hide-scrollbar">
+<!-- Gallery Item 1 -->
+<div class="min-w-full h-full snap-center relative">
+<img alt="Ancient temple architecture restoration" class="w-full h-full object-cover" data-alt="A cinematic, wide-angle shot of a majestic ancient South Indian temple during a restoration process. The towering gopuram (gateway tower) is intricately carved with hundreds of deities, bathed in warm, golden-hour sunlight that highlights the stonework. Scaffolding made of bamboo is partially visible, indicating active, careful restoration. The atmosphere is reverent and awe-inspiring, perfectly fitting the 'Cinematic Devotional' dark theme with rich umbers and saffron highlights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxTy8aOhhE7u9h1rYN3uJJsQ5N03_vBT63NzkrAc6omApTRPEU_7Osf6Gao1jvGoRF6ziUHuDUsQZ1UKjUZh4-wkNR0So7ohdgiEr_z6Bg2gAEX2RtLfe-QFAj8hFe3d1UBW9w7DIduSUr6Sz0Xyn4GLOYlSiMBbFXXhQJAnRPMeHU4jY3dbtloTpiuaQxEsOw7rtEsJuTejBMFzbkA6q2i4tqxh8WQod_AlnrPu0zy9XmT8O2dYx24BQVwaqXDEwV-krocmb71lY"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent"></div>
+</div>
+<!-- Additional gallery items would go here for full swipe functionality -->
+</div>
+<!-- Gallery Indicators -->
+<div class="absolute bottom-margin-edge left-1/2 transform -translate-x-1/2 flex gap-unit z-20">
+<div class="w-3 h-3 rounded-full bg-primary glow-ambient"></div>
+<div class="w-3 h-3 rounded-full bg-on-surface-variant/50"></div>
+<div class="w-3 h-3 rounded-full bg-on-surface-variant/50"></div>
+</div>
+</section>
+<!-- Right Side: Content & Typography -->
+<section class="w-full md:w-1/2 h-1/2 md:h-full bg-background flex flex-col justify-center px-margin-edge relative md:border-l md:border-surface-variant">
+<div class="max-w-2xl mx-auto space-y-8">
+<!-- Subtitle / Tag -->
+<div class="inline-flex items-center gap-unit px-4 py-2 rounded-full bg-surface-container border border-outline/20">
+<span class="material-symbols-outlined text-primary text-[20px] filled-icon">account_balance</span>
+<span class="font-label-lg text-label-lg text-primary uppercase tracking-widest">Heritage Project</span>
+</div>
+<!-- Main Title -->
+<h1 class="font-display-lg text-display-lg text-on-background">
+                    Protection of Heritage &amp; Culture
+                </h1>
+<!-- Divider -->
+<div class="w-24 h-1 bg-gradient-to-r from-primary to-secondary rounded-full"></div>
+<!-- Body Text -->
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+                    Focuses on the massive renovation and Kumbhabhishekam of ancient temples across India, restoration of Vahanams, and preserving traditional arts via the Deiva Tamizh Isai Vizha.
+                </p>
+<!-- Action Area -->
+<div class="pt-8">
+<button class="h-touch-target-min px-8 rounded-full bg-gradient-to-r from-primary to-secondary text-on-primary font-button-text text-button-text flex items-center gap-3 hover:scale-105 active:scale-95 transition-transform duration-400 glow-ambient">
+<span class="material-symbols-outlined">volunteer_activism</span>
+<span>View Contributions</span>
+</button>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Shared Component JSON execution) -->
+<nav class="fixed bottom-0 w-full z-50 h-24 flex justify-around items-center px-margin-edge pb-unit bg-surface/80 backdrop-blur-3xl rounded-t-xl bg-surface-container-high shadow-[0_-4px_30px_rgba(226,125,24,0.05)]">
+<!-- Home (Inactive) -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant h-16 w-32 active:bg-surface-bright transition-colors fluid scale-up transition-all duration-400">
+<span class="material-symbols-outlined text-[32px] mb-1">home</span>
+<span class="font-label-lg text-label-lg text-[14px]">Home</span>
+</button>
+<!-- Back / Current Section (Active contextually based on task intent: viewing an activity detail implies deeper nav, highlighting back/contrast conceptually, but defaulting to a logical 'Explore/Activities' state if it existed. Using 'Back' as active for demonstration of JSON styles as per array) -->
+<button class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full h-16 w-32 active:bg-surface-bright transition-colors fluid scale-up transition-all duration-400 glow-ambient">
+<span class="material-symbols-outlined text-[32px] mb-1 filled-icon">arrow_back</span>
+<span class="font-label-lg text-label-lg text-[14px]">Back</span>
+</button>
+<!-- Contrast (Inactive) -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant h-16 w-32 active:bg-surface-bright transition-colors fluid scale-up transition-all duration-400">
+<span class="material-symbols-outlined text-[32px] mb-1">contrast</span>
+<span class="font-label-lg text-label-lg text-[14px]">Contrast</span>
+</button>
+</nav>
+</body></html>

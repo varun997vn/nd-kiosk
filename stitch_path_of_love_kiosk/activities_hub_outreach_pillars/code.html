@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Activities Hub - In the Path of Love</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Noto+Serif:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-primary": "#4e2600",
+                        "on-secondary-fixed": "#241a00",
+                        "on-secondary": "#3c2f00",
+                        "outline": "#a38c7c",
+                        "surface-tint": "#ffb77f",
+                        "primary-container": "#e27d18",
+                        "on-primary-fixed": "#2f1500",
+                        "error": "#ffb4ab",
+                        "surface-container": "#221f1d",
+                        "surface-bright": "#3c3936",
+                        "on-secondary-fixed-variant": "#574500",
+                        "background": "#151311",
+                        "surface-dim": "#151311",
+                        "on-surface-variant": "#dcc2b0",
+                        "surface-container-low": "#1d1b19",
+                        "error-container": "#93000a",
+                        "on-error-container": "#ffdad6",
+                        "inverse-on-surface": "#33302d",
+                        "primary-fixed": "#ffdcc4",
+                        "on-surface": "#e8e1dd",
+                        "primary-fixed-dim": "#ffb77f",
+                        "tertiary-container": "#b18f89",
+                        "on-tertiary": "#422a26",
+                        "surface-container-high": "#2c2927",
+                        "tertiary-fixed": "#ffdad4",
+                        "secondary": "#e9c349",
+                        "tertiary-fixed-dim": "#e3beb8",
+                        "secondary-fixed-dim": "#e9c349",
+                        "inverse-primary": "#924c00",
+                        "surface-variant": "#373432",
+                        "surface": "#151311",
+                        "secondary-fixed": "#ffe088",
+                        "on-primary-fixed-variant": "#6f3800",
+                        "on-primary-container": "#4c2500",
+                        "surface-container-lowest": "#100e0c",
+                        "on-tertiary-fixed-variant": "#5b403c",
+                        "surface-container-highest": "#373432",
+                        "on-background": "#e8e1dd",
+                        "primary": "#ffb77f",
+                        "on-error": "#690005",
+                        "inverse-surface": "#e8e1dd",
+                        "tertiary": "#e3beb8",
+                        "on-tertiary-fixed": "#2b1613",
+                        "outline-variant": "#554336",
+                        "on-tertiary-container": "#412925",
+                        "on-secondary-container": "#342800",
+                        "secondary-container": "#af8d11"
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.25rem",
+                        lg: "0.5rem",
+                        xl: "0.75rem",
+                        full: "9999px"
+                    },
+                    spacing: {
+                        unit: "8px",
+                        "margin-edge": "48px",
+                        "touch-target-min": "64px",
+                        "stack-gap": "24px",
+                        gutter: "32px"
+                    },
+                    fontFamily: {
+                        "label-lg": ["Inter"],
+                        "button-text": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Noto Serif"],
+                        "headline-lg": ["Noto Serif"],
+                        "body-lg": ["Inter"],
+                        "display-lg": ["Noto Serif"]
+                    },
+                    fontSize: {
+                        "label-lg": ["18px", { lineHeight: "24px", letterSpacing: "0.05em", fontWeight: "700" }],
+                        "button-text": ["20px", { lineHeight: "24px", fontWeight: "600" }],
+                        "body-md": ["20px", { lineHeight: "30px", fontWeight: "400" }],
+                        "headline-md": ["32px", { lineHeight: "40px", fontWeight: "600" }],
+                        "headline-lg": ["48px", { lineHeight: "56px", fontWeight: "600" }],
+                        "body-lg": ["24px", { lineHeight: "36px", fontWeight: "400" }],
+                        "display-lg": ["72px", { lineHeight: "84px", letterSpacing: "-0.02em", fontWeight: "700" }]
+                    }
+                }
+            }
+        };
+    </script>
+<style>
+        .masonry-grid {
+            column-count: 2;
+            column-gap: 2rem;
+        }
+        .masonry-item {
+            break-inside: avoid;
+            margin-bottom: 2rem;
+        }
+        /* Custom scrollbar to be hidden as per guidance */
+        ::-webkit-scrollbar {
+            display: none;
+        }
+        * {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen overflow-x-hidden selection:bg-primary-container selection:text-on-primary-container">
+<!-- Top App Bar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-edge h-touch-target-min bg-transparent">
+<div class="font-headline-md text-headline-md text-primary">In the Path of Love</div>
+<div class="flex items-center gap-4">
+<button aria-label="contrast" class="active:scale-95 transition-transform w-16 h-16 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" style="font-size: 32px;">contrast</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-[120px] pb-[160px] px-margin-edge w-full max-w-7xl mx-auto">
+<div class="mb-12">
+<h1 class="font-display-lg text-display-lg text-primary mb-4 tracking-tight">Our Devotion in Action</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl leading-relaxed">
+                Explore the diverse pathways through which we manifest compassion and sustain heritage.
+            </p>
+</div>
+<!-- Masonry Grid -->
+<div class="masonry-grid">
+<!-- Tile 1 -->
+<div class="masonry-item relative rounded-xl overflow-hidden group cursor-pointer aspect-[3/4] active:scale-[0.98] transition-transform duration-400 ease-out shadow-[0_0_20px_rgba(226,125,24,0.1)] hover:shadow-[0_0_30px_rgba(226,125,24,0.3)] bg-surface-container">
+<img alt="" class="absolute inset-0 w-full h-full object-cover transition-transform duration-[600ms] group-active:scale-105" data-alt="A serene cinematic shot of an ancient ornate temple carved in stone, bathed in warm golden hour light. The atmosphere is deeply reverent and timeless, fitting a spiritual documentary aesthetic. The colors are earthy umbers and vibrant saffron, emphasizing the intricate heritage and cultural preservation." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhqjj-3eDuXUMZlnKSivWhreqS7Kdptya68u3t1b4gnfB2wOCQhA4RodO67EzXx95zw3QH1tE5Xn0n-mvlU_J6BFRjAsbXQnxbg3V0zbVw4e48gLpkH0h5CD97YL1SQNWZgho-6yld7tXyJyhmnY0Nx2y_beUhEf2L31WnNpjc8r2b3qov4E2INdfR1F96S9ZueDmd9mZdiZPjMl6ioDco8LJdMfXj3mosKXvQEvZJbMBOOKpKT8PJhDJCXNytdU027gC3QVLWK9c"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent opacity-90"></div>
+<div class="absolute inset-0 p-8 flex flex-col justify-end">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-2">Protection of Heritage &amp; Culture</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Preserving sacred architecture and ancient traditions.</p>
+</div>
+</div>
+<!-- Tile 2 -->
+<div class="masonry-item relative rounded-xl overflow-hidden group cursor-pointer aspect-square active:scale-[0.98] transition-transform duration-400 ease-out shadow-[0_0_20px_rgba(226,125,24,0.1)] hover:shadow-[0_0_30px_rgba(226,125,24,0.3)] bg-surface-container">
+<img alt="" class="absolute inset-0 w-full h-full object-cover transition-transform duration-[600ms] group-active:scale-105" data-alt="A cinematic, warm-toned image of young students in traditional robes studying ancient texts in a serene, shadow-dappled courtyard. The lighting highlights their focused expressions, conveying a deep sense of devotion and scholarship in an earthy, reverent setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1uHKm0X5nIMJA6Pzfwnl0EsZSlP4oxkncdImqRMz1WpTIcriFUkPoUoJtE-lxWrttW3V5PFnKXNdmOVhnV-OeUS4rkT5pMoZisFTtpWUIIlhX8rylj6lT1kCz9qDit-yY_ld8WlPWg9mebIj12xptsgqOtTDqycyLAdJRwoDJyNa3azE3L7KokgTv0_SZPTnCVy8CCtEVu2eWwpP7z7PzyenH0bYRhI9w6Fr1-4jXEC_zWVtyUZJLY9xR2v-_DtXKMc4qAp4sh2g"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent opacity-90"></div>
+<div class="absolute inset-0 p-8 flex flex-col justify-end">
+<h2 class="font-headline-lg text-headline-lg text-secondary mb-2">Veda Patasalas</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Nurturing the roots of wisdom for future generations.</p>
+</div>
+</div>
+<!-- Tile 3 -->
+<div class="masonry-item relative rounded-xl overflow-hidden group cursor-pointer aspect-[4/3] active:scale-[0.98] transition-transform duration-400 ease-out shadow-[0_0_20px_rgba(226,125,24,0.1)] hover:shadow-[0_0_30px_rgba(226,125,24,0.3)] bg-surface-container">
+<img alt="" class="absolute inset-0 w-full h-full object-cover transition-transform duration-[600ms] group-active:scale-105" data-alt="A warm, compassionate shot of a modern yet modest rural clinic where a smiling healthcare worker tends to a child. The lighting is soft and hopeful, utilizing deep earthy backgrounds with saffron highlights to emphasize care and humanitarian effort in a spiritual context." src="https://lh3.googleusercontent.com/aida-public/AB6AXuALXY4XaSPGfQ-tprAeAFKt0shReSMRZHQ8Ydc4HxIQxD12uw_9sBeMA2FPAYBAGiwmcTJVDPjU0_TBgE2P7KrhAj60AlEU9-TAwZ4MyR-tNhhRBB_XR_kf_cSI-D51elJiqF22HJZ2SCx7IqDTuUNGxA46ebmzN9gy8qddb-tPLuijtiMwicGzZkrhyGQIcqTddo2-3CuJoEwK0XWjx9gZBIfEvFvs3oPxGZao2iTL7qByynlZ2jfKZo6DSPUEEqZ9tFn5MpuBT-w"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent opacity-90"></div>
+<div class="absolute inset-0 p-8 flex flex-col justify-end">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-2">Healthcare &amp; Youth Education</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Healing bodies and empowering minds.</p>
+</div>
+</div>
+<!-- Tile 4 -->
+<div class="masonry-item relative rounded-xl overflow-hidden group cursor-pointer aspect-square active:scale-[0.98] transition-transform duration-400 ease-out shadow-[0_0_20px_rgba(226,125,24,0.1)] hover:shadow-[0_0_30px_rgba(226,125,24,0.3)] bg-surface-container">
+<img alt="" class="absolute inset-0 w-full h-full object-cover transition-transform duration-[600ms] group-active:scale-105" data-alt="A rich, cinematic wide shot of a massive communal dining hall where diverse people sit together sharing a meal. Steam rises from large copper pots in the background. The scene is lit with warm, inviting light, reflecting a profound sense of community, charity, and sustenance." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAl7QInISc5aROksArXAorv0dqMrmFfORyxtIDbbvYE8zAmDYGrWBBIF5F8Im1VPfE7L4tGI9Q30-Dzqj0UqUJaa0TkTkmp_kYX3fkDjU8vtMs4dEkabmJj2jIVk57AOO-Ik55_VtKC65lPkCbRxF-0BX8EQ57g6K0YGgscqvtwk37PBwQY_g5PWLMCdbRj_Jil5pUYLtgfnWk-pN5lMSeepHrbZuu-K85Op1xSL8oWsXQI3DLmvy0bAvKvBxwcrYmVrQ8L28omhU0"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent opacity-90"></div>
+<div class="absolute inset-0 p-8 flex flex-col justify-end">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-2">Annadaanam</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">The sacred offering of food to all beings.</p>
+</div>
+</div>
+<!-- Tile 5 -->
+<div class="masonry-item relative rounded-xl overflow-hidden group cursor-pointer aspect-[3/4] active:scale-[0.98] transition-transform duration-400 ease-out shadow-[0_0_20px_rgba(226,125,24,0.1)] hover:shadow-[0_0_30px_rgba(226,125,24,0.3)] bg-surface-container">
+<img alt="" class="absolute inset-0 w-full h-full object-cover transition-transform duration-[600ms] group-active:scale-105" data-alt="A breathtaking, majestic portrait of an elephant in a lush, dense forest under soft morning mist. The image captures the harmony between nature and spirit, utilizing deep greens and umber tones with a subtle glowing light filtering through the canopy, emphasizing conservation." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBa059nwUzR27FBSwapV1kemPI2zqYPrlA2s7zAek3IKiaN1ckyjE8AmGdppZ_bP3LmyEI-tAYc6l-36lw4SkcOoTDN0dHrUmEcGy0G9AGGZSqR_P0LlvKxEqQbJWpiB3k99uP1F6_2e_bT9fXKJkSruPwp5aacwdYn8-SfQGRi_HHYj9iC4Du1QVvr0zm5f1ym4X4IHWEBASMUpsoM46G1mXjo9nUXNZlE0grqtHnny72PdppzWd2u2NVBSyjVbishOq3KdOC-90Q"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent opacity-90"></div>
+<div class="absolute inset-0 p-8 flex flex-col justify-end">
+<h2 class="font-headline-lg text-headline-lg text-secondary mb-2">Animal &amp; Nature Conservation</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Protecting the silent devotees of the earth.</p>
+</div>
+</div>
+<!-- Tile 6 -->
+<div class="masonry-item relative rounded-xl overflow-hidden group cursor-pointer aspect-video active:scale-[0.98] transition-transform duration-400 ease-out shadow-[0_0_20px_rgba(226,125,24,0.1)] hover:shadow-[0_0_30px_rgba(226,125,24,0.3)] bg-surface-container">
+<img alt="" class="absolute inset-0 w-full h-full object-cover transition-transform duration-[600ms] group-active:scale-105" data-alt="A scenic overview of a vibrant, sustainable rural village at dusk. Warm lights glow from mud-brick homes surrounded by lush fields. The scene is peaceful and aspirational, highlighting community upliftment with deep earth tones and a saffron sunset sky." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBkwv_CHfzXUSM--LFQPR55Znn1-fbjCT4mwiq_opo-gZVaGnGqvr5UAoPZH0w5R47sFzXZdjxDZygAm7_H7pVM7d0SgL0k62sqwanV-9sxvCakAoqjs3Z67yH9kQBiKc63GlP3uI29fFXTaZ06bQ6-JYHrFKM5X9K6TE5Qcz97ar6vyUDCGYj71IfVeBWQ9znMeGuMpbz1bSA5GblzkBSJfUxro0lpL48127ceOT6-LIQc4eq0TmQuJyX0OWhSQ1xLY01uYfAthg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent opacity-90"></div>
+<div class="absolute inset-0 p-8 flex flex-col justify-end">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-2">Model Villages</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Building sustainable communities rooted in dharma.</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Edge fading for scroll indication -->
+<div class="fixed bottom-24 left-0 w-full h-24 bg-gradient-to-t from-background to-transparent pointer-events-none z-40"></div>
+<!-- Bottom Nav Bar -->
+<nav class="fixed bottom-0 w-full z-50 h-24 flex justify-around items-center px-margin-edge pb-unit bg-surface/80 backdrop-blur-3xl rounded-t-xl md:hidden shadow-[0_0_30px_rgba(226,125,24,0.05)]">
+<!-- Active Item (assuming Home/Hub intent) -->
+<button class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full h-16 w-32 active:bg-surface-bright transition-colors duration-400 font-label-lg text-label-lg">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">home</span>
+<span>Home</span>
+</button>
+<!-- Inactive Items -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant h-16 w-32 active:bg-surface-bright transition-colors duration-400 font-label-lg text-label-lg">
+<span class="material-symbols-outlined mb-1">arrow_back</span>
+<span>Back</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant h-16 w-32 active:bg-surface-bright transition-colors duration-400 font-label-lg text-label-lg">
+<span class="material-symbols-outlined mb-1">contrast</span>
+<span>Contrast</span>
+</button>
+</nav>
+<script>
+        // Simple script to add slight scale effect on tile click for the kiosk environment
+        document.querySelectorAll('.masonry-item').forEach(item => {
+            item.addEventListener('touchstart', () => {
+                item.style.transform = 'scale(0.98)';
+            });
+            item.addEventListener('touchend', () => {
+                item.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body></html>

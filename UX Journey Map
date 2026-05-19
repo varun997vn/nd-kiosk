@@ -1,0 +1,96 @@
+As an expert UX designer, I have structured the vast, rich content from "In the Path of Love" into a seamless, highly visual, and interactive kiosk application. 
+
+Since this is a touch-screen kiosk, the design prioritizes large tap targets, highly legible typography, and intuitive, foolproof navigation. As per your requirements, there will be **no modals or pop-ups**. Instead, the app will use a flat hierarchy with fluid page transitions (like horizontal slide-ins and crossfades) and a persistent bottom/side navigation bar allowing the user to seamlessly move forward, backward, or jump to the Home screen.
+
+Here is the comprehensive Information Architecture and UX Journey Map for the kiosk app.
+
+---
+
+### **Information Architecture (Content Structure)**
+To capture all the information without overwhelming the user, the content is divided into four primary pillars:
+1.  **Institutions:** The physical ashrams, temples, and mandapams.
+2.  **Activities:** The humanitarian, cultural, and spiritual outreach programs.
+3.  **Global Presence (Namadwaars):** The worldwide centers for Nama Kirtan.
+4.  **Connect & Publications:** Magazines, stores, and contact/donation information.
+
+---
+
+### **UX Journey Map & Page Breakdown**
+
+#### **1. The Attract Screen (Idle State)**
+*   **Purpose:** To draw users to the kiosk when no one is using it.
+*   **Visuals:** A full-screen, slow-pan cinematic video background of Madhurapuri Ashram, continuous Mahamantra chanting, and the majestic 24-foot Kanyakumari Sri Jaya Hanuman. 
+*   **Animation:** The Mahamantra ("Hare Rama Hare Rama...") softly scrolls across the screen in an infinite, elegant loop. A pulsating, glowing button reads: "Touch to Explore The Path of Love."
+*   **Navigation:** Tapping anywhere on the screen triggers a soft crossfade transition to the **Home Dashboard**.
+
+#### **2. Home Dashboard**
+*   **Purpose:** The main hub routing the user to the four content pillars.
+*   **Visuals:** A rich, split-screen grid or horizontal carousel. Each of the 4 pillars is represented by a large, beautifully masked image card. 
+    *   *Card 1 (Institutions):* Image of Madhuri Sakhi Sametha Sri Premika Varadan.
+    *   *Card 2 (Activities):* Image of children at Gopa Kuteeram or Medical Camps.
+    *   *Card 3 (Global Namadwaars):* A stylized glowing world map.
+    *   *Card 4 (Connect):* The cover of Madhuramurali magazine.
+*   **Navigation:** Tapping a card triggers a "slide-left" transition into the respective Hub Page. A persistent "Home" button appears at the bottom center of the screen, remaining there for the rest of the journey.
+
+#### **3. Pillar 1: Institutions Hub**
+*   **Purpose:** To showcase the various spiritual centers.
+*   **Visuals:** A visually immersive interactive map of India with glowing pins, alongside a sleek, touch-friendly scrolling list of locations.
+*   **Content Captured:** 
+    *   Madhurapuri Ashram & Sri Kalyanasrinivasa Perumal Temple.
+    *   Govindapuram Centers (Chaitanya Kuteeram, Prasada Koodam, YogiRamsuratkumar Nama Ashram).
+    *   Sri Sundara Anjaneya Swami Temple, Bengaluru.
+    *   Premika Vidya Kendra, Gurugram.
+    *   Keerthanavali Mandapam, Kanchipuram.
+    *   Sri Premika Janmasthan, Senganoor.
+    *   Sri Niketan, Vrindavan.
+    *   Sri Vanararajasimhan Namadwaar, Kangeyam.
+*   **Navigation:** Tapping any location slides the user into the **Institution Detail Page**. A "Back" arrow at the top-left returns them to the Home Dashboard.
+
+#### **4. Institution Detail Page (Dynamic Template)**
+*   **Purpose:** To provide deep dives into specific locations.
+*   **Visuals:** A lush top-half image/video header (e.g., a video of the Kalpakavruksha Vimanam or daily Darshan). The bottom half contains tabbed content.
+*   **Component specifics:**
+    *   *Image Carousel:* Users can swipe through high-res photos of the deities and the architecture. 
+    *   *Info Cards:* Beautifully styled text blocks detailing "Daily Routine," "Darshan Timings," and "Festivals".
+*   **Navigation:** A "Back" button slides the screen right, returning to the Institutions Hub.
+
+#### **5. Pillar 2: Activities Hub**
+*   **Purpose:** Categorize the massive portfolio of humanitarian and cultural work.
+*   **Visuals:** A masonry grid of large, vibrant tiles with subtle hover/tap animations (e.g., the image zooms slightly when tapped before transitioning).
+*   **Categories Captured:**
+    *   **Heritage & Culture:** Details the Deiva Tamizh Isai Vizha and features a scrolling carousel listing the dozens of renovated ancient temples and Kumbhabhishekams (e.g., Sri Parthasarathyswamy Temple, Sri Ranganatha Temple). 
+    *   **Veda Patasalas:** A swipeable gallery showing the 8 different traditional schools (Sandeepani Gurukulams, Sri Premika Vedashramams, etc.).
+    *   **Animal & Nature:** Videos of the 3 Goshalas (housing 130+ cows), GOD Clean-up Day, and Agro Forestry efforts.
+    *   **Healthcare & Education:** Smart classrooms, Gopa Kuteeram heritage classes, mass prayers for students, and the 3 free Oushadalayas (clinics).
+    *   **Annadaanam:** Images of the massive dining halls serving free food.
+    *   **Model Villages:** Interactive infographics detailing the curation of Senganoor and Kalattipet with banking, medical, and waste management facilities.
+*   **Navigation:** Tapping a tile uses a "push" transition to enter the **Activity Detail Page**. "Back" goes to the Home Dashboard.
+
+#### **6. Pillar 3: Global Presence (Namadwaars) Hub**
+*   **Purpose:** To show the global scale of the "doorways to the Divine Name".
+*   **Visuals:** A highly interactive 3D globe or flat world map. 
+*   **Content Captured:** An alphabetical, swipeable directory on the left side, listing Namadwaars across India (Bengaluru, Chennai, Madurai, etc.) and internationally (USA, Canada, Fiji, Malaysia, Australia, New Zealand, Singapore). 
+*   **Component specifics:** Tapping a location on the list makes the map smoothly animate and zoom into that pin. A side-panel slides in (replacing the list, not as a modal) showing the specific address of that Namadwaar.
+*   **Navigation:** A top-left "Back to List" button restores the directory. The main "Back" arrow returns to the Home Dashboard.
+
+#### **7. Pillar 4: Connect, Publications & Support**
+*   **Purpose:** To capture the literature, stores, and ways to contribute.
+*   **Visuals:** A clean, elegant layout featuring high-quality renders of book covers and magazines.
+*   **Content Captured:** 
+    *   *Madhuramurali:* Details on the English and Tamil monthly journals.
+    *   *Madhuram Stores:* Carousel of books, audio/video CDs, and puja items available.
+    *   *Contribution:* A sleek, structured list of the official registered trusts (e.g., Jaya Hanuman Seva Trust, Global Organisation for Divinity India Trust).
+    *   *Contact Info:* A dedicated panel with central office addresses and phone numbers.
+    *   *QR Code Gallery:* A swipeable gallery of large, scannable QR codes for users to pull up Facebook, Instagram, YouTube, and the Madhuram Stores website directly on their personal smartphones.
+*   **Navigation:** Standard "Back" arrow to return to Home.
+
+---
+
+### **UX Motion & Navigation Rules (Kiosk Guidelines)**
+
+1.  **Transition Style:** Because you requested no modals, all forward movements use a **"Slide-Left"** animation (new page pushes in from the right). All backward movements use a **"Slide-Right"** animation. This creates a spatial, physical sense of moving through a book or physical space. 
+2.  **Persistent Navigation Bar:** A thick, high-contrast bar lives at the bottom of the screen at all times. It contains:
+    *   **Home Icon:** Instantly crossfades the user back to the Home Dashboard.
+    *   **Back Arrow:** Returns the user to the immediate previous screen.
+    *   **Accessibility Toggles:** High contrast mode and language toggle (if applicable).
+3.  **Inactivity Timeout:** If the screen is not touched for 60 seconds, a soft ripple animation appears. If untouched for 90 seconds, the app smoothly fades back to the **Attract Screen** (Page 1) to protect privacy and reset the experience for the next user.

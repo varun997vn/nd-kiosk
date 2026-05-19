@@ -1,0 +1,121 @@
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { motion } from 'framer-motion';
+
+const pillars = [
+  {
+    id: 'institutions',
+    title: 'Institutions',
+    subtitle: 'Ashrams, Temples & Mandapams',
+    image: '/assets/institutions_hub_split_view.png',
+    path: '/institutions'
+  },
+  {
+    id: 'activities',
+    title: 'Activities',
+    subtitle: 'Humanitarian & Cultural Outreach',
+    image: '/assets/activities_hub_outreach_pillars.png',
+    path: '/activities'
+  },
+  {
+    id: 'global',
+    title: 'Global Presence',
+    subtitle: 'Namadwaars Worldwide',
+    image: '/assets/global_presence_hub_interactive_map_1.png',
+    path: '/global'
+  },
+  {
+    id: 'connect',
+    title: 'Connect & Support',
+    subtitle: 'Publications & Contributions',
+    image: '/assets/connect_hub_publications_outreach.png',
+    path: '/connect'
+  }
+];
+
+export default function HomeDashboard() {
+  const navigate = useNavigate();
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, x: 100 }}
+      animate={{ opacity: 1, x: 0 }}
+      exit={{ opacity: 0, x: -100 }}
+      transition={{ duration: 0.5, ease: 'easeOut' }}
+      style={{
+        width: '100%',
+        height: '100%',
+        padding: '60px',
+        paddingBottom: 'calc(var(--nav-height) + 40px)', // Leave space for nav
+        display: 'flex',
+        flexDirection: 'column',
+        overflowY: 'auto'
+      }}
+    >
+      <header style={{ marginBottom: '40px' }}>
+        <h1 style={{ fontSize: '4rem', margin: 0 }}>The Path of Love</h1>
+        <p style={{ fontSize: '1.5rem', color: 'var(--color-text-secondary)' }}>Select a pillar to explore our journey.</p>
+      </header>
+
+      <div style={{
+        display: 'grid',
+        gridTemplateColumns: 'repeat(2, 1fr)',
+        gridAutoRows: 'minmax(350px, 1fr)',
+        gap: '30px',
+        flex: 1
+      }}>
+        {pillars.map((pillar, index) => (
+          <motion.div
+            key={pillar.id}
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            onClick={() => navigate(pillar.path)}
+            style={{
+              position: 'relative',
+              borderRadius: 'var(--border-radius-lg)',
+              overflow: 'hidden',
+              cursor: 'pointer',
+              boxShadow: 'var(--shadow-glass)',
+              border: '1px solid rgba(255,255,255,0.1)'
+            }}
+          >
+            <div style={{
+              position: 'absolute',
+              top: 0, left: 0, right: 0, bottom: 0,
+              backgroundImage: `url(${pillar.image})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              transition: 'transform 0.5s ease',
+            }} className="card-bg" />
+            
+            {/* Gradient Overlay */}
+            <div style={{
+              position: 'absolute',
+              top: 0, left: 0, right: 0, bottom: 0,
+              background: 'linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.2) 60%, rgba(0,0,0,0) 100%)'
+            }} />
+
+            <div style={{
+              position: 'absolute',
+              bottom: '40px',
+              left: '40px',
+              right: '40px'
+            }}>
+              <h2 style={{ 
+                fontSize: '3rem', 
+                color: 'var(--color-accent-gold)',
+                marginBottom: '8px',
+                textShadow: '0 2px 10px rgba(0,0,0,0.5)'
+              }}>{pillar.title}</h2>
+              <p style={{ 
+                fontSize: '1.5rem', 
+                color: 'var(--color-text-primary)',
+                opacity: 0.9 
+              }}>{pillar.subtitle}</p>
+            </div>
+          </motion.div>
+        ))}
+      </div>
+    </motion.div>
+  );
+}

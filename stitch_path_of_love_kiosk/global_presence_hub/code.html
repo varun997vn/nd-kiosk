@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Global Presence - Namadwaars Worldwide</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Noto+Serif:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-primary": "#924c00",
+                        "background": "#151311",
+                        "primary": "#ffb77f",
+                        "surface-dim": "#151311",
+                        "surface-variant": "#373432",
+                        "error-container": "#93000a",
+                        "on-secondary": "#3c2f00",
+                        "primary-container": "#e27d18",
+                        "outline": "#a38c7c",
+                        "surface-container-high": "#2c2927",
+                        "on-tertiary-fixed": "#2b1613",
+                        "tertiary": "#e3beb8",
+                        "tertiary-fixed-dim": "#e3beb8",
+                        "on-secondary-fixed": "#241a00",
+                        "on-primary-container": "#4c2500",
+                        "on-error": "#690005",
+                        "on-background": "#e8e1dd",
+                        "surface-container-low": "#1d1b19",
+                        "on-primary-fixed": "#2f1500",
+                        "tertiary-container": "#b18f89",
+                        "on-tertiary-fixed-variant": "#5b403c",
+                        "inverse-on-surface": "#33302d",
+                        "surface-container-lowest": "#100e0c",
+                        "secondary-fixed-dim": "#e9c349",
+                        "on-secondary-fixed-variant": "#574500",
+                        "error": "#ffb4ab",
+                        "surface-bright": "#3c3936",
+                        "surface-tint": "#ffb77f",
+                        "secondary": "#e9c349",
+                        "primary-fixed-dim": "#ffb77f",
+                        "on-secondary-container": "#342800",
+                        "inverse-surface": "#e8e1dd",
+                        "surface-container-highest": "#373432",
+                        "outline-variant": "#554336",
+                        "surface": "#151311",
+                        "on-surface-variant": "#dcc2b0",
+                        "on-error-container": "#ffdad6",
+                        "on-primary-fixed-variant": "#6f3800",
+                        "secondary-fixed": "#ffe088",
+                        "secondary-container": "#af8d11",
+                        "primary-fixed": "#ffdcc4",
+                        "tertiary-fixed": "#ffdad4",
+                        "on-surface": "#e8e1dd",
+                        "on-tertiary-container": "#412925",
+                        "surface-container": "#221f1d",
+                        "on-primary": "#4e2600",
+                        "on-tertiary": "#422a26"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "touch-target-min": "64px",
+                        "stack-gap": "24px",
+                        "margin-edge": "48px",
+                        "gutter": "32px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Noto Serif"],
+                        "headline-md": ["Noto Serif"],
+                        "display-lg": ["Noto Serif"],
+                        "label-lg": ["Inter"],
+                        "button-text": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["24px", { "lineHeight": "36px", "fontWeight": "400" }],
+                        "headline-lg": ["48px", { "lineHeight": "56px", "fontWeight": "600" }],
+                        "headline-md": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "display-lg": ["72px", { "lineHeight": "84px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-lg": ["18px", { "lineHeight": "24px", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "button-text": ["20px", { "lineHeight": "24px", "fontWeight": "600" }],
+                        "body-md": ["20px", { "lineHeight": "30px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        /* Smooth sweeping transitions for the kiosk */
+        .page-transition {
+            animation: fadeInScale 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+        }
+        @keyframes fadeInScale {
+            0% { opacity: 0; transform: scale(0.98); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+        
+        .slide-right-transition {
+            transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.4s ease;
+        }
+        .slide-right-transition:active {
+            transform: translateX(10px);
+            opacity: 0.8;
+        }
+
+        /* Ambient Saffron Glow */
+        .glow-saffron {
+            box-shadow: 0 0 40px -10px rgba(226, 125, 24, 0.4);
+        }
+        .glow-saffron-hover:hover {
+            box-shadow: 0 0 60px -10px rgba(226, 125, 24, 0.6);
+            border-color: rgba(226, 125, 24, 0.8);
+        }
+
+        /* Hide scrollbars but allow scrolling */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* Edge fade for scrollable areas */
+        .fade-bottom::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 120px;
+            background: linear-gradient(to top, #151311 0%, transparent 100%);
+            pointer-events: none;
+            z-index: 10;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen font-body-lg overflow-hidden flex flex-col page-transition selection:bg-primary selection:text-on-primary">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-edge h-touch-target-min bg-transparent no-border flat no shadows">
+<div class="font-headline-md text-headline-md text-primary tracking-tight">
+            In the Path of Love
+        </div>
+<div class="flex items-center gap-gutter">
+<!-- Hidden Search Bar per JSON -->
+<button aria-label="Contrast" class="h-touch-target-min w-touch-target-min flex items-center justify-center text-primary hover:text-primary-fixed-dim active:scale-95 transition-transform sweeping fluid transitions 400ms rounded-full bg-surface-container/50 backdrop-blur-md glow-saffron-hover border border-transparent">
+<span class="material-symbols-outlined text-4xl" data-icon="contrast">contrast</span>
+</button>
+</div>
+</header>
+<!-- Main Canvas -->
+<main class="flex-1 relative pt-[120px] pb-[160px] px-margin-edge flex flex-col h-screen fade-bottom">
+<!-- Header Section -->
+<div class="mb-gutter max-w-4xl">
+<h1 class="font-display-lg text-display-lg text-primary mb-unit">Global Presence</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl leading-relaxed">
+                Explore the worldwide network of Namadwaars. Touch any region to discover sanctuaries of devotion and community.
+            </p>
+</div>
+<!-- Interactive Map / Directory Container -->
+<div class="flex-1 relative bg-surface-container rounded-3xl border border-surface-container-high overflow-hidden shadow-2xl flex flex-col lg:flex-row gap-0">
+<!-- Map Area (Left/Top) -->
+<div class="flex-[2] relative bg-surface-container-lowest min-h-[400px]">
+<div class="absolute inset-0 bg-cover bg-center opacity-40 mix-blend-luminosity" data-alt="A stylized, highly detailed monochromatic world map depicted in deep earthy umber tones with subtle saffron glowing points. The map has a tactile, almost topographic texture, glowing softly under cinematic, dramatic lighting. The aesthetic is devotional, minimal, and premium, avoiding standard digital map markers in favor of elegant, radiant nodes. Deep shadows contrast with the warm, radiant points of light across the globe." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDi9ne00Y7_kL01xlXmgr7gORqs-V2Uv-U8n0j8GXf-cbdTVsFcJ7vWWlrGZAqfimdboUBRf6LcGTnFDSjwYZPv35tnAsGrd9ddt3LJjlL9jGuF3TqvPHZj1lbnz5VaHXoLZN5dY030S1v3o0JmIoZeelB9OCxbLbkR1Ty-NZlv8CtCKhbHJESzU1AqvbeELG9gvHbhjZrmO4yaECsYesx_XXVs6TlAer-6lBBeJihNTUnxSkGNhxhLyUxddB5Ey3Y5r5vmTCg2Ih0');">
+</div>
+<!-- Interactive Map Nodes (Simulated for Kiosk) -->
+<!-- North America -->
+<button class="absolute top-[30%] left-[20%] group flex flex-col items-center sweeping fluid transitions 400ms">
+<div class="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center border-2 border-primary/50 group-hover:bg-primary/40 group-hover:border-primary glow-saffron transition-all duration-400">
+<div class="w-4 h-4 rounded-full bg-primary glow-saffron"></div>
+</div>
+<span class="mt-2 font-label-lg text-label-lg text-on-surface bg-surface-container/80 backdrop-blur-md px-4 py-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-400">North America</span>
+</button>
+<!-- India -->
+<button class="absolute top-[45%] left-[70%] group flex flex-col items-center sweeping fluid transitions 400ms">
+<div class="w-20 h-20 rounded-full bg-primary-container/40 flex items-center justify-center border-2 border-primary glow-saffron-hover transition-all duration-400">
+<div class="w-6 h-6 rounded-full bg-primary-container shadow-[0_0_20px_rgba(226,125,24,1)]"></div>
+</div>
+<span class="mt-2 font-label-lg text-label-lg text-primary bg-surface-container-high/90 backdrop-blur-md px-4 py-2 rounded-full shadow-lg">India Hub</span>
+</button>
+<!-- Europe -->
+<button class="absolute top-[25%] left-[50%] group flex flex-col items-center sweeping fluid transitions 400ms">
+<div class="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center border-2 border-primary/50 group-hover:bg-primary/40 group-hover:border-primary glow-saffron transition-all duration-400">
+<div class="w-4 h-4 rounded-full bg-primary glow-saffron"></div>
+</div>
+<span class="mt-2 font-label-lg text-label-lg text-on-surface bg-surface-container/80 backdrop-blur-md px-4 py-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-400">Europe</span>
+</button>
+</div>
+<!-- Directory Listing (Right/Bottom) -->
+<div class="flex-1 bg-surface border-l border-surface-container-high flex flex-col relative z-10">
+<div class="p-8 border-b border-surface-container-high bg-surface-container/30 backdrop-blur-sm">
+<h2 class="font-headline-md text-headline-md text-on-surface">Regional Centers</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">Select a region to view local Namadwaars.</p>
+</div>
+<div class="flex-1 overflow-y-auto no-scrollbar p-6 space-y-4">
+<!-- Region Card: India (Active/Expanded State Simulation) -->
+<div class="bg-surface-container-high rounded-2xl p-6 border border-outline-variant glow-saffron">
+<div class="flex justify-between items-center mb-4">
+<h3 class="font-headline-lg text-headline-md text-primary">India</h3>
+<span class="bg-primary-container/20 text-primary-container px-4 py-1 rounded-full font-label-lg text-label-lg">42 Locations</span>
+</div>
+<!-- Location Sub-list (Feature Strips) -->
+<div class="space-y-3 mt-4">
+<button class="w-full text-left bg-surface-container rounded-xl p-5 min-h-touch-target-min flex items-center justify-between hover:bg-surface-bright active:scale-95 transition-all duration-400 border border-transparent hover:border-outline-variant">
+<div>
+<div class="font-button-text text-button-text text-on-surface">Chennai Main Namadwaar</div>
+<div class="font-body-md text-body-md text-on-surface-variant mt-1">Tamil Nadu</div>
+</div>
+<span class="material-symbols-outlined text-primary" data-icon="chevron_right">chevron_right</span>
+</button>
+<button class="w-full text-left bg-surface-container rounded-xl p-5 min-h-touch-target-min flex items-center justify-between hover:bg-surface-bright active:scale-95 transition-all duration-400 border border-transparent hover:border-outline-variant">
+<div>
+<div class="font-button-text text-button-text text-on-surface">Bangalore Namadwaar</div>
+<div class="font-body-md text-body-md text-on-surface-variant mt-1">Karnataka</div>
+</div>
+<span class="material-symbols-outlined text-primary" data-icon="chevron_right">chevron_right</span>
+</button>
+<button class="w-full text-left bg-surface-container rounded-xl p-5 min-h-touch-target-min flex items-center justify-between hover:bg-surface-bright active:scale-95 transition-all duration-400 border border-transparent hover:border-outline-variant">
+<div>
+<div class="font-button-text text-button-text text-on-surface">Delhi Namadwaar</div>
+<div class="font-body-md text-body-md text-on-surface-variant mt-1">New Delhi</div>
+</div>
+<span class="material-symbols-outlined text-primary" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Region Card: North America -->
+<button class="w-full text-left bg-surface-container rounded-2xl p-6 border border-transparent hover:border-outline-variant hover:bg-surface-container-high transition-all duration-400 min-h-[120px] flex items-center justify-between group">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors">North America</h3>
+<div class="font-body-md text-body-md text-on-surface-variant mt-2">USA &amp; Canada</div>
+</div>
+<div class="flex items-center gap-4">
+<span class="bg-surface-variant text-on-surface-variant px-4 py-1 rounded-full font-label-lg text-label-lg">8 Locations</span>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors text-3xl" data-icon="expand_more">expand_more</span>
+</div>
+</button>
+<!-- Region Card: Europe -->
+<button class="w-full text-left bg-surface-container rounded-2xl p-6 border border-transparent hover:border-outline-variant hover:bg-surface-container-high transition-all duration-400 min-h-[120px] flex items-center justify-between group">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors">Europe</h3>
+<div class="font-body-md text-body-md text-on-surface-variant mt-2">UK &amp; Mainland</div>
+</div>
+<div class="flex items-center gap-4">
+<span class="bg-surface-variant text-on-surface-variant px-4 py-1 rounded-full font-label-lg text-label-lg">4 Locations</span>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors text-3xl" data-icon="expand_more">expand_more</span>
+</div>
+</button>
+<!-- Spacer for scrolling past bottom fade -->
+<div class="h-24"></div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 h-24 flex justify-around items-center px-margin-edge pb-unit bg-surface/80 backdrop-blur-3xl bg-surface-container-high rounded-t-xl flat with saffron ambient glow">
+<!-- Home (Active Semantic Match - Hub Page) -->
+<button aria-label="Home" class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full h-16 w-32 active:bg-surface-bright transition-colors fluid scale-up transition-all duration-400">
+<span class="material-symbols-outlined text-3xl mb-1" data-icon="home" data-weight="fill" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-label-lg text-label-lg">Home</span>
+</button>
+<!-- Back (Slide Right Transition per user request) -->
+<button aria-label="Back" class="flex flex-col items-center justify-center text-on-surface-variant h-16 w-32 active:bg-surface-bright transition-colors fluid scale-up transition-all duration-400 slide-right-transition hover:text-primary">
+<span class="material-symbols-outlined text-3xl mb-1" data-icon="arrow_back">arrow_back</span>
+<span class="font-label-lg text-label-lg">Back</span>
+</button>
+<!-- Contrast -->
+<button aria-label="Contrast" class="flex flex-col items-center justify-center text-on-surface-variant h-16 w-32 active:bg-surface-bright transition-colors fluid scale-up transition-all duration-400 hover:text-primary">
+<span class="material-symbols-outlined text-3xl mb-1" data-icon="contrast">contrast</span>
+<span class="font-label-lg text-label-lg">Contrast</span>
+</button>
+</nav>
+<script>
+        // Lightweight JS for kiosk interactions (prevent default drag, double tap zoom etc)
+        document.addEventListener('contextmenu', event => event.preventDefault());
+        document.addEventListener('dblclick', event => event.preventDefault());
+    </script>
+</body></html>

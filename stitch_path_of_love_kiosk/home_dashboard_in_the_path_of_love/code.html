@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>In the Path of Love - Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Noto+Serif:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary": "#ffb77f",
+                    "inverse-primary": "#924c00",
+                    "on-error-container": "#ffdad6",
+                    "on-primary-container": "#4c2500",
+                    "on-primary-fixed": "#2f1500",
+                    "surface-tint": "#ffb77f",
+                    "secondary": "#e9c349",
+                    "on-secondary-fixed": "#241a00",
+                    "secondary-container": "#af8d11",
+                    "surface-container-high": "#2c2927",
+                    "on-secondary-fixed-variant": "#574500",
+                    "surface-dim": "#151311",
+                    "primary-fixed": "#ffdcc4",
+                    "tertiary-container": "#b18f89",
+                    "surface-variant": "#373432",
+                    "secondary-fixed-dim": "#e9c349",
+                    "on-tertiary-container": "#412925",
+                    "tertiary-fixed": "#ffdad4",
+                    "on-secondary": "#3c2f00",
+                    "on-tertiary-fixed": "#2b1613",
+                    "surface-bright": "#3c3936",
+                    "primary-container": "#e27d18",
+                    "on-surface-variant": "#dcc2b0",
+                    "outline": "#a38c7c",
+                    "error-container": "#93000a",
+                    "inverse-surface": "#e8e1dd",
+                    "on-tertiary": "#422a26",
+                    "surface-container": "#221f1d",
+                    "secondary-fixed": "#ffe088",
+                    "surface": "#151311",
+                    "on-primary": "#4e2600",
+                    "error": "#ffb4ab",
+                    "inverse-on-surface": "#33302d",
+                    "surface-container-highest": "#373432",
+                    "on-secondary-container": "#342800",
+                    "surface-container-lowest": "#100e0c",
+                    "surface-container-low": "#1d1b19",
+                    "background": "#151311",
+                    "on-surface": "#e8e1dd",
+                    "on-error": "#690005",
+                    "outline-variant": "#554336",
+                    "tertiary": "#e3beb8",
+                    "primary-fixed-dim": "#ffb77f",
+                    "on-primary-fixed-variant": "#6f3800",
+                    "on-tertiary-fixed-variant": "#5b403c",
+                    "on-background": "#e8e1dd",
+                    "tertiary-fixed-dim": "#e3beb8"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "32px",
+                    "touch-target-min": "64px",
+                    "stack-gap": "24px",
+                    "margin-edge": "48px",
+                    "unit": "8px"
+            },
+            "fontFamily": {
+                    "headline-lg": [
+                            "Noto Serif"
+                    ],
+                    "button-text": [
+                            "Inter"
+                    ],
+                    "display-lg": [
+                            "Noto Serif"
+                    ],
+                    "label-lg": [
+                            "Inter"
+                    ],
+                    "body-lg": [
+                            "Inter"
+                    ],
+                    "body-md": [
+                            "Inter"
+                    ],
+                    "headline-md": [
+                            "Noto Serif"
+                    ]
+            },
+            "fontSize": {
+                    "headline-lg": [
+                            "48px",
+                            {
+                                    "lineHeight": "56px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "button-text": [
+                            "20px",
+                            {
+                                    "lineHeight": "24px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "display-lg": [
+                            "72px",
+                            {
+                                    "lineHeight": "84px",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "label-lg": [
+                            "18px",
+                            {
+                                    "lineHeight": "24px",
+                                    "letterSpacing": "0.05em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "body-lg": [
+                            "24px",
+                            {
+                                    "lineHeight": "36px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "body-md": [
+                            "20px",
+                            {
+                                    "lineHeight": "30px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-md": [
+                            "32px",
+                            {
+                                    "lineHeight": "40px",
+                                    "fontWeight": "600"
+                            }
+                    ]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-background');
+            overflow: hidden; /* Hide scrollbars for kiosk */
+            transition: opacity 1s ease-in-out;
+            opacity: 0;
+        }
+        body.loaded {
+            opacity: 1;
+        }
+        
+        .bento-glow:focus-within, .bento-glow:active {
+            box-shadow: 0 0 30px theme('colors.secondary-container');
+            border-color: theme('colors.secondary');
+        }
+
+        .scroll-fade-bottom {
+            mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+        }
+    </style>
+</head>
+<body class="w-screen h-screen flex flex-col items-center bg-surface-dim relative">
+<!-- Top App Bar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-edge h-touch-target-min bg-transparent no-border flat no shadows sweeping fluid transitions 400ms">
+<h1 class="font-headline-md text-headline-md text-primary tracking-tight">In the Path of Love</h1>
+<button aria-label="Toggle Contrast" class="w-[64px] h-[64px] flex items-center justify-center text-primary active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="contrast" style="font-size: 32px;">contrast</span>
+</button>
+</header>
+<!-- Main Content Area -->
+<main class="w-full max-w-[1080px] flex-1 mt-[100px] mb-[120px] px-margin-edge flex flex-col gap-stack-gap overflow-y-auto scroll-fade-bottom">
+<!-- Welcome Hero Text -->
+<section class="py-12">
+<h2 class="font-display-lg text-display-lg text-on-surface mb-4">Welcome, Pilgrim.</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Find your center. Choose a path below to begin your devotional journey today.</p>
+</section>
+<!-- Bento Grid Layout -->
+<section class="grid grid-cols-12 gap-stack-gap auto-rows-[250px]">
+<!-- Daily Prayers (Large Feature) -->
+<button aria-label="Enter Daily Prayers" class="col-span-12 row-span-2 bento-glow relative rounded-xl overflow-hidden group active:scale-[0.98] transition-all duration-400 ease-in-out bg-surface-container-high border border-outline-variant flex flex-col justify-end">
+<div class="absolute inset-0 bg-black/40 z-10 group-hover:bg-black/30 transition-colors"></div>
+<img alt="" class="absolute inset-0 w-full h-full object-cover group-active:scale-105 transition-transform duration-700" data-alt="A cinematic, low-key lighting photograph of a grand, ancient wooden door slightly ajar, revealing a warm, golden glowing light from within. The aesthetic is devotional, moody, and deeply reverent, utilizing a palette of deep umber, rich mahogany, and bright saffron accents. Dust motes dance in the shaft of light, suggesting a quiet sanctuary." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBz-QfMBub0Yo53M2vYfbq0NqKGdCaCIzjGXvd6j938z5mTuWu-yYvnBUoNaTQD2-sfGsHJxdslRTbPuLpDh4P7EjqRKkP1wp7f0xGWKGLzH3lpOz80mnuiHGZbmVSlcXZCVrVFpnH_cAfbCY1P_7FrTlwCeatXMg4-FkAslEaezVqT8mWLRMnUOcMwYdSHqJmz956savt7XzZuSiXVXklqB5RuDDi3A0-O14o5k6jUhcdZUdMvntDyMVWvTKskeKDSUix0u1s0EM0"/>
+<div class="relative z-20 p-gutter w-full text-left bg-gradient-to-t from-surface-dim to-transparent pb-8">
+<span class="material-symbols-outlined text-secondary mb-4 block" data-icon="local_library" data-weight="fill" style="font-size: 48px; font-variation-settings: 'FILL' 1;">local_library</span>
+<h3 class="font-headline-lg text-headline-lg text-on-surface mb-2">Daily Prayers</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Morning reflections and guided meditations for peace.</p>
+</div>
+</button>
+<!-- Sacred Text -->
+<button aria-label="Read Sacred Text" class="col-span-6 row-span-1 bento-glow relative rounded-xl overflow-hidden group active:scale-[0.98] transition-all duration-400 ease-in-out bg-surface-container flex flex-col justify-end border border-outline-variant">
+<div class="absolute inset-0 bg-gradient-to-br from-surface-container-high to-surface-container-lowest z-10 opacity-90"></div>
+<img alt="" class="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-30" data-alt="Close up macro photography of ancient, textured parchment paper with faded ink script barely visible. The lighting is soft and ambient, casting gentle shadows across the rough fibers of the paper. The color palette revolves around warm earthy tones, sepia, ochre, and deep bronze." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJnckPGZA7mny85b-M1r5yx_DboKj_6ejb94eqb6DxsmEOsALcOLXQM743OgijKIuI2Xx3lk6IVGtC5yCb1JPf13PSodwWWVsAPk9T0lRBd-PlldcBAyrBdtrOnt0PPJIngsgwLavpOn28ALWgt-T2jhj7-b44zDmjyO5DKX5gGNOXTjormV_hjxRwgcQnH7NC54e89xOf6vQTooNPkzxkslNcaJFkwBsIF4UZNOZV4XMVDPJrMfprqMqzmiR0-8zG3GPp-PX-SVU"/>
+<div class="relative z-20 p-stack-gap w-full text-left">
+<span class="material-symbols-outlined text-primary mb-2 block" data-icon="menu_book" style="font-size: 36px;">menu_book</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">Sacred Text</h3>
+</div>
+</button>
+<!-- Interactive Altar -->
+<button aria-label="Visit Interactive Altar" class="col-span-6 row-span-1 bento-glow relative rounded-xl overflow-hidden group active:scale-[0.98] transition-all duration-400 ease-in-out bg-surface-container flex flex-col justify-end border border-outline-variant">
+<div class="absolute inset-0 bg-gradient-to-bl from-primary-container/20 to-surface-container-low z-10"></div>
+<div class="relative z-20 p-stack-gap w-full text-left">
+<span class="material-symbols-outlined text-primary-fixed mb-2 block" data-icon="local_fire_department" style="font-size: 36px;">local_fire_department</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">Interactive Altar</h3>
+</div>
+</button>
+<!-- Community Stories (Wide Banner) -->
+<button aria-label="View Community Stories" class="col-span-12 row-span-1 bento-glow relative rounded-xl overflow-hidden group active:scale-[0.98] transition-all duration-400 ease-in-out bg-surface-container-high flex flex-row items-center border border-outline-variant">
+<div class="w-1/3 h-full relative">
+<img alt="" class="absolute inset-0 w-full h-full object-cover" data-alt="A cinematic shot of diverse hands holding lit candles in a dark room. The warm glow of the candles illuminates the hands, creating a sense of unity and shared devotion. The background is completely swallowed in rich, deep darkness, making the bright amber and yellow flames the focal point." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9ud1HBSlggs7RQtmtbp9F3i-xoQUuR-Lgl14sILyiiSHyRYxehsLuN60cmufZTBNg3eNj6zm-cmk2BjlkUMCYTxOPW38I2UsSOXLb0h5RG9h89cpUxBkwqHBS97iH6I-n0xAXfkduvGa8iemjb9DNLVwruQWnWM7NI3zVja5yewHruDGd0eXx_YorU_pbBzWLCDyjQfTjpDtx1OymYmu3PWCpP_h42qlft8Da_Wcb1uzo2vrE1CBTowQNvlKfPSodceBl-YDEvHc"/>
+<div class="absolute inset-0 bg-gradient-to-r from-transparent to-surface-container-high"></div>
+</div>
+<div class="w-2/3 p-gutter text-left relative z-20">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Community Stories</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">Testaments of faith and journey from pilgrims around the world.</p>
+</div>
+</button>
+</section>
+<!-- Spacer for bottom nav -->
+<div class="h-8"></div>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 w-full z-50 h-24 flex justify-around items-center px-margin-edge pb-unit bg-surface/80 backdrop-blur-3xl rounded-t-xl border-none flat with saffron ambient glow">
+<!-- Active Tab: Home -->
+<button aria-current="page" class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full h-16 w-32 fluid scale-up transition-all duration-400 active:bg-surface-bright transition-colors">
+<span class="material-symbols-outlined mb-1" data-icon="home" data-weight="fill" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-label-lg text-label-lg">Home</span>
+</button>
+<!-- Inactive Tab: Back -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant h-16 w-32 fluid scale-up transition-all duration-400 active:bg-surface-bright transition-colors">
+<span class="material-symbols-outlined mb-1" data-icon="arrow_back">arrow_back</span>
+<span class="font-label-lg text-label-lg">Back</span>
+</button>
+<!-- Inactive Tab: Contrast -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant h-16 w-32 fluid scale-up transition-all duration-400 active:bg-surface-bright transition-colors">
+<span class="material-symbols-outlined mb-1" data-icon="contrast">contrast</span>
+<span class="font-label-lg text-label-lg">Contrast</span>
+</button>
+</nav>
+<script>
+        // Crossfade entrance
+        window.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                document.body.classList.add('loaded');
+            }, 100);
+        });
+
+        // Simulate slide-left for future navigation
+        document.querySelectorAll('button:not(nav button)').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                document.body.style.transform = 'translateX(-100vw)';
+                document.body.style.transition = 'transform 0.4s ease-in-out, opacity 0.4s ease-in-out';
+                document.body.style.opacity = '0';
+                
+                setTimeout(() => {
+                    // Reset for demo purposes
+                    document.body.style.transition = 'none';
+                    document.body.style.transform = 'translateX(0)';
+                    document.body.style.opacity = '1';
+                }, 500);
+            });
+        });
+    </script>
+</body></html>

@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Connect Hub - In the Path of Love</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Noto+Serif:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-low": "#1d1b19",
+                        "error-container": "#93000a",
+                        "on-surface-variant": "#dcc2b0",
+                        "on-error-container": "#ffdad6",
+                        "inverse-on-surface": "#33302d",
+                        "primary-fixed": "#ffdcc4",
+                        "primary-fixed-dim": "#ffb77f",
+                        "tertiary-container": "#b18f89",
+                        "on-tertiary": "#422a26",
+                        "on-surface": "#e8e1dd",
+                        "secondary": "#e9c349",
+                        "surface-container-high": "#2c2927",
+                        "tertiary-fixed": "#ffdad4",
+                        "on-primary": "#4e2600",
+                        "on-secondary-fixed": "#241a00",
+                        "outline": "#a38c7c",
+                        "on-secondary": "#3c2f00",
+                        "surface-container": "#221f1d",
+                        "surface-tint": "#ffb77f",
+                        "primary-container": "#e27d18",
+                        "on-primary-fixed": "#2f1500",
+                        "error": "#ffb4ab",
+                        "surface-dim": "#151311",
+                        "surface-bright": "#3c3936",
+                        "on-secondary-fixed-variant": "#574500",
+                        "background": "#151311",
+                        "on-background": "#e8e1dd",
+                        "surface-container-lowest": "#100e0c",
+                        "on-tertiary-fixed-variant": "#5b403c",
+                        "surface-container-highest": "#373432",
+                        "tertiary": "#e3beb8",
+                        "on-tertiary-fixed": "#2b1613",
+                        "primary": "#ffb77f",
+                        "on-error": "#690005",
+                        "inverse-surface": "#e8e1dd",
+                        "outline-variant": "#554336",
+                        "on-tertiary-container": "#412925",
+                        "on-secondary-container": "#342800",
+                        "secondary-container": "#af8d11",
+                        "secondary-fixed-dim": "#e9c349",
+                        "inverse-primary": "#924c00",
+                        "surface-variant": "#373432",
+                        "surface": "#151311",
+                        "secondary-fixed": "#ffe088",
+                        "tertiary-fixed-dim": "#e3beb8",
+                        "on-primary-fixed-variant": "#6f3800",
+                        "on-primary-container": "#4c2500"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "margin-edge": "48px",
+                        "touch-target-min": "64px",
+                        "stack-gap": "24px",
+                        "gutter": "32px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "button-text": ["Inter"],
+                        "label-lg": ["Inter"],
+                        "display-lg": ["Noto Serif"],
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Noto Serif"],
+                        "headline-lg": ["Noto Serif"]
+                    },
+                    "fontSize": {
+                        "body-md": ["20px", { "lineHeight": "30px", "fontWeight": "400" }],
+                        "button-text": ["20px", { "lineHeight": "24px", "fontWeight": "600" }],
+                        "label-lg": ["18px", { "lineHeight": "24px", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "display-lg": ["72px", { "lineHeight": "84px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["24px", { "lineHeight": "36px", "fontWeight": "400" }],
+                        "headline-md": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "headline-lg": ["48px", { "lineHeight": "56px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .no-scrollbar {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+        
+        /* Smooth scrolling for main container */
+        html { scroll-behavior: smooth; }
+        
+        /* Edge fading masks */
+        .fade-edges-x {
+            -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+            mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md h-screen w-screen overflow-hidden flex flex-col antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-edge h-touch-target-min bg-transparent sweeping fluid transitions 400ms">
+<div class="font-headline-md text-headline-md text-primary tracking-tight">
+            In the Path of Love
+        </div>
+<div class="flex items-center gap-stack-gap">
+<button class="active:scale-95 transition-transform flex items-center justify-center w-touch-target-min h-touch-target-min rounded-full hover:bg-surface-container-lowest text-primary">
+<span class="material-symbols-outlined" style="font-size: 32px; font-variation-settings: 'FILL' 0;">contrast</span>
+</button>
+</div>
+</header>
+<!-- Main Canvas -->
+<main class="flex-1 overflow-y-auto no-scrollbar px-margin-edge pt-[100px] pb-[160px] space-y-[80px]">
+<!-- Header -->
+<div class="space-y-unit">
+<h1 class="font-display-lg text-display-lg text-primary">Connect Hub</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl">
+                Explore our profound spiritual literature, connect with our central trusts, and join our global digital congregation.
+            </p>
+</div>
+<!-- Section 1: Publications & Stores -->
+<section class="space-y-stack-gap">
+<h2 class="font-headline-lg text-headline-lg text-on-surface flex items-center gap-unit">
+<span class="material-symbols-outlined text-secondary" style="font-size: 40px; font-variation-settings: 'FILL' 1;">menu_book</span>
+                Publications &amp; Stores
+            </h2>
+<div class="flex overflow-x-auto snap-x snap-mandatory gap-gutter pb-unit no-scrollbar fade-edges-x" style="padding-left: 2px; padding-right: 48px;">
+<!-- Card 1 (Image Provided) -->
+<article class="bg-surface-container-low rounded-xl w-[480px] h-[560px] shrink-0 snap-start flex flex-col relative overflow-hidden group shadow-lg">
+<div class="h-2/3 w-full bg-surface-container-highest overflow-hidden">
+<img alt="Devotional Publications" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida/ADBb0ugK9s7KQ3w6ve7ECkdr4eK4ngzy4a6z_u-_nIn0CZf7U4jhrNp8UvQ8dvwlV7Tl8THmY5QOI9Ukq3dQldo34fW1Qe0AuIuQSI-80hYoGedGMaqBhiQn18atXxTCug5uQHH8t7byloQ82kK09fUK2xfy6A0Pq325nv8svVGNpIajh4apANuym47S7xl-fZy5VPjw1wHqOaqwIGsAtIfbOUAo-zYd2GQ8PShWKa9MqudUfHcsfcY-54e-ejI"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low via-surface-container-low/50 to-transparent h-full"></div>
+</div>
+<div class="absolute bottom-0 w-full p-gutter flex flex-col justify-end h-1/2 bg-gradient-to-t from-surface-container-low via-surface-container-low to-transparent">
+<h3 class="font-headline-md text-headline-md text-primary mb-2">The Quiet Hours</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">A profound collection of daily meditations and reflections for the inner journey.</p>
+<button class="mt-stack-gap self-start h-touch-target-min px-8 rounded-full border-2 border-secondary text-secondary font-button-text text-button-text flex items-center gap-unit hover:bg-secondary/10 transition-colors active:scale-95">
+<span>Explore Collection</span>
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</article>
+<!-- Card 2 -->
+<article class="bg-surface-container-low rounded-xl w-[480px] h-[560px] shrink-0 snap-start flex flex-col relative overflow-hidden group shadow-lg">
+<div class="h-2/3 w-full bg-surface-container-highest overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A cinematic, high-end product photograph of a stack of elegant spiritual journals titled 'Madhuramurali'. The journals feature minimalist typography and subtle gold foil accents on their dark matte covers. They rest on a rustic, dark wooden table illuminated by a single, warm, soft spotlight, casting long, dramatic shadows. The overall aesthetic perfectly matches a dark mode devotional kiosk, utilizing deep umber tones and rich saffron highlights to create a mood of profound reverence and intellectual depth." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYaRwHPJZL7OBF09e93xrBqaDOa_DCsIyjmq5qpRrakPdXwq1cuKLF9e2J3RXon1EwpSwjSlPWP-KIqWFe1DZvWu4XPrKfVog6f368gq04WZSDE8KvayOzLsM7aJNOuZeBR1LHTl58yjczYYE6CefXOU24gkhWKPBBhOpKDpYiwAOnMT5yGWf8c3pbxDDOwJ2GwwOEVXWDiHVXSaiSQF600ZlUIVJgvsprjAY2K1Fg3q_hguhj0KTV0F1isFpOQr2so2DIB-5pgq0"/>
+</div>
+<div class="absolute bottom-0 w-full p-gutter flex flex-col justify-end h-1/2 bg-gradient-to-t from-surface-container-low via-surface-container-low to-transparent">
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Madhuramurali Journal</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">Our monthly spiritual magazine available in English and Tamil, featuring wisdom and global updates.</p>
+<button class="mt-stack-gap self-start h-touch-target-min px-8 rounded-full border-2 border-secondary text-secondary font-button-text text-button-text flex items-center gap-unit hover:bg-secondary/10 transition-colors active:scale-95">
+<span>Subscribe Now</span>
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</article>
+<!-- Card 3 -->
+<article class="bg-surface-container-low rounded-xl w-[480px] h-[560px] shrink-0 snap-start flex flex-col relative overflow-hidden group shadow-lg">
+<div class="h-2/3 w-full bg-surface-container-highest overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A luxurious, minimalist composition featuring a beautifully designed audio CD case and traditional brass puja items. The arrangement is positioned on a highly polished dark stone surface, bathed in an ambient, warm amber glow from an unseen oil lamp. The visual style embodies a serene, premium dark mode aesthetic, emphasizing tactile elegance, deep shadows, and intense spiritual focus within a sophisticated, moody sanctuary setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC25Smixc-aZplC7YObhkDQ0QbO9IM-gQQ-RflgKVDIaNWePKisNvVG5Zc-A56GuCWAA7DaINZasRo7I0n4JaaJsoTPR_D68D8lyJ7a99ZxAT5JJMr8O46mkrVFpfwITY2Zx8oQsoCF2bbb3MAGK4BAsAdfo18iEwpExwFAlrm1XFjZIvfdHyFulMaqHZ94qHkiEyqt6nQjTLxrSkOnx51WAStLIFqLE4lOMfNnFbI7JK2PM_j0yIdZfd7nvJ7QcLGFleW1Uaz6nZA"/>
+</div>
+<div class="absolute bottom-0 w-full p-gutter flex flex-col justify-end h-1/2 bg-gradient-to-t from-surface-container-low via-surface-container-low to-transparent">
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Madhuram Stores</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">Discover sacred chants on CD, authentic puja items, and spiritual artifacts.</p>
+<button class="mt-stack-gap self-start h-touch-target-min px-8 rounded-full border-2 border-secondary text-secondary font-button-text text-button-text flex items-center gap-unit hover:bg-secondary/10 transition-colors active:scale-95">
+<span>Visit Store</span>
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</article>
+</div>
+</section>
+<!-- Section 2: Contribution & Contact -->
+<section class="space-y-stack-gap">
+<h2 class="font-headline-lg text-headline-lg text-on-surface flex items-center gap-unit">
+<span class="material-symbols-outlined text-secondary" style="font-size: 40px; font-variation-settings: 'FILL' 1;">diversity_1</span>
+                Contribution &amp; Contact
+            </h2>
+<div class="bg-surface-container rounded-xl p-gutter flex flex-col lg:flex-row gap-margin-edge border border-surface-container-highest shadow-2xl relative overflow-hidden">
+<!-- Decorative background glow -->
+<div class="absolute -top-40 -right-40 w-96 h-96 bg-secondary/10 rounded-full blur-[100px] pointer-events-none"></div>
+<!-- Trust 1 -->
+<div class="flex-1 space-y-unit z-10">
+<div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-surface-container-highest text-secondary mb-4">
+<span class="material-symbols-outlined" style="font-size: 32px;">account_balance</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary">Jaya Hanuman Seva Trust</h3>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md h-24">
+                        Central Office: 123 Devotional Lane, Spiritual Quarter, Chennai, Tamil Nadu 600001, India.
+                    </p>
+<div class="pt-unit border-t border-surface-container-highest">
+<p class="font-label-lg text-label-lg text-outline uppercase tracking-widest mb-2">Direct Line</p>
+<a class="font-display-lg text-display-lg text-secondary hover:text-primary transition-colors block active:scale-[0.98] origin-left" href="#">
+                            +91 98765 43210
+                        </a>
+</div>
+</div>
+<!-- Divider (visible on large screens) -->
+<div class="hidden lg:block w-px bg-surface-container-highest self-stretch"></div>
+<!-- Divider (visible on small screens) -->
+<div class="block lg:hidden h-px bg-surface-container-highest w-full"></div>
+<!-- Trust 2 -->
+<div class="flex-1 space-y-unit z-10">
+<div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-surface-container-highest text-secondary mb-4">
+<span class="material-symbols-outlined" style="font-size: 32px;">public</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary">Global Organisation for Divinity</h3>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md h-24">
+                        India Trust Headquarters: 456 Peace Avenue, Harmony District, Chennai, Tamil Nadu 600002, India.
+                    </p>
+<div class="pt-unit border-t border-surface-container-highest">
+<p class="font-label-lg text-label-lg text-outline uppercase tracking-widest mb-2">Direct Line</p>
+<a class="font-display-lg text-display-lg text-secondary hover:text-primary transition-colors block active:scale-[0.98] origin-left" href="#">
+                            +91 99887 76655
+                        </a>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 3: QR Code Gallery -->
+<section class="space-y-stack-gap">
+<h2 class="font-headline-lg text-headline-lg text-on-surface flex items-center gap-unit">
+<span class="material-symbols-outlined text-secondary" style="font-size: 40px; font-variation-settings: 'FILL' 1;">qr_code_scanner</span>
+                Connect Digitally
+            </h2>
+<div class="flex overflow-x-auto snap-x snap-mandatory gap-gutter pb-unit no-scrollbar fade-edges-x" style="padding-left: 2px; padding-right: 48px;">
+<!-- QR 1 -->
+<div class="bg-surface-container-low rounded-xl w-[400px] shrink-0 snap-start p-stack-gap flex flex-col items-center justify-center gap-stack-gap border border-surface-container-highest shadow-xl">
+<div class="w-[320px] h-[320px] bg-white rounded-lg p-4 flex items-center justify-center shadow-inner">
+<img class="w-full h-full object-cover rounded mix-blend-multiply" data-alt="A highly detailed, perfectly crisp, very large QR code rendered in pure jet black against a bright, pristine white square background. The edges of the white square are cleanly defined. The image is brightly and evenly lit, completely flat with no shadows across the code itself, ensuring it is perfectly optimized for instant scanning by a mobile device camera. The overall look is modern, highly functional, and seamlessly integrated." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoJtjVBjWKp4uv9ij_KkbIvv0sZSu4qHKTRRkpFY9cqOB2BZDAcw6dMxnT0rVT-wj9roQEgfyU2jDMxGynS2XxD0-K7QWOG5Hg2V6a13tZgyw06pt8mt1EsV6gDRFvOWgek-RWjo68qcLD0U2Pqn9qnwm_YhrXBey52ostqUlOX6nVrk1yavPKik2CwF8yG3UqZTi_xA0Vryv4ylavpT5xWbsFE4FSWJcqBy6BlUI2A48drtp65Wz9ecyqrtjXI22mX4HpUFDJATE"/>
+</div>
+<div class="text-center w-full">
+<div class="font-headline-md text-headline-md text-primary mb-2">Madhuram Stores</div>
+<div class="font-body-md text-body-md text-on-surface-variant bg-surface-container-highest py-2 px-4 rounded-full inline-block">Scan to visit website</div>
+</div>
+</div>
+<!-- QR 2 -->
+<div class="bg-surface-container-low rounded-xl w-[400px] shrink-0 snap-start p-stack-gap flex flex-col items-center justify-center gap-stack-gap border border-surface-container-highest shadow-xl">
+<div class="w-[320px] h-[320px] bg-white rounded-lg p-4 flex items-center justify-center shadow-inner">
+<img class="w-full h-full object-cover rounded mix-blend-multiply" data-alt="A high-contrast, perfectly crisp, very large QR code rendered in pure black against a bright white square background. The edges of the white square are slightly rounded. The image is brightly lit, completely flat, and optimized for instant scanning by a mobile device camera to open a Facebook page. The design is utilitarian, modern, and highly legible for digital interaction." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUYqkcca51lI9dri6TG24622Xw5AFkdUhVYEXkPlDm835tj9Hc42mUOZzJlFlUGQGm-On_RAlX80BumSh8i6iYxagGA6OnJkoSR26lxeqvKwatekxFZWEGNoLd0Gh3YQJRj5OlTOmEMiD0rgYj1CJdm2qkSCIlNNmDiwRFtVXtggO_k8QdkbIhHCxktfGBtr6YOB0G8JhKLGTeZkSYHapgIEi1LfetEATsnz4hSnHl8s3Nce6ld_b_XgOJjrS_Krzv458uMiZODdI"/>
+</div>
+<div class="text-center w-full">
+<div class="font-headline-md text-headline-md text-primary mb-2 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">thumb_up</span>
+                            Facebook
+                        </div>
+<div class="font-body-md text-body-md text-on-surface-variant bg-surface-container-highest py-2 px-4 rounded-full inline-block">Follow our official page</div>
+</div>
+</div>
+<!-- QR 3 -->
+<div class="bg-surface-container-low rounded-xl w-[400px] shrink-0 snap-start p-stack-gap flex flex-col items-center justify-center gap-stack-gap border border-surface-container-highest shadow-xl">
+<div class="w-[320px] h-[320px] bg-white rounded-lg p-4 flex items-center justify-center shadow-inner">
+<img class="w-full h-full object-cover rounded mix-blend-multiply" data-alt="A massive, perfectly sharp QR code rendered in deep black ink against a stark white square background. The image is intensely lit from the front to eliminate any glare or shadows, making it perfectly optimized for rapid scanning by a smartphone camera to open an Instagram profile. The aesthetic is clean, precise, and strictly functional for digital kiosk usage." src="https://lh3.googleusercontent.com/aida-public/AB6AXuADjixJqr7t8sNFPPrlW5bLOctGQ-nKgwUmdpgT0cRQl1_zOKgku2xmiYwTUsdB2rJOkJQMJDwm251jbnejJyFZRHA_lRS-nXun_5sfNnVbFLtLhERp6ukm6UGgBx3cMaVA1oIE3mpygujUoC2A3B9Ty8adhcQH6lOS5zlhGSaiHZRYzhN8B6t-nG9hpk7zO4JQnsTX3dzM_A75nKkunfoL3rWFgB4_pdgDj9-9hQIIpg5JTa9A0bXuKKmkr4xAlSiGytHYNhOkFpo"/>
+</div>
+<div class="text-center w-full">
+<div class="font-headline-md text-headline-md text-primary mb-2 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">photo_camera</span>
+                            Instagram
+                        </div>
+<div class="font-body-md text-body-md text-on-surface-variant bg-surface-container-highest py-2 px-4 rounded-full inline-block">See daily inspiration</div>
+</div>
+</div>
+<!-- QR 4 -->
+<div class="bg-surface-container-low rounded-xl w-[400px] shrink-0 snap-start p-stack-gap flex flex-col items-center justify-center gap-stack-gap border border-surface-container-highest shadow-xl">
+<div class="w-[320px] h-[320px] bg-white rounded-lg p-4 flex items-center justify-center shadow-inner">
+<img class="w-full h-full object-cover rounded mix-blend-multiply" data-alt="A pristine, high-resolution, giant QR code in solid black against a completely white square background. The lighting is perfectly even and bright, entirely flat to guarantee immediate scanning success by any mobile device camera aiming to open a YouTube channel. The overall appearance is strictly functional, sharp, and highly contrasting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuASJVF8Hg5HbdqKbTCoyoM1BNR2zNYDShEwyDAAq3T52rW8f1GNs56m0wQ6BMDOgl0RbtMl2E3jLNE6FNsNjMthgKbhIEe1du_msk-ZRZRaRqwnA2rrq5kTSO-kNGIPsZWfaHOMbukqmd8t2697nM-1DZobkrBQXz_9exoJuKYOatiYscW5YbDzhJiaZB9f9qydClNo4xicT9HoyWS037g9X6iWdgz7nZPOOMaIjxU4jfN2ZCJOakc_ObEO0_1tt3cmiUvVetOdMXU"/>
+</div>
+<div class="text-center w-full">
+<div class="font-headline-md text-headline-md text-primary mb-2 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">play_circle</span>
+                            YouTube
+                        </div>
+<div class="font-body-md text-body-md text-on-surface-variant bg-surface-container-highest py-2 px-4 rounded-full inline-block">Subscribe for discourses</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 h-24 flex justify-around items-center px-margin-edge pb-unit bg-surface/80 backdrop-blur-3xl rounded-t-xl bg-surface-container-high shadow-[0_-10px_40px_rgba(233,195,73,0.05)] border-t-0">
+<!-- Home (Active) -->
+<button class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full h-16 w-32 fluid scale-up transition-all duration-400">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-label-lg text-label-lg">Home</span>
+</button>
+<!-- Back (Inactive) -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant h-16 w-32 fluid scale-up transition-all duration-400 active:bg-surface-bright rounded-full">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 0;">arrow_back</span>
+<span class="font-label-lg text-label-lg">Back</span>
+</button>
+<!-- Contrast (Inactive) -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant h-16 w-32 fluid scale-up transition-all duration-400 active:bg-surface-bright rounded-full">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 0;">contrast</span>
+<span class="font-label-lg text-label-lg">Contrast</span>
+</button>
+</nav>
+</body></html>

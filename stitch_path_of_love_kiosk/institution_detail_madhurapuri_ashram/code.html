@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Institution Detail - Madhurapuri Ashram</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Noto+Serif:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-highest": "#373432",
+                      "surface-tint": "#ffb77f",
+                      "inverse-primary": "#924c00",
+                      "secondary-fixed": "#ffe088",
+                      "primary-container": "#e27d18",
+                      "inverse-surface": "#e8e1dd",
+                      "primary": "#ffb77f",
+                      "surface-dim": "#151311",
+                      "outline": "#a38c7c",
+                      "on-tertiary-container": "#412925",
+                      "tertiary-fixed": "#ffdad4",
+                      "secondary": "#e9c349",
+                      "on-surface": "#e8e1dd",
+                      "on-primary-fixed-variant": "#6f3800",
+                      "surface-container-lowest": "#100e0c",
+                      "on-tertiary-fixed-variant": "#5b403c",
+                      "on-secondary-container": "#342800",
+                      "on-error": "#690005",
+                      "surface-container-high": "#2c2927",
+                      "error-container": "#93000a",
+                      "tertiary": "#e3beb8",
+                      "surface-variant": "#373432",
+                      "on-surface-variant": "#dcc2b0",
+                      "tertiary-container": "#b18f89",
+                      "surface-container-low": "#1d1b19",
+                      "on-secondary": "#3c2f00",
+                      "on-primary-fixed": "#2f1500",
+                      "on-secondary-fixed": "#241a00",
+                      "error": "#ffb4ab",
+                      "secondary-fixed-dim": "#e9c349",
+                      "primary-fixed": "#ffdcc4",
+                      "on-primary": "#4e2600",
+                      "surface-bright": "#3c3936",
+                      "on-primary-container": "#4c2500",
+                      "secondary-container": "#af8d11",
+                      "surface": "#151311",
+                      "on-tertiary-fixed": "#2b1613",
+                      "background": "#151311",
+                      "tertiary-fixed-dim": "#e3beb8",
+                      "outline-variant": "#554336",
+                      "on-background": "#e8e1dd",
+                      "on-tertiary": "#422a26",
+                      "surface-container": "#221f1d",
+                      "primary-fixed-dim": "#ffb77f",
+                      "on-secondary-fixed-variant": "#574500",
+                      "inverse-on-surface": "#33302d",
+                      "on-error-container": "#ffdad6"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "stack-gap": "24px",
+                      "gutter": "32px",
+                      "margin-edge": "48px",
+                      "unit": "8px",
+                      "touch-target-min": "64px"
+              },
+              "fontFamily": {
+                      "display-lg": ["Noto Serif"],
+                      "label-lg": ["Inter"],
+                      "button-text": ["Inter"],
+                      "body-md": ["Inter"],
+                      "headline-lg": ["Noto Serif"],
+                      "headline-md": ["Noto Serif"],
+                      "body-lg": ["Inter"]
+              },
+              "fontSize": {
+                      "display-lg": ["72px", {"lineHeight": "84px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "label-lg": ["18px", {"lineHeight": "24px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                      "button-text": ["20px", {"lineHeight": "24px", "fontWeight": "600"}],
+                      "body-md": ["20px", {"lineHeight": "30px", "fontWeight": "400"}],
+                      "headline-lg": ["48px", {"lineHeight": "56px", "fontWeight": "600"}],
+                      "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                      "body-lg": ["24px", {"lineHeight": "36px", "fontWeight": "400"}]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        /* Custom scrollbar hiding and smooth behaviors */
+        ::-webkit-scrollbar { display: none; }
+        .hide-scroll { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        /* Swiping Gallery Animation Classes */
+        .gallery-slide {
+            transition: transform 500ms cubic-bezier(0.25, 1, 0.5, 1);
+        }
+        
+        /* Glassmorphism utility */
+        .glass-panel {
+            background: rgba(44, 41, 39, 0.6);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(163, 140, 124, 0.2);
+        }
+        
+        /* Tab Transition */
+        .tab-content {
+            display: none;
+            opacity: 0;
+            transition: opacity 300ms ease-in-out;
+        }
+        .tab-content.active {
+            display: block;
+            opacity: 1;
+        }
+
+        /* Slide Right transition setup */
+        .page-enter {
+            animation: slideRightIn 500ms cubic-bezier(0.25, 1, 0.5, 1) forwards;
+        }
+        @keyframes slideRightIn {
+            from { transform: translateX(-20px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background h-screen w-full overflow-hidden flex flex-col font-body-md select-none page-enter">
+<!-- Top Navigation AppBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-edge h-touch-target-min bg-transparent">
+<button aria-label="Back to Institutions" class="flex items-center gap-2 h-touch-target-min px-4 bg-surface-container/60 backdrop-blur-md rounded-full active:scale-95 transition-transform text-on-surface-variant font-label-lg text-label-lg">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">arrow_back</span>
+            Back to Institutions
+        </button>
+</header>
+<!-- Main Scrollable Area -->
+<main class="flex-1 overflow-y-auto hide-scroll pb-[120px]">
+<!-- Hero Banner (Top 40%) -->
+<section class="relative h-[40vh] w-full bg-surface-container-lowest overflow-hidden group">
+<!-- Gallery Wrapper -->
+<div class="flex h-full w-full gallery-slide" id="galleryContainer" style="transform: translateX(0%);">
+<!-- Slide 1 -->
+<div class="h-full w-full flex-shrink-0 relative">
+<img alt="Madhurapuri Ashram Wide Shot" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPo4CwVuCyokNSEV-E77FNZhb-x3_R_XJQZv6O0rLhpQMBzR8Jg7gFeFA6JVHvnvyWOm3-PjqsWtnmqrNi9xPPG_JqcjMAYb0wPbhKhAIqMJs1EU25c4shpfREKNIS2uDBt249x62csAPW2nBdW37Wrh_1CjR26VMLKw6dR7kCrnvl4uF_1YFm2M5VHj0fc6FjYTe2bmx6nnkhAQo0d0fW9wAVe_kLB6lw4_eRWwDM1mxJ5JRhg6SJLi2XGdS7AgK2qh7Gv5mqi34"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent"></div>
+</div>
+<!-- Slide 2 -->
+<div class="h-full w-full flex-shrink-0 relative">
+<img alt="Prayer Hall Interior" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOJ4ROgjJj4bwGJsJx8Q75PBW1qUXFqWNVKfp-SGhKM11Xgz6hiK49o1tQxz4ocAabaMlShijTHilGNk-HNktf65z0rXX3_re-G_73yszYK0si9ZlrSulk8wKMlt45zoXJbsEDpK88-BgZLiqIjjmN4vh6qj0woGOXT-LCtxHwRihmwFWLaYUF3JSir1Aipkd3k9_NXZgacTQjPYWSNMJ4VIwD8r4iqj4PncZlxyS1ZF1utCkF4Jm9sU0yli9_SBCRPfr3wNRXob4"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent"></div>
+</div>
+<!-- Slide 3 -->
+<div class="h-full w-full flex-shrink-0 relative">
+<img alt="Gurukulam Setting" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZm2f3_irrTKHvJVYYJ3CxwYaGOOnk8aWAUtVeWHMFOqYetW6HAS87E_BGimbUJbEDlC2l8_xSmYAZqyGfi620NpgdZl6JfPdK3wGnAszVoBEDpBJ1n2q2xhAKtVPoLfwKgA7-HvS1ENPaAAuGpsZJWib1GN7ZJYLOSMOWJFHTXeN9zjnW3uk5tB9jwznctDGwTDK0wtqTHrL9Kuj-R-o_YowsGyzndx73ebT7XpgiGHwaHgWrIxtOQ6c2l6ElulOM_gm3g1NtuwM"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent"></div>
+</div>
+</div>
+<!-- Gallery Controls (Dots) -->
+<div class="absolute bottom-6 w-full flex justify-center gap-3 z-10">
+<button class="w-3 h-3 rounded-full bg-primary transition-colors gallery-dot" data-index="0"></button>
+<button class="w-3 h-3 rounded-full bg-surface-variant transition-colors gallery-dot" data-index="1"></button>
+<button class="w-3 h-3 rounded-full bg-surface-variant transition-colors gallery-dot" data-index="2"></button>
+</div>
+<!-- Title Overlay -->
+<div class="absolute bottom-16 left-margin-edge z-10">
+<h1 class="font-display-lg text-display-lg text-primary drop-shadow-md">Madhurapuri Ashram</h1>
+<p class="font-headline-md text-headline-md text-secondary mt-2">A Sanctuary of Devotion</p>
+</div>
+</section>
+<!-- Tabbed Interface (Bottom 60%) -->
+<section class="w-full px-margin-edge mt-stack-gap">
+<!-- Tab Headers -->
+<div class="flex gap-4 border-b border-outline-variant/50 pb-4 mb-stack-gap overflow-x-auto hide-scroll">
+<button class="tab-btn active font-headline-md text-headline-md px-6 py-4 min-h-touch-target-min flex items-center rounded-t-xl bg-surface-container-high text-primary border-b-2 border-primary transition-colors" data-target="tab-about">
+                    About
+                </button>
+<button class="tab-btn font-headline-md text-headline-md px-6 py-4 min-h-touch-target-min flex items-center rounded-t-xl bg-transparent text-on-surface-variant hover:text-on-surface transition-colors" data-target="tab-routine">
+                    Daily Routine
+                </button>
+<button class="tab-btn font-headline-md text-headline-md px-6 py-4 min-h-touch-target-min flex items-center rounded-t-xl bg-transparent text-on-surface-variant hover:text-on-surface transition-colors" data-target="tab-facilities">
+                    Facilities &amp; Shrines
+                </button>
+</div>
+<!-- Tab Content Container -->
+<div class="relative w-full pb-stack-gap">
+<!-- Tab: About -->
+<div class="tab-content active glass-panel p-8 rounded-2xl" id="tab-about">
+<p class="font-body-lg text-body-lg text-on-surface leading-relaxed">
+                        Serves as a central hub and living embodiment of the spiritual and social missions. Deeply connected to Vaishnava heritage, rooted in Bhagavata Dharma, Bhagavan Sri Krishna, and continuous Nama Kirtan.
+                    </p>
+</div>
+<!-- Tab: Daily Routine -->
+<div class="tab-content glass-panel p-8 rounded-2xl" id="tab-routine">
+<div class="flex items-start gap-6">
+<div class="w-16 h-16 rounded-full bg-secondary-container flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-on-secondary-container text-4xl" style="font-variation-settings: 'FILL' 1;">schedule</span>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface leading-relaxed pt-2">
+                            At the heart is Bhagavata Bhavanam, where devotees chant the Mahamantra incessantly from 6 am to 6 pm every day around the deity Namam Ketkum Perumal.
+                        </p>
+</div>
+</div>
+<!-- Tab: Facilities -->
+<div class="tab-content glass-panel p-8 rounded-2xl" id="tab-facilities">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-stack-gap">
+<!-- Facility Item -->
+<div class="bg-surface-container-low p-6 rounded-xl flex items-center gap-4">
+<span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings: 'FILL' 0;">school</span>
+<span class="font-button-text text-button-text text-on-surface">Sri Sandeepani Gurukulam (Veda Patasala)</span>
+</div>
+<!-- Facility Item -->
+<div class="bg-surface-container-low p-6 rounded-xl flex items-center gap-4">
+<span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings: 'FILL' 0;">restaurant</span>
+<span class="font-button-text text-button-text text-on-surface">Sant Ekanatha Swami Dining Hall</span>
+</div>
+<!-- Facility Item -->
+<div class="bg-surface-container-low p-6 rounded-xl flex items-center gap-4">
+<span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings: 'FILL' 0;">local_hospital</span>
+<span class="font-button-text text-button-text text-on-surface">Sri Premika Varadan Oushadalaya</span>
+</div>
+<!-- Facility Item -->
+<div class="bg-surface-container-low p-6 rounded-xl flex items-center gap-4">
+<span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings: 'FILL' 0;">pets</span>
+<span class="font-button-text text-button-text text-on-surface">Gokulam Goshala (80+ cows)</span>
+</div>
+<!-- Facility Item -->
+<div class="bg-surface-container-low p-6 rounded-xl flex items-center gap-4 md:col-span-2">
+<span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings: 'FILL' 0;">temple_hindu</span>
+<span class="font-button-text text-button-text text-on-surface">Sri Kalyanasrinivasa Perumal Temple (24-foot Kanyakumari Sri Jaya Hanuman)</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 h-24 flex justify-around items-center px-margin-edge pb-unit bg-surface/80 backdrop-blur-3xl rounded-t-xl bg-surface-container-high active:bg-surface-bright transition-colors fluid scale-up transition-all duration-400">
+<!-- Home (Active) -->
+<button class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full h-16 w-32 font-label-lg text-label-lg">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">home</span>
+<span>Home</span>
+</button>
+<!-- Back (Inactive) -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant h-16 w-32 font-label-lg text-label-lg">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 0;">arrow_back</span>
+<span>Back</span>
+</button>
+<!-- Contrast (Inactive) -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant h-16 w-32 font-label-lg text-label-lg">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 0;">contrast</span>
+<span>Contrast</span>
+</button>
+</nav>
+<script>
+        // Tab Switching Logic
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active classes
+                tabBtns.forEach(b => {
+                    b.classList.remove('bg-surface-container-high', 'text-primary', 'border-b-2', 'border-primary');
+                    b.classList.add('bg-transparent', 'text-on-surface-variant');
+                });
+                tabContents.forEach(c => c.classList.remove('active'));
+
+                // Add active classes to clicked
+                btn.classList.remove('bg-transparent', 'text-on-surface-variant');
+                btn.classList.add('bg-surface-container-high', 'text-primary', 'border-b-2', 'border-primary');
+                
+                const targetId = btn.getAttribute('data-target');
+                document.getElementById(targetId).classList.add('active');
+            });
+        });
+
+        // Simple Gallery Swiper Logic
+        let currentSlide = 0;
+        const totalSlides = 3;
+        const galleryContainer = document.getElementById('galleryContainer');
+        const dots = document.querySelectorAll('.gallery-dot');
+
+        function updateGallery() {
+            galleryContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
+            dots.forEach((dot, index) => {
+                if(index === currentSlide) {
+                    dot.classList.remove('bg-surface-variant');
+                    dot.classList.add('bg-primary');
+                } else {
+                    dot.classList.remove('bg-primary');
+                    dot.classList.add('bg-surface-variant');
+                }
+            });
+        }
+
+        // Auto-advance gallery
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateGallery();
+        }, 5000);
+
+        // Dot click handlers
+        dots.forEach(dot => {
+            dot.addEventListener('click', (e) => {
+                currentSlide = parseInt(e.target.getAttribute('data-index'));
+                updateGallery();
+            });
+        });
+    </script>
+</body></html>
