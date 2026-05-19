@@ -44,25 +44,26 @@ export default function HomeDashboard() {
       transition={{ duration: 0.5, ease: 'easeOut' }}
       style={{
         width: '100%',
-        height: '100%',
-        padding: '60px',
-        paddingBottom: 'calc(var(--nav-height) + 40px)', // Leave space for nav
+        height: '100vh',
+        padding: '5vh 4vw',
+        paddingBottom: 'calc(var(--nav-height) + 2vh)',
         display: 'flex',
         flexDirection: 'column',
-        overflowY: 'auto'
+        overflow: 'hidden'
       }}
     >
-      <header style={{ marginBottom: '40px' }}>
-        <h1 style={{ fontSize: '4rem', margin: 0 }}>The Path of Love</h1>
-        <p style={{ fontSize: '1.5rem', color: 'var(--color-text-secondary)' }}>Select a pillar to explore our journey.</p>
+      <header style={{ marginBottom: '3vh', flexShrink: 0 }}>
+        <h1 style={{ fontSize: 'clamp(2.5rem, 6vh, 4rem)', margin: 0 }}>The Path of Love</h1>
+        <p style={{ fontSize: 'clamp(1rem, 2vh, 1.5rem)', color: 'var(--color-text-secondary)' }}>Select a pillar to explore our journey.</p>
       </header>
 
       <div style={{
         display: 'grid',
         gridTemplateColumns: 'repeat(2, 1fr)',
-        gridAutoRows: 'minmax(350px, 1fr)',
-        gap: '30px',
-        flex: 1
+        gridTemplateRows: 'repeat(2, 1fr)',
+        gap: '2vw',
+        flex: 1,
+        minHeight: 0
       }}>
         {pillars.map((pillar, index) => (
           <motion.div
@@ -97,18 +98,18 @@ export default function HomeDashboard() {
 
             <div style={{
               position: 'absolute',
-              bottom: '40px',
-              left: '40px',
-              right: '40px'
+              bottom: '3vh',
+              left: '3vw',
+              right: '3vw'
             }}>
               <h2 style={{ 
-                fontSize: '3rem', 
+                fontSize: 'clamp(1.8rem, 4vh, 3rem)', 
                 color: 'var(--color-accent-gold)',
-                marginBottom: '8px',
+                marginBottom: '1vh',
                 textShadow: '0 2px 10px rgba(0,0,0,0.5)'
               }}>{pillar.title}</h2>
               <p style={{ 
-                fontSize: '1.5rem', 
+                fontSize: 'clamp(1rem, 2vh, 1.5rem)', 
                 color: 'var(--color-text-primary)',
                 opacity: 0.9 
               }}>{pillar.subtitle}</p>

@@ -25,17 +25,17 @@ export default function ActivityDetail() {
       transition={{ duration: 0.5, ease: 'easeOut' }}
       style={{
         width: '100%',
-        height: '100%',
+        height: '100vh',
         display: 'flex',
         flexDirection: 'column',
         paddingBottom: 'var(--nav-height)',
-        overflowY: 'auto'
+        overflow: 'hidden'
       }}
     >
       {/* Hero Header */}
       <div style={{
         width: '100%',
-        height: '40vh',
+        height: '35vh',
         backgroundImage: `url('${data.heroImage}')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
@@ -51,30 +51,31 @@ export default function ActivityDetail() {
           position: 'absolute',
           bottom: '40px',
           left: '60px',
-          right: '60px'
+          right: '4vw'
         }}>
-          <h1 style={{ fontSize: '4.5rem', color: 'var(--color-accent-gold)', margin: 0, textShadow: '0 4px 10px rgba(0,0,0,0.8)' }}>
+          <h1 style={{ fontSize: 'clamp(2.5rem, 6vh, 4.5rem)', color: 'var(--color-accent-gold)', margin: 0, textShadow: '0 4px 10px rgba(0,0,0,0.8)' }}>
             {data.title}
           </h1>
-          <p style={{ fontSize: '1.6rem', color: 'white', opacity: 0.9, maxWidth: '800px', lineHeight: 1.5, marginTop: '16px' }}>
+          <p style={{ fontSize: 'clamp(1.1rem, 2vh, 1.6rem)', color: 'white', opacity: 0.9, maxWidth: '800px', lineHeight: 1.5, marginTop: '2vh' }}>
             {data.description}
           </p>
         </div>
       </div>
 
       {/* Content Area */}
-      <div style={{ padding: '40px 60px', flex: 1 }}>
+      <div style={{ padding: '3vh 4vw', flex: 1, display: 'flex', gap: '3vw' }}>
         <div style={{ 
           display: 'grid', 
-          gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', 
-          gap: '40px' 
+          gridTemplateColumns: data.sections.length > 2 ? 'repeat(3, 1fr)' : 'repeat(2, 1fr)', 
+          gap: '2vw',
+          width: '100%'
         }}>
           {data.sections.map((section, idx) => (
-            <div key={idx} className="glass-panel" style={{ padding: '40px', display: 'flex', flexDirection: 'column' }}>
-              <h2 style={{ fontSize: '2.2rem', color: 'var(--color-accent-gold)', marginBottom: '20px' }}>
+            <div key={idx} className="glass-panel" style={{ padding: '3vh 2vw', display: 'flex', flexDirection: 'column' }}>
+              <h2 style={{ fontSize: 'clamp(1.5rem, 3vh, 2.2rem)', color: 'var(--color-accent-gold)', marginBottom: '1.5vh' }}>
                 {section.heading}
               </h2>
-              <div style={{ fontSize: '1.3rem', color: 'var(--color-text-primary)', lineHeight: 1.8 }}>
+              <div style={{ fontSize: 'clamp(1rem, 1.8vh, 1.3rem)', color: 'var(--color-text-primary)', lineHeight: 1.6 }}>
                 {section.content.split('\n').map((paragraph, i) => (
                   <p key={i} style={{ marginBottom: paragraph.trim() ? '16px' : '0' }}>
                     {paragraph.startsWith('-') || paragraph.startsWith('1)') || paragraph.startsWith('2)') || paragraph.startsWith('3)') 

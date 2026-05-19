@@ -16,7 +16,7 @@
   --font-body: 'Inter', sans-serif;
   
   /* Layout */
-  --nav-height: 100px;
+  --nav-height: 10vh;
   --border-radius-lg: 24px;
   --border-radius-md: 16px;
   --border-radius-sm: 8px;

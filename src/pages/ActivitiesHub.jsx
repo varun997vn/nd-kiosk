@@ -22,17 +22,17 @@ export default function ActivitiesHub() {
       transition={{ duration: 0.5, ease: 'easeOut' }}
       style={{
         width: '100%',
-        height: '100%',
-        padding: '60px',
-        paddingBottom: 'calc(var(--nav-height) + 40px)',
+        height: '100vh',
+        padding: '5vh 4vw',
+        paddingBottom: 'calc(var(--nav-height) + 2vh)',
         display: 'flex',
         flexDirection: 'column',
-        overflowY: 'auto'
+        overflow: 'hidden'
       }}
     >
-      <header style={{ marginBottom: '40px' }}>
-        <h1 style={{ fontSize: '4rem', color: 'var(--color-accent-gold)', margin: 0 }}>Activities Hub</h1>
-        <p style={{ fontSize: '1.5rem', color: 'var(--color-text-secondary)' }}>
+      <header style={{ marginBottom: '3vh', flexShrink: 0 }}>
+        <h1 style={{ fontSize: 'clamp(2.5rem, 6vh, 4rem)', color: 'var(--color-accent-gold)', margin: 0 }}>Activities Hub</h1>
+        <p style={{ fontSize: 'clamp(1rem, 2vh, 1.5rem)', color: 'var(--color-text-secondary)' }}>
           Discover our humanitarian and cultural outreach programs.
         </p>
       </header>
@@ -42,8 +42,9 @@ export default function ActivitiesHub() {
         flex: 1,
         display: 'grid',
         gridTemplateColumns: 'repeat(4, 1fr)',
-        gridAutoRows: 'minmax(250px, 1fr)',
-        gap: '24px'
+        gridTemplateRows: 'repeat(3, 1fr)',
+        gap: '2vw',
+        minHeight: 0
       }}>
         {activities.map((activity) => {
           // Manual CSS grid span mapping
@@ -88,12 +89,12 @@ export default function ActivitiesHub() {
 
               <div style={{
                 position: 'absolute',
-                bottom: '24px',
-                left: '24px',
-                right: '24px'
+                bottom: '3vh',
+                left: '2vw',
+                right: '2vw'
               }}>
                 <h2 style={{ 
-                  fontSize: '2rem', 
+                  fontSize: 'clamp(1.5rem, 3.5vh, 2.5rem)', 
                   color: 'white',
                   textShadow: '0 2px 4px rgba(0,0,0,0.8)' 
                 }}>{activity.title}</h2>
