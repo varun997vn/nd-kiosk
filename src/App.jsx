@@ -11,6 +11,7 @@ import ActivitiesHub from './pages/ActivitiesHub';
 import GlobalPresenceHub from './pages/GlobalPresenceHub';
 import ConnectHub from './pages/ConnectHub';
 import InstitutionDetail from './pages/InstitutionDetail';
+import ActivityDetail from './pages/ActivityDetail';
 
 export default function App() {
   const location = useLocation();
@@ -26,6 +27,7 @@ export default function App() {
             <Route path="/institutions" element={<InstitutionsHub />} />
             <Route path="/institutions/:id" element={<InstitutionDetail />} />
             <Route path="/activities" element={<ActivitiesHub />} />
+            <Route path="/activities/:id" element={<ActivityDetail />} />
             <Route path="/global" element={<GlobalPresenceHub />} />
             <Route path="/connect" element={<ConnectHub />} />
           </Routes>

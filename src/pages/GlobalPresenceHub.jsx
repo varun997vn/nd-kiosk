@@ -1,25 +1,15 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ComposableMap, Geographies, Geography, Marker } from 'react-simple-maps';
+import { namadwaarData } from '../namadwaarData';
 
 // A simple topojson for the world map
 const geoUrl = "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json";
 
-const namadwaars = [
-  { id: 'bengaluru', name: 'Bengaluru', country: 'India', coordinates: [77.5946, 12.9716] },
-  { id: 'chennai', name: 'Chennai', country: 'India', coordinates: [80.2707, 13.0827] },
-  { id: 'madurai', name: 'Madurai', country: 'India', coordinates: [78.1198, 9.9252] },
-  { id: 'usa', name: 'Houston', country: 'USA', coordinates: [-95.3698, 29.7604] },
-  { id: 'canada', name: 'Toronto', country: 'Canada', coordinates: [-79.3832, 43.6532] },
-  { id: 'fiji', name: 'Suva', country: 'Fiji', coordinates: [178.4415, -18.1416] },
-  { id: 'malaysia', name: 'Kuala Lumpur', country: 'Malaysia', coordinates: [101.6869, 3.1390] },
-  { id: 'australia', name: 'Sydney', country: 'Australia', coordinates: [151.2093, -33.8688] },
-  { id: 'nz', name: 'Auckland', country: 'New Zealand', coordinates: [174.7633, -36.8485] },
-  { id: 'singapore', name: 'Singapore', country: 'Singapore', coordinates: [103.8198, 1.3521] }
-];
-
 export default function GlobalPresenceHub() {
   const [activeMarker, setActiveMarker] = useState(null);
+  
+  const allLocations = [...namadwaarData.india, ...namadwaarData.international];
 
   return (
     <motion.div
@@ -53,26 +43,55 @@ export default function GlobalPresenceHub() {
           padding: '0 40px',
           display: 'flex',
           flexDirection: 'column',
-          gap: '12px'
+          gap: '24px'
         }}>
-          {namadwaars.sort((a,b) => a.name.localeCompare(b.name)).map(location => (
-            <button
-              key={location.id}
-              onClick={() => setActiveMarker(location.id)}
-              style={{
-                padding: '16px',
-                borderRadius: '8px',
-                background: activeMarker === location.id ? 'var(--color-bg-card)' : 'transparent',
-                border: activeMarker === location.id ? '1px solid var(--color-accent-gold)' : '1px solid rgba(255,255,255,0.1)',
-                color: activeMarker === location.id ? 'var(--color-accent-gold)' : 'var(--color-text-primary)',
-                textAlign: 'left',
-                transition: 'all 0.2s ease'
-              }}
-            >
-              <div style={{ fontSize: '1.2rem', fontWeight: 600 }}>{location.name}</div>
-              <div style={{ fontSize: '0.9rem', color: 'var(--color-text-secondary)' }}>{location.country}</div>
-            </button>
-          ))}
+          <div>
+            <h3 style={{ color: 'var(--color-text-secondary)', marginBottom: '12px' }}>In India</h3>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+              {namadwaarData.india.sort((a,b) => a.name.localeCompare(b.name)).map(location => (
+                <button
+                  key={location.id}
+                  onClick={() => setActiveMarker(location.id)}
+                  style={{
+                    padding: '16px',
+                    borderRadius: '8px',
+                    background: activeMarker === location.id ? 'var(--color-bg-card)' : 'transparent',
+                    border: activeMarker === location.id ? '1px solid var(--color-accent-gold)' : '1px solid rgba(255,255,255,0.1)',
+                    color: activeMarker === location.id ? 'var(--color-accent-gold)' : 'var(--color-text-primary)',
+                    textAlign: 'left',
+                    transition: 'all 0.2s ease'
+                  }}
+                >
+                  <div style={{ fontSize: '1.2rem', fontWeight: 600, marginBottom: '4px' }}>{location.name}</div>
+                  <div style={{ fontSize: '0.9rem', color: 'var(--color-text-secondary)', lineHeight: 1.4 }}>{location.address}</div>
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <h3 style={{ color: 'var(--color-text-secondary)', marginBottom: '12px' }}>International</h3>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+              {namadwaarData.international.sort((a,b) => a.name.localeCompare(b.name)).map(location => (
+                <button
+                  key={location.id}
+                  onClick={() => setActiveMarker(location.id)}
+                  style={{
+                    padding: '16px',
+                    borderRadius: '8px',
+                    background: activeMarker === location.id ? 'var(--color-bg-card)' : 'transparent',
+                    border: activeMarker === location.id ? '1px solid var(--color-accent-gold)' : '1px solid rgba(255,255,255,0.1)',
+                    color: activeMarker === location.id ? 'var(--color-accent-gold)' : 'var(--color-text-primary)',
+                    textAlign: 'left',
+                    transition: 'all 0.2s ease'
+                  }}
+                >
+                  <div style={{ fontSize: '1.2rem', fontWeight: 600, marginBottom: '4px' }}>{location.name}</div>
+                  <div style={{ fontSize: '0.9rem', color: 'var(--color-text-secondary)', lineHeight: 1.4 }}>{location.address}</div>
+                </button>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
 
@@ -113,8 +132,8 @@ export default function GlobalPresenceHub() {
             }
           </Geographies>
 
-          {namadwaars.map(({ id, name, coordinates }) => (
-            <Marker key={id} coordinates={coordinates} onClick={() => setActiveMarker(id)}>
+          {allLocations.map(({ id, name, coords }) => (
+            <Marker key={id} coordinates={coords} onClick={() => setActiveMarker(id)}>
               <motion.circle 
                 r={activeMarker === id ? 8 : 4} 
                 fill="var(--color-accent-gold)"

@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 
 const activities = [
   { id: 'heritage', title: 'Heritage & Culture', img: '/assets/activity_detail_heritage_culture.png', span: 'col-span-2 row-span-2' },
@@ -11,6 +12,8 @@ const activities = [
 ];
 
 export default function ActivitiesHub() {
+  const navigate = useNavigate();
+
   return (
     <motion.div
       initial={{ opacity: 0, x: 100 }}
@@ -56,6 +59,7 @@ export default function ActivitiesHub() {
           return (
             <motion.div
               key={activity.id}
+              onClick={() => navigate(`/activities/${activity.id}`)}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               style={{

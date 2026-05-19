@@ -57,12 +57,17 @@ export default function ConnectHub() {
           </div>
 
           {/* Contributions */}
-          <div className="glass-panel" style={{ padding: '40px' }}>
+          <div className="glass-panel" style={{ padding: '40px', flex: 1 }}>
             <h2 style={{ fontSize: '2.5rem', marginBottom: '20px' }}>Contribution</h2>
-            <ul style={{ listStyle: 'none', padding: 0, margin: 0, fontSize: '1.2rem', lineHeight: 2, color: 'var(--color-text-primary)' }}>
-              <li>• Jaya Hanuman Seva Trust</li>
-              <li>• Global Organisation for Divinity India Trust</li>
-              <li>• Sri Sandeepani Gurukula Trust</li>
+            <p style={{ color: 'var(--color-text-secondary)', marginBottom: '16px' }}>Your magnanimous contributions may please be sent to our registered trusts:</p>
+            <ul style={{ listStyle: 'none', padding: 0, margin: 0, fontSize: '1.1rem', lineHeight: 2, color: 'var(--color-text-primary)' }}>
+              <li>• Sri Sandeepani Gurukula Trust <span style={{color: 'var(--color-accent-gold)', fontSize: '0.9rem'}}>(80G / FCRA)</span></li>
+              <li>• Chaitanya Mahaprabhu Nama Bhiksha Kendra <span style={{color: 'var(--color-accent-gold)', fontSize: '0.9rem'}}>(80G)</span></li>
+              <li>• Global Organisation for Divinity India Trust <span style={{color: 'var(--color-accent-gold)', fontSize: '0.9rem'}}>(80G / FCRA)</span></li>
+              <li>• Mukhya Prana Seva Trust <span style={{color: 'var(--color-accent-gold)', fontSize: '0.9rem'}}>(80G)</span></li>
+              <li>• Sri Sandeepani Gurukula Seva Trust, AP <span style={{color: 'var(--color-accent-gold)', fontSize: '0.9rem'}}>(80G)</span></li>
+              <li>• Senganoor Kshetra Upasana Samiti <span style={{color: 'var(--color-accent-gold)', fontSize: '0.9rem'}}>(80G)</span></li>
+              <li>• Jaya Hanuman Seva Trust <span style={{color: 'var(--color-accent-gold)', fontSize: '0.9rem'}}>(FCRA)</span></li>
             </ul>
           </div>
         </div>
@@ -74,10 +79,10 @@ export default function ConnectHub() {
             <h2 style={{ fontSize: '2.5rem', marginBottom: '20px' }}>Contact Us</h2>
             <p style={{ fontSize: '1.2rem', lineHeight: 1.8, color: 'var(--color-text-secondary)' }}>
               <strong>Central Office:</strong><br/>
-              Madhurapuri Ashram, Maharanyam Village<br/>
-              Sriperumbudur Taluk, Chennai<br/><br/>
-              <strong>Phone:</strong> +91 XXXXX XXXXX<br/>
-              <strong>Email:</strong> contact@example.com
+              Plot No 11, Door No 4/11, Netaji Nagar Main Road<br/>
+              Jafferkhanpet, Chennai - 600083, India<br/><br/>
+              <strong>Phone:</strong> +91-44-24895875 / +91-7305985875<br/>
+              <strong>Email:</strong> contact@namadwaar.org
             </p>
           </div>
 
