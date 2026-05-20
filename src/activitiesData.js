@@ -2,7 +2,7 @@ export const activitiesData = {
   heritage: {
     id: 'heritage',
     title: 'Heritage & Culture',
-    heroImage: '/assets/images/unnamed (14).jpg',
+    heroImage: '/assets/images/unnamed (34).jpg',
     description: 'Protection of National Heritage, Art and Culture through renovation and restoration of ancient temples, conservation of monuments, and conducting Deiva Tamizh Isai Vizha.',
     sections: [
       {
@@ -18,12 +18,16 @@ export const activitiesData = {
         heading: 'Deiva Tamizh Isai Vizha',
         content: 'Since 2007, Chaitanya Mahaprabhu Namabhiksha Kendra has conducted the Deiva Tamizh Isai Vizha during the December Music Festival Season in Chennai. Stalwarts in classical music render Tamil compositions of legendary composers, Nalayira Divya Prabandams, and Thiruvasagam.'
       }
+    ],
+    images: [
+      '/assets/images/unnamed (35).jpg',
+      '/assets/images/unnamed (36).jpg'
     ]
   },
   veda: {
     id: 'veda',
     title: 'Veda Patasalas',
-    heroImage: '/assets/images/unnamed (10).jpg',
+    heroImage: '/assets/images/unnamed (37).jpg',
     description: 'Traditional Value-Based Education to preserve our Vaidhika Dharma by imparting Vedic knowledge to students and supporting Vedic scholars.',
     sections: [
       {
@@ -42,12 +46,18 @@ export const activitiesData = {
         content: `- **Smt. Jayanthi Janakiraman Ninaivu Dravida Veda Agama Patasala (Thirunangur):** Trains students in Vaishnava Agama Shastra.
 - **Shuddha Premika Vidya Kendra (Senganoor):** Imparts knowledge of the Divine Works of Sri Sri Krishna Premi Maharaj.`
       }
+    ],
+    images: [
+      '/assets/images/unnamed (38).jpg',
+      '/assets/images/unnamed (39).jpg',
+      '/assets/images/unnamed (40).jpg',
+      '/assets/images/unnamed (41).jpg'
     ]
   },
   animal: {
     id: 'animal',
     title: 'Animal & Nature',
-    heroImage: '/assets/images/unnamed (23).jpg',
+    heroImage: '/assets/images/unnamed (46).jpg',
     description: 'Animal Welfare and Conservation of Flora and Fauna. Dedicated to cow protection, agroforestry, and social forestry.',
     sections: [
       {
@@ -62,12 +72,16 @@ Regular animal welfare camps rescue and support hundreds of cows.`
         heading: 'Agro & Social Forestry',
         content: 'To ensure environmental sustainability, saplings are actively planted in rural communities like Senganoor, Nangur, Govindapuram, and Madhurapuri. Solar power projects and rainwater harvesting are also widely implemented.'
       }
+    ],
+    images: [
+      '/assets/images/unnamed (45).jpg',
+      '/assets/images/unnamed (47).jpg'
     ]
   },
   health: {
     id: 'health',
     title: 'Healthcare & Education',
-    heroImage: '/assets/images/unnamed (34).jpg',
+    heroImage: '/assets/images/unnamed (49).jpg',
     description: 'Providing fully charitable medical centres in rural areas, and quality modern education to children.',
     sections: [
       {
@@ -81,12 +95,18 @@ Regular medical camps, eye screening, and blood donation drives are conducted.`
         heading: 'Educational Support',
         content: 'Classrooms and toilet blocks have been constructed in Panchayat Schools at Maharanyam and Senganoor. Smart Classes are implemented, and free coaching centres are run at Senganoor.'
       }
+    ],
+    images: [
+      '/assets/images/unnamed (50).jpg',
+      '/assets/images/unnamed (48).jpg',
+      '/assets/images/unnamed (51).jpg',
+      '/assets/images/unnamed (52).jpg'
     ]
   },
   annadaanam: {
     id: 'annadaanam',
     title: 'Annadaanam',
-    heroImage: '/assets/images/unnamed (44).jpg',
+    heroImage: '/assets/images/unnamed (60).jpg',
     description: 'Serving the Lord by serving humanity through widespread free food distribution.',
     sections: [
       {
@@ -96,12 +116,15 @@ Regular medical camps, eye screening, and blood donation drives are conducted.`
 - Sri Premika Jagannatha Prasada Koodam, Chaitanya Kuteeram, Govindapuram
 - Sri Parvathi Ammal Prasada Koodam, Ambi Illam, Senganoor Village`
       }
+    ],
+    images: [
+      '/assets/images/unnamed (14).jpg'
     ]
   },
   model: {
     id: 'model',
     title: 'Model Villages',
-    heroImage: '/assets/images/unnamed (50).jpg',
+    heroImage: '/assets/images/unnamed (65).jpg',
     description: 'Curating Model Villages to function with comprehensive facilities for rural empowerment.',
     sections: [
       {
@@ -112,6 +135,9 @@ Regular medical camps, eye screening, and blood donation drives are conducted.`
         heading: 'Sanitation & Cleanliness',
         content: 'Participation in Swacch Bhaarat includes the "GOD clean-up day" (every November at 30+ locations). Installation of waste collection vehicles, bioseptic tanks, and solid waste management awareness camps.'
       }
+    ],
+    images: [
+      '/assets/images/unnamed (66).jpg'
     ]
   }
 };

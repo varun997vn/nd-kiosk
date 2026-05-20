@@ -7,28 +7,28 @@ const pillars = [
     id: 'institutions',
     title: 'Institutions',
     subtitle: 'Ashrams, Temples & Mandapams',
-    image: '/assets/institutions_hub_split_view.png',
+    image: '/assets/images/unnamed (1).jpg',
     path: '/institutions'
   },
   {
     id: 'activities',
     title: 'Activities',
     subtitle: 'Humanitarian & Cultural Outreach',
-    image: '/assets/activities_hub_outreach_pillars.png',
+    image: '/assets/images/unnamed (29).jpg',
     path: '/activities'
   },
   {
     id: 'global',
     title: 'Global Presence',
     subtitle: 'Namadwaars Worldwide',
-    image: '/assets/global_presence_hub_interactive_map_1.png',
+    image: '/assets/a_glowing_stylized_world_map_with_golden_points_of_light_representing_spiritual.png',
     path: '/global'
   },
   {
     id: 'connect',
     title: 'Connect & Support',
     subtitle: 'Publications & Contributions',
-    image: '/assets/connect_hub_publications_outreach.png',
+    image: '/assets/images/unnamed (67).jpg',
     path: '/connect'
   }
 ];

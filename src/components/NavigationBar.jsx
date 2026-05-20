@@ -26,22 +26,26 @@ export default function NavigationBar() {
       zIndex: 1000
     }}>
       
-      <button 
-        onClick={() => navigate(-1)}
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          gap: '12px',
-          color: 'var(--color-text-primary)',
-          fontSize: '1.5rem',
-          padding: '16px 24px',
-          borderRadius: '9999px',
-          backgroundColor: 'rgba(255,255,255,0.1)'
-        }}
-      >
-        <ArrowLeft size={32} />
-        Back
-      </button>
+      {location.pathname !== '/home' ? (
+        <button 
+          onClick={() => navigate(-1)}
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: '12px',
+            color: 'var(--color-text-primary)',
+            fontSize: '1.5rem',
+            padding: '16px 24px',
+            borderRadius: '9999px',
+            backgroundColor: 'rgba(255,255,255,0.1)'
+          }}
+        >
+          <ArrowLeft size={32} />
+          Back
+        </button>
+      ) : (
+        <div style={{ width: '130px' }} /> /* Spacer to keep Home button centered */
+      )}
 
       <button 
         onClick={() => navigate('/home')}

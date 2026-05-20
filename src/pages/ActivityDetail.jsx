@@ -17,6 +17,8 @@ export default function ActivityDetail() {
     );
   }
 
+  const hasImages = data.images && data.images.length > 0;
+
   return (
     <motion.div
       initial={{ opacity: 0, x: 100 }}
@@ -49,37 +51,41 @@ export default function ActivityDetail() {
         }} />
         <div style={{
           position: 'absolute',
-          bottom: '40px',
-          left: '60px',
+          bottom: '30px',
+          left: '4vw',
           right: '4vw'
         }}>
           <h1 style={{ fontSize: 'clamp(2.5rem, 6vh, 4.5rem)', color: 'var(--color-accent-gold)', margin: 0, textShadow: '0 4px 10px rgba(0,0,0,0.8)' }}>
             {data.title}
           </h1>
-          <p style={{ fontSize: 'clamp(1.1rem, 2vh, 1.6rem)', color: 'white', opacity: 0.9, maxWidth: '800px', lineHeight: 1.5, marginTop: '2vh' }}>
+          <p style={{ fontSize: 'clamp(1.1rem, 2vh, 1.6rem)', color: 'white', opacity: 0.9, maxWidth: '900px', lineHeight: 1.5, marginTop: '1.5vh' }}>
             {data.description}
           </p>
         </div>
       </div>
 
       {/* Content Area */}
-      <div style={{ padding: '3vh 4vw', flex: 1, display: 'flex', gap: '3vw' }}>
+      <div style={{ padding: '3vh 4vw', flex: 1, display: 'flex', gap: '3vw', minHeight: 0, overflow: 'hidden' }}>
+        {/* Left Col: Sections Grid */}
         <div style={{ 
+          flex: 1,
           display: 'grid', 
           gridTemplateColumns: data.sections.length > 2 ? 'repeat(3, 1fr)' : 'repeat(2, 1fr)', 
           gap: '2vw',
-          width: '100%'
+          minHeight: 0,
+          overflowY: 'auto',
+          paddingRight: '8px'
         }}>
           {data.sections.map((section, idx) => (
-            <div key={idx} className="glass-panel" style={{ padding: '3vh 2vw', display: 'flex', flexDirection: 'column' }}>
-              <h2 style={{ fontSize: 'clamp(1.5rem, 3vh, 2.2rem)', color: 'var(--color-accent-gold)', marginBottom: '1.5vh' }}>
+            <div key={idx} className="glass-panel" style={{ padding: '3vh 2vw', display: 'flex', flexDirection: 'column', height: 'fit-content' }}>
+              <h2 style={{ fontSize: 'clamp(1.3rem, 2.5vh, 2rem)', color: 'var(--color-accent-gold)', marginBottom: '1.5vh' }}>
                 {section.heading}
               </h2>
-              <div style={{ fontSize: 'clamp(1rem, 1.8vh, 1.3rem)', color: 'var(--color-text-primary)', lineHeight: 1.6 }}>
+              <div style={{ fontSize: 'clamp(0.95rem, 1.7vh, 1.25rem)', color: 'var(--color-text-primary)', lineHeight: 1.6 }}>
                 {section.content.split('\n').map((paragraph, i) => (
-                  <p key={i} style={{ marginBottom: paragraph.trim() ? '16px' : '0' }}>
+                  <p key={i} style={{ marginBottom: paragraph.trim() ? '12px' : '0' }}>
                     {paragraph.startsWith('-') || paragraph.startsWith('1)') || paragraph.startsWith('2)') || paragraph.startsWith('3)') 
-                      ? <span style={{display: 'block', marginLeft: '20px'}}>{paragraph}</span>
+                      ? <span style={{display: 'block', marginLeft: '16px'}}>{paragraph}</span>
                       : paragraph}
                   </p>
                 ))}
@@ -87,6 +93,26 @@ export default function ActivityDetail() {
             </div>
           ))}
         </div>
+
+        {/* Right Col: Image Gallery */}
+        {hasImages && (
+          <div style={{ width: '30vw', display: 'flex', flexDirection: 'column', gap: '2vh', flexShrink: 0 }}>
+            {data.images.slice(0, 2).map((img, idx) => (
+              <div 
+                key={idx}
+                className="glass-panel"
+                style={{
+                  width: '100%',
+                  flex: 1,
+                  backgroundImage: `url('${img}')`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                  borderRadius: 'var(--border-radius-md)'
+                }}
+              />
+            ))}
+          </div>
+        )}
       </div>
     </motion.div>
   );

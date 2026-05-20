@@ -3,16 +3,37 @@ import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 
 const activities = [
-  { id: 'heritage', title: 'Heritage & Culture', img: '/assets/activity_detail_heritage_culture.png', span: 'col-span-2 row-span-2' },
-  { id: 'veda', title: 'Veda Patasalas', img: '/assets/a_traditional_vedic_school_gurukulam_setting_within_an_ashram_with_students_and.png', span: 'col-span-1 row-span-1' },
-  { id: 'animal', title: 'Animal & Nature', img: '/assets/a_lush_cinematic_high_resolution_background_for_a_spiritual_kiosk_application.png', span: 'col-span-1 row-span-2' },
-  { id: 'health', title: 'Healthcare & Education', img: '/assets/happy_children_smiling_during_a_cultural_festival_in_india_or_a_clean_medical.png', span: 'col-span-1 row-span-1' },
-  { id: 'annadaanam', title: 'Annadaanam', img: '/assets/activities_hub.png', span: 'col-span-2 row-span-1' },
-  { id: 'model', title: 'Model Villages', img: '/assets/activities_hub_outreach_pillars.png', span: 'col-span-1 row-span-1' },
+  { id: 'heritage', title: 'Heritage & Culture', img: '/assets/images/unnamed (34).jpg', span: 'col-span-2 row-span-2' },
+  { id: 'veda', title: 'Veda Patasalas', img: '/assets/images/unnamed (37).jpg', span: 'col-span-1 row-span-1' },
+  { id: 'animal', title: 'Animal & Nature', img: '/assets/images/unnamed (46).jpg', span: 'col-span-1 row-span-2' },
+  { id: 'health', title: 'Healthcare & Education', img: '/assets/images/unnamed (49).jpg', span: 'col-span-1 row-span-1' },
+  { id: 'annadaanam', title: 'Annadaanam', img: '/assets/images/unnamed (60).jpg', span: 'col-span-2 row-span-1' },
+  { id: 'model', title: 'Model Villages', img: '/assets/images/unnamed (65).jpg', span: 'col-span-1 row-span-1' },
 ];
 
 export default function ActivitiesHub() {
   const navigate = useNavigate();
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.3
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, scale: 0.95, y: 20 },
+    visible: { 
+      opacity: 1, 
+      scale: 1,
+      y: 0,
+      transition: { duration: 0.4, ease: 'easeOut' }
+    }
+  };
 
   return (
     <motion.div
@@ -38,14 +59,19 @@ export default function ActivitiesHub() {
       </header>
 
       {/* Pseudo-masonry using CSS Grid */}
-      <div style={{
-        flex: 1,
-        display: 'grid',
-        gridTemplateColumns: 'repeat(4, 1fr)',
-        gridTemplateRows: 'repeat(3, 1fr)',
-        gap: '2vw',
-        minHeight: 0
-      }}>
+      <motion.div 
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+        style={{
+          flex: 1,
+          display: 'grid',
+          gridTemplateColumns: 'repeat(4, 1fr)',
+          gridTemplateRows: 'repeat(3, 1fr)',
+          gap: '2vw',
+          minHeight: 0
+        }}
+      >
         {activities.map((activity) => {
           // Manual CSS grid span mapping
           const getGridArea = () => {
@@ -60,6 +86,7 @@ export default function ActivitiesHub() {
           return (
             <motion.div
               key={activity.id}
+              variants={itemVariants}
               onClick={() => navigate(`/activities/${activity.id}`)}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
@@ -102,7 +129,7 @@ export default function ActivitiesHub() {
             </motion.div>
           );
         })}
-      </div>
+      </motion.div>
     </motion.div>
   );
 }

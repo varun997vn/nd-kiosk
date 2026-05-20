@@ -3,7 +3,7 @@ export const institutionsData = {
     id: 'madhurapuri',
     name: 'Madhurapuri Ashram',
     location: 'Maharanyam, Chennai',
-    heroImage: '/assets/institution_detail_madhurapuri_ashram.png',
+    heroImage: '/assets/images/unnamed (2).jpg',
     description: 'Madhurapuri Ashram serves as a central hub and living embodiment of the spiritual and social missions described in "In the Path of Love". Located in the serene Maharanyam village on the outskirts of Chennai, the ashram is deeply connected to Vaishnava heritage.',
     tabs: {
       routine: 'At the heart of the ashram is Bhagavata Bhavanam, a satsang hall where devotees chant the Mahamantra incessantly from 6 am to 6 pm every day around the deity Namam Ketkum Perumal.',
@@ -11,15 +11,17 @@ export const institutionsData = {
       festivals: 'Utsavs are celebrated all year round, including Ram Navami, Brahmotsavam, Navaratri, and Vasantotsavam.'
     },
     images: [
-      '/assets/a_majestic_golden_deity_statue_in_a_beautifully_lit_indian_temple_high.png',
-      '/assets/a_beautifully_lit_interior_of_a_prayer_hall_in_an_ashram_showing_a_deity_or_a.png'
+      '/assets/images/unnamed (3).jpg',
+      '/assets/images/unnamed (4).jpg',
+      '/assets/images/unnamed (5).jpg',
+      '/assets/images/unnamed (8).jpg'
     ]
   },
   kalyanasrinivasa: {
     id: 'kalyanasrinivasa',
     name: 'Sri Kalyanasrinivasa Perumal Temple',
     location: 'Maharanyam, Chennai',
-    heroImage: '/assets/institutions_hub_split_view.png',
+    heroImage: '/assets/images/unnamed (9).jpg',
     description: 'Consecrated by Sri Swamiji on February 17, 2002, the temple is known for a unique miracle: immediately after the consecration, the Perumal deity spontaneously turned toward the North-East.',
     tabs: {
       routine: 'Daily annadhaanam (free food distribution) to those in need under the Sri Sridhar Ayyaval Annadaana Scheme.',
@@ -27,14 +29,16 @@ export const institutionsData = {
       festivals: 'Vaikunta Ekadasi, Vasanta Panchami, and all Vaishnava Ekadasis.'
     },
     images: [
-      '/assets/institutions_hub_split_view.png'
+      '/assets/images/unnamed (10).jpg',
+      '/assets/images/unnamed (11).jpg',
+      '/assets/images/unnamed (12).jpg'
     ]
   },
   govindapuram: {
     id: 'govindapuram',
     name: 'Chaitanya Kuteeram',
     location: 'Govindapuram',
-    heroImage: '/assets/a_high_resolution_cinematic_wide_shot_of_an_indian_ashram_madhurapuri_ashram.png',
+    heroImage: '/assets/images/unnamed (13).jpg',
     description: 'A profound tribute to Sri Chaitanya Mahaprabhu and Sri Bhagavannama Bodhendra Saraswathi Swamigal. The presiding deities here are Sri Jagannath, Sri Subhadra, and Sri Balarama.',
     tabs: {
       routine: 'Akhanda Mahamantra chanting every day from 6 am to 6 pm, alongside daily pooja.',
@@ -42,14 +46,16 @@ export const institutionsData = {
       festivals: 'Sri Premika Jagannatha Ratha Yatra, Pratishta Day, and Sri Chaitanya Mahaprabhu Jayanti.'
     },
     images: [
-      '/assets/a_beautifully_lit_interior_of_a_prayer_hall_in_an_ashram_showing_a_deity_or_a.png'
+      '/assets/images/unnamed (14).jpg',
+      '/assets/images/unnamed (15).jpg',
+      '/assets/images/unnamed (16).jpg'
     ]
   },
   sundara: {
     id: 'sundara',
     name: 'Sri Sundara Anjaneya Swami Temple',
     location: 'Bengaluru',
-    heroImage: '/assets/a_majestic_golden_deity_statue_in_a_beautifully_lit_indian_temple_high.png',
+    heroImage: '/assets/images/unnamed (23).jpg',
     description: 'An exquisite spiritual center with an Oriya-style vimaanam topped with a gold-plated kalasam. The presiding deity, Hanumanji, relieves devotees of navagraha doshams and troubles.',
     tabs: {
       routine: 'The temple functions as a multipurpose hub, housing the Veda Vyasa Purana Patasala and Seetha Rama Hall for traditional learning.',
@@ -57,14 +63,16 @@ export const institutionsData = {
       festivals: 'Hanuman Jayanti, Rama Navami, Mahashivaratri, and Dussehra.'
     },
     images: [
-      '/assets/institutions_hub_split_view.png'
+      '/assets/images/unnamed (24).jpg',
+      '/assets/images/unnamed (25).jpg',
+      '/assets/images/unnamed (26).jpg'
     ]
   },
   premika: {
     id: 'premika',
     name: 'Premika Vidya Kendra',
     location: 'Gurugram',
-    heroImage: '/assets/a_stack_of_elegant_devotional_magazines_and_spiritual_books_on_a_silk_cloth.png',
+    heroImage: '/assets/images/unnamed (20).jpg',
     description: 'A unique spiritual facility functioning as a contemporary museum and temple specifically dedicated to the divine works of Mahatma Sri Sri Krishna Premi Maharaj.',
     tabs: {
       routine: 'Hosts a Sama Veda Patasala operated by the Sri Sandeepani Gurukulam Trust.',
@@ -72,14 +80,15 @@ export const institutionsData = {
       festivals: 'Celebrates major utsavs associated with Sri Sri Krishna Premi Maharaj.'
     },
     images: [
-      '/assets/a_traditional_vedic_school_gurukulam_setting_within_an_ashram_with_students_and.png'
+      '/assets/images/unnamed (42).jpg',
+      '/assets/images/unnamed (43).jpg'
     ]
   },
   keerthanavali: {
     id: 'keerthanavali',
     name: 'Keerthanavali Mandapam',
     location: 'Kanchipuram',
-    heroImage: '/assets/a_high_resolution_cinematic_wide_shot_of_an_indian_ashram_madhurapuri_ashram.png',
+    heroImage: '/assets/images/unnamed (17).jpg',
     description: 'Established as a tribute to Keerthanavali, a divine text authored by Mahatma Sri Sri Krishna Premi Maharaj praising the Divya Desams.',
     tabs: {
       routine: 'Mahamantra kirtan is performed incessantly. Serves as an active center for spreading the Divine Name.',
@@ -87,14 +96,15 @@ export const institutionsData = {
       festivals: 'Regular utsavas and continuous devotional singing.'
     },
     images: [
-      '/assets/a_beautifully_lit_interior_of_a_prayer_hall_in_an_ashram_showing_a_deity_or_a.png'
+      '/assets/images/unnamed (18).jpg',
+      '/assets/images/unnamed (19).jpg'
     ]
   },
   janmasthan: {
     id: 'janmasthan',
     name: 'Sri Premika Janmasthan',
     location: 'Senganoor',
-    heroImage: '/assets/a_majestic_golden_deity_statue_in_a_beautifully_lit_indian_temple_high.png',
+    heroImage: '/assets/images/unnamed (21).jpg',
     description: 'A sacred spiritual center marking the exact birthplace of Paranur Mahatma Sri Sri Krishna Premi Maharaj, with the Divine moorthis of the Divine Couple consecrated here.',
     tabs: {
       routine: 'Acts as the geographic and spiritual origin point for a wider network revering the Mahatma.',
@@ -102,14 +112,15 @@ export const institutionsData = {
       festivals: 'Focuses on the life and teachings of Sri Sri Krishna Premi Maharaj.'
     },
     images: [
-      '/assets/institutions_hub_split_view.png'
+      '/assets/images/unnamed (22).jpg',
+      '/assets/images/unnamed (53).jpg'
     ]
   },
   niketan: {
     id: 'niketan',
     name: 'Sri Niketan',
     location: 'Vrindavan',
-    heroImage: '/assets/institutions_hub.png',
+    heroImage: '/assets/images/unnamed (27).jpg',
     description: 'A sacred temple site in the holy town of Vrindavan featuring a beautiful deity, Prema Madhuri sametha Sri Vrindavana Vihari, and Sri Govardhana Giriraj.',
     tabs: {
       routine: 'Daily pooja performed as per Bhagavata Dharma. Proposed site for a comprehensive temple and Veda patasala complex.',
@@ -117,14 +128,14 @@ export const institutionsData = {
       festivals: 'Vaishnava Ekadasis, Holi, Janmashtami, and Radhashtami.'
     },
     images: [
-      '/assets/a_beautifully_lit_interior_of_a_prayer_hall_in_an_ashram_showing_a_deity_or_a.png'
+      '/assets/images/unnamed (28).jpg'
     ]
   },
   vanararajasimhan: {
     id: 'vanararajasimhan',
     name: 'Sri Vanararajasimhan Namadwaar',
     location: 'Kangeyam',
-    heroImage: '/assets/a_high_resolution_cinematic_wide_shot_of_an_indian_ashram_madhurapuri_ashram.png',
+    heroImage: '/assets/images/unnamed (28).jpg',
     description: 'A unique Namadwaar where the presiding deity is Hanumanji, denoting the immense glory of the "King of Vanaras".',
     tabs: {
       routine: 'Functions primarily as an active center for continuous Mahamantra chanting.',
@@ -132,7 +143,7 @@ export const institutionsData = {
       festivals: 'Organizes social and cultural events for the local community.'
     },
     images: [
-      '/assets/a_majestic_golden_deity_statue_in_a_beautifully_lit_indian_temple_high.png'
+      '/assets/images/unnamed (12).jpg'
     ]
   }
 };
