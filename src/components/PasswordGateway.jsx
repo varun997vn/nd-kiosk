@@ -42,7 +42,7 @@ export default function PasswordGateway({ onAuthenticated }) {
       }
     } catch (err) {
       console.error(err);
-      setError('An error occurred during verification.');
+      setError(`Verification error: ${err.message || err}`);
     }
   };
 
