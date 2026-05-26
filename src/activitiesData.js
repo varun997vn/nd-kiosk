@@ -2,7 +2,7 @@ export const activitiesData = {
   heritage: {
     id: 'heritage',
     title: 'Heritage & Culture',
-    heroImage: '/assets/images/unnamed (34).jpg',
+    heroImage: './assets/images/unnamed (34).jpg',
     description: 'Protection of National Heritage, Art and Culture through renovation and restoration of ancient temples, conservation of monuments, and conducting Deiva Tamizh Isai Vizha.',
     sections: [
       {
@@ -20,14 +20,14 @@ export const activitiesData = {
       }
     ],
     images: [
-      '/assets/images/unnamed (35).jpg',
-      '/assets/images/unnamed (36).jpg'
+      './assets/images/unnamed (35).jpg',
+      './assets/images/unnamed (36).jpg'
     ]
   },
   veda: {
     id: 'veda',
     title: 'Veda Patasalas',
-    heroImage: '/assets/images/unnamed (37).jpg',
+    heroImage: './assets/images/unnamed (37).jpg',
     description: 'Traditional Value-Based Education to preserve our Vaidhika Dharma by imparting Vedic knowledge to students and supporting Vedic scholars.',
     sections: [
       {
@@ -48,16 +48,16 @@ export const activitiesData = {
       }
     ],
     images: [
-      '/assets/images/unnamed (38).jpg',
-      '/assets/images/unnamed (39).jpg',
-      '/assets/images/unnamed (40).jpg',
-      '/assets/images/unnamed (41).jpg'
+      './assets/images/unnamed (38).jpg',
+      './assets/images/unnamed (39).jpg',
+      './assets/images/unnamed (40).jpg',
+      './assets/images/unnamed (41).jpg'
     ]
   },
   animal: {
     id: 'animal',
     title: 'Animal & Nature',
-    heroImage: '/assets/images/unnamed (46).jpg',
+    heroImage: './assets/images/unnamed (46).jpg',
     description: 'Animal Welfare and Conservation of Flora and Fauna. Dedicated to cow protection, agroforestry, and social forestry.',
     sections: [
       {
@@ -74,14 +74,14 @@ Regular animal welfare camps rescue and support hundreds of cows.`
       }
     ],
     images: [
-      '/assets/images/unnamed (45).jpg',
-      '/assets/images/unnamed (47).jpg'
+      './assets/images/unnamed (45).jpg',
+      './assets/images/unnamed (47).jpg'
     ]
   },
   health: {
     id: 'health',
     title: 'Healthcare & Education',
-    heroImage: '/assets/images/unnamed (49).jpg',
+    heroImage: './assets/images/unnamed (49).jpg',
     description: 'Providing fully charitable medical centres in rural areas, and quality modern education to children.',
     sections: [
       {
@@ -97,16 +97,16 @@ Regular medical camps, eye screening, and blood donation drives are conducted.`
       }
     ],
     images: [
-      '/assets/images/unnamed (50).jpg',
-      '/assets/images/unnamed (48).jpg',
-      '/assets/images/unnamed (51).jpg',
-      '/assets/images/unnamed (52).jpg'
+      './assets/images/unnamed (50).jpg',
+      './assets/images/unnamed (48).jpg',
+      './assets/images/unnamed (51).jpg',
+      './assets/images/unnamed (52).jpg'
     ]
   },
   annadaanam: {
     id: 'annadaanam',
     title: 'Annadaanam',
-    heroImage: '/assets/images/unnamed (60).jpg',
+    heroImage: './assets/images/unnamed (60).jpg',
     description: 'Serving the Lord by serving humanity through widespread free food distribution.',
     sections: [
       {
@@ -118,13 +118,13 @@ Regular medical camps, eye screening, and blood donation drives are conducted.`
       }
     ],
     images: [
-      '/assets/images/unnamed (14).jpg'
+      './assets/images/unnamed (14).jpg'
     ]
   },
   model: {
     id: 'model',
     title: 'Model Villages',
-    heroImage: '/assets/images/unnamed (65).jpg',
+    heroImage: './assets/images/unnamed (65).jpg',
     description: 'Curating Model Villages to function with comprehensive facilities for rural empowerment.',
     sections: [
       {
@@ -137,7 +137,7 @@ Regular medical camps, eye screening, and blood donation drives are conducted.`
       }
     ],
     images: [
-      '/assets/images/unnamed (66).jpg'
+      './assets/images/unnamed (66).jpg'
     ]
   }
 };

@@ -3,10 +3,10 @@ import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const bgImages = [
-  '/assets/images/unnamed.jpg',
-  '/assets/images/unnamed (1).jpg',
-  '/assets/images/unnamed (29).jpg',
-  '/assets/images/unnamed (65).jpg'
+  './assets/images/unnamed.jpg',
+  './assets/images/unnamed (1).jpg',
+  './assets/images/unnamed (29).jpg',
+  './assets/images/unnamed (65).jpg'
 ];
 
 export default function AttractScreen() {

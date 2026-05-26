@@ -100,7 +100,7 @@ export default function InstitutionsHub() {
       {/* Right side: Stylized Map/Image View */}
       <div style={{
         flex: 1,
-        backgroundImage: `url('/assets/images/unnamed (1).jpg')`,
+        backgroundImage: `url('./assets/images/unnamed (1).jpg')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         position: 'relative'

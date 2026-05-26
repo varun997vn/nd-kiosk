@@ -3,12 +3,12 @@ import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 
 const activities = [
-  { id: 'heritage', title: 'Heritage & Culture', img: '/assets/images/unnamed (34).jpg', span: 'col-span-2 row-span-2' },
-  { id: 'veda', title: 'Veda Patasalas', img: '/assets/images/unnamed (37).jpg', span: 'col-span-1 row-span-1' },
-  { id: 'animal', title: 'Animal & Nature', img: '/assets/images/unnamed (46).jpg', span: 'col-span-1 row-span-2' },
-  { id: 'health', title: 'Healthcare & Education', img: '/assets/images/unnamed (49).jpg', span: 'col-span-1 row-span-1' },
-  { id: 'annadaanam', title: 'Annadaanam', img: '/assets/images/unnamed (60).jpg', span: 'col-span-2 row-span-1' },
-  { id: 'model', title: 'Model Villages', img: '/assets/images/unnamed (65).jpg', span: 'col-span-1 row-span-1' },
+  { id: 'heritage', title: 'Heritage & Culture', img: './assets/images/unnamed (34).jpg', span: 'col-span-2 row-span-2' },
+  { id: 'veda', title: 'Veda Patasalas', img: './assets/images/unnamed (37).jpg', span: 'col-span-1 row-span-1' },
+  { id: 'animal', title: 'Animal & Nature', img: './assets/images/unnamed (46).jpg', span: 'col-span-1 row-span-2' },
+  { id: 'health', title: 'Healthcare & Education', img: './assets/images/unnamed (49).jpg', span: 'col-span-1 row-span-1' },
+  { id: 'annadaanam', title: 'Annadaanam', img: './assets/images/unnamed (60).jpg', span: 'col-span-2 row-span-1' },
+  { id: 'model', title: 'Model Villages', img: './assets/images/unnamed (65).jpg', span: 'col-span-1 row-span-1' },
 ];
 
 export default function ActivitiesHub() {

@@ -89,7 +89,7 @@ export default function ConnectHub() {
               <div style={{ 
                 width: '12vh', 
                 height: '16vh', 
-                backgroundImage: `url('/assets/images/unnamed (67).jpg')`,
+                backgroundImage: `url('./assets/images/unnamed (67).jpg')`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 borderRadius: '8px', 
