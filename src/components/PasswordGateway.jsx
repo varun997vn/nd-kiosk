@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Lock, Unlock, Eye, EyeOff, AlertCircle } from 'lucide-react';
 
-const STATIC_PASSWORD_HASH = 'e1c5aaa306476379434340834ea721c6d72345a2442c5a472f00ca239a996ebd';
+const STATIC_PASSWORD_HASH = '25eb105257015240cae3c92cd57f303dc5dd9f51d244973e19eb2cf8fddf5cae';
 
 // Helper function to hash a string to SHA-256 hex format using Web Crypto API
 async function sha256(message) {
