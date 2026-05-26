@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import InactivityManager from './components/InactivityManager';
 import NavigationBar from './components/NavigationBar';
 import RippleEffect from './components/RippleEffect';
+import PasswordGateway from './components/PasswordGateway';
 
 import AttractScreen from './pages/AttractScreen';
 import HomeDashboard from './pages/HomeDashboard';
@@ -16,6 +17,18 @@ import ActivityDetail from './pages/ActivityDetail';
 
 export default function App() {
   const location = useLocation();
+  const [isAuthenticated, setIsAuthenticated] = useState(() => {
+    return sessionStorage.getItem('nd-kiosk-auth') === 'true';
+  });
+
+  const handleAuthenticated = () => {
+    sessionStorage.setItem('nd-kiosk-auth', 'true');
+    setIsAuthenticated(true);
+  };
+
+  if (!isAuthenticated) {
+    return <PasswordGateway onAuthenticated={handleAuthenticated} />;
+  }
 
   return (
     <InactivityManager>
