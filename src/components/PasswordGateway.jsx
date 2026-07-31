@@ -1,17 +1,29 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Lock, Unlock, Eye, EyeOff, AlertCircle } from 'lucide-react';
+import { useState } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
+import { AlertCircle, Delete, Eye, EyeOff, Lock, Unlock } from 'lucide-react';
+import TouchButton from './ui/TouchButton';
+import { KolamFrame, KolamRule } from './ui/Kolam';
 
-const STATIC_PASSWORD_HASH = '25eb105257015240cae3c92cd57f303dc5dd9f51d244973e19eb2cf8fddf5cae';
+const STATIC_PASSWORD_HASH =
+  '25eb105257015240cae3c92cd57f303dc5dd9f51d244973e19eb2cf8fddf5cae';
 
-// Helper function to hash a string to SHA-256 hex format using Web Crypto API
+// SHA-256 hex via Web Crypto.
 async function sha256(message) {
   const msgBuffer = new TextEncoder().encode(message);
   const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
-  const hashArray = Array.from(new Uint8Array(hashBuffer));
-  return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+  return Array.from(new Uint8Array(hashBuffer))
+    .map((b) => b.toString(16).padStart(2, '0'))
+    .join('');
 }
 
+/**
+ * Attendant-facing unlock screen, shown before the kiosk enters public mode.
+ *
+ * The auth logic is unchanged. What changed is the surface: the old glass card
+ * on a dark field is now sandal paper on a kolam-dotted ground, and the keypad
+ * buttons went from 70px to 88px so they clear the kiosk touch minimum with
+ * room for a gloved or imprecise finger.
+ */
 export default function PasswordGateway({ onAuthenticated }) {
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
@@ -20,25 +32,19 @@ export default function PasswordGateway({ onAuthenticated }) {
   const [isSuccess, setIsSuccess] = useState(false);
 
   const handleSubmit = async (e) => {
-    if (e) e.preventDefault();
+    e?.preventDefault();
 
     try {
-      const hashedPassword = await sha256(password);
-      if (hashedPassword === STATIC_PASSWORD_HASH) {
+      if ((await sha256(password)) === STATIC_PASSWORD_HASH) {
         setIsSuccess(true);
         setError('');
-        // Delay the callback slightly to allow the unlock animation to play
-        setTimeout(() => {
-          onAuthenticated();
-        }, 1000);
+        // Let the unlock animation land before handing over.
+        setTimeout(onAuthenticated, 1000);
       } else {
         setShake(true);
         setError('Incorrect password. Please try again.');
         setPassword('');
-        // Reset shake state after animation runs
-        setTimeout(() => {
-          setShake(false);
-        }, 500);
+        setTimeout(() => setShake(false), 500);
       }
     } catch (err) {
       console.error(err);
@@ -46,313 +52,142 @@ export default function PasswordGateway({ onAuthenticated }) {
     }
   };
 
-  const handleKeyPress = (num) => {
+  const press = (digit) => {
     if (isSuccess) return;
     setError('');
-    setPassword((prev) => prev + num);
+    setPassword((prev) => prev + digit);
   };
 
-  const handleBackspace = () => {
-    if (isSuccess) return;
-    setPassword((prev) => prev.slice(0, -1));
-  };
-
-  const handleClear = () => {
-    if (isSuccess) return;
-    setPassword('');
-    setError('');
-  };
-
-  // Virtual Keypad Button
-  const KeypadButton = ({ val, onClick, label }) => (
-    <motion.button
-      type="button"
-      whileHover={{ scale: 1.05, backgroundColor: 'rgba(255, 255, 255, 0.1)' }}
-      whileTap={{ scale: 0.95 }}
-      onClick={onClick}
-      style={{
-        width: '70px',
-        height: '70px',
-        borderRadius: '50%',
-        backgroundColor: 'rgba(255, 255, 255, 0.05)',
-        border: '1px solid rgba(255, 255, 255, 0.1)',
-        color: 'var(--color-text-primary)',
-        fontSize: '1.5rem',
-        fontWeight: '600',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        cursor: 'pointer',
-        fontFamily: 'var(--font-heading)',
-        transition: 'border-color 0.2s',
-      }}
-    >
-      {label || val}
-    </motion.button>
-  );
+  const keys = [
+    ...[1, 2, 3, 4, 5, 6, 7, 8, 9].map((n) => ({
+      key: n,
+      label: n,
+      onClick: () => press(String(n)),
+    })),
+    {
+      key: 'clear',
+      label: 'C',
+      onClick: () => !isSuccess && (setPassword(''), setError('')),
+    },
+    { key: 0, label: 0, onClick: () => press('0') },
+    {
+      key: 'del',
+      label: <Delete size={26} aria-hidden="true" />,
+      ariaLabel: 'Backspace',
+      onClick: () => !isSuccess && setPassword((p) => p.slice(0, -1)),
+    },
+  ];
 
   return (
-    <div style={{
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      justifyContent: 'center',
-      width: '100vw',
-      height: '100vh',
-      backgroundColor: 'var(--color-bg-base)',
-      position: 'fixed',
-      top: 0,
-      left: 0,
-      zIndex: 9999,
-      fontFamily: 'var(--font-body)',
-      overflow: 'hidden',
-    }}>
-
-      {/* Background Glowing Ambient Orbs */}
-      <div style={{
-        position: 'absolute',
-        width: '500px',
-        height: '500px',
-        borderRadius: '50%',
-        background: 'radial-gradient(circle, rgba(245, 158, 11, 0.08) 0%, rgba(0, 0, 0, 0) 70%)',
-        top: '-10%',
-        left: '20%',
-        filter: 'blur(80px)',
-        pointerEvents: 'none',
-      }} />
-      <div style={{
-        position: 'absolute',
-        width: '600px',
-        height: '600px',
-        borderRadius: '50%',
-        background: 'radial-gradient(circle, rgba(99, 102, 241, 0.06) 0%, rgba(0, 0, 0, 0) 70%)',
-        bottom: '-10%',
-        right: '15%',
-        filter: 'blur(90px)',
-        pointerEvents: 'none',
-      }} />
-
-      {/* Main Glassmorphism Card */}
+    <div className="absolute inset-0 grid place-items-center overflow-hidden bg-surface-sunk pulli">
       <motion.div
-        initial={{ opacity: 0, y: 20, scale: 0.95 }}
+        initial={{ opacity: 0, y: 16, scale: 0.97 }}
         animate={{
           opacity: 1,
           y: 0,
           scale: 1,
-          x: shake ? [-8, 8, -6, 6, -4, 4, 0] : 0
+          x: shake ? [-8, 8, -6, 6, -4, 4, 0] : 0,
         }}
         transition={{
           type: 'spring',
           stiffness: 300,
-          damping: 25,
-          x: { duration: 0.4 }
+          damping: 26,
+          x: { duration: 0.4 },
         }}
-        className="glass-panel"
-        style={{
-          padding: '40px 32px',
-          width: '90%',
-          maxWidth: '440px',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          gap: '24px',
-          zIndex: 10,
-        }}
+        className="relative flex w-[520px] flex-col items-center gap-7 rounded-[var(--radius-xl)] border border-line-strong bg-surface-raised px-12 py-12 shadow-[var(--shadow-3)]"
       >
-        {/* Animated Lock Icon */}
+        <KolamFrame inset={14} size={30} />
+
         <motion.div
-          animate={isSuccess ? { scale: [1, 1.2, 1], rotate: [0, -10, 0] } : {}}
+          animate={isSuccess ? { scale: [1, 1.15, 1], rotate: [0, -8, 0] } : {}}
           transition={{ duration: 0.5 }}
-          style={{
-            width: '80px',
-            height: '80px',
-            borderRadius: '50%',
-            backgroundColor: isSuccess ? 'rgba(16, 185, 129, 0.15)' : 'rgba(245, 158, 11, 0.1)',
-            border: `2px solid ${isSuccess ? '#10b981' : 'var(--color-accent-gold)'}`,
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            boxShadow: isSuccess
-              ? '0 0 20px rgba(16, 185, 129, 0.4)'
-              : '0 0 20px rgba(245, 158, 11, 0.2)',
-            color: isSuccess ? '#10b981' : 'var(--color-accent-gold)',
-          }}
+          className={`grid h-24 w-24 place-items-center rounded-full border-2 ${
+            isSuccess
+              ? 'border-tulsi bg-tulsi/10 text-tulsi'
+              : 'border-saffron bg-saffron/10 text-saffron-ink'
+          }`}
         >
-          {isSuccess ? <Unlock size={38} /> : <Lock size={38} />}
+          {isSuccess ? <Unlock size={40} /> : <Lock size={40} />}
         </motion.div>
 
-        {/* Title */}
-        <div style={{ textAlign: 'center' }}>
-          <h2 style={{
-            fontSize: '1.8rem',
-            color: 'var(--color-text-primary)',
-            marginBottom: '8px',
-            fontFamily: 'var(--font-heading)'
-          }}>
-            Kiosk Security Portal
-          </h2>
-          <p style={{
-            fontSize: '0.95rem',
-            color: 'var(--color-text-secondary)',
-          }}>
-            Please enter password to access this system
+        <div className="text-center">
+          <h1 className="font-serif text-headline text-ink">In the Path of Love</h1>
+          <p className="mt-2 font-sans text-body text-ink-muted">
+            Enter the attendant passcode to open this kiosk
           </p>
+          <KolamRule className="mx-auto mt-4 opacity-70" width={220} />
         </div>
 
-        {/* Form Container */}
-        <form onSubmit={handleSubmit} style={{ width: '100%', display: 'flex', flexDirection: 'column', gap: '16px' }}>
-          <div style={{ position: 'relative', width: '100%' }}>
+        <form onSubmit={handleSubmit} className="flex w-full flex-col gap-5">
+          <div className="relative w-full">
             <input
               type={showPassword ? 'text' : 'password'}
-              placeholder="Enter password"
+              placeholder="Passcode"
               value={password}
               onChange={(e) => {
                 setError('');
                 setPassword(e.target.value);
               }}
               disabled={isSuccess}
-              style={{
-                width: '100%',
-                padding: '16px 50px 16px 16px',
-                fontSize: '1.2rem',
-                backgroundColor: 'rgba(15, 23, 42, 0.6)',
-                border: error ? '1px solid var(--color-accent-red)' : '1px solid rgba(255, 255, 255, 0.15)',
-                borderRadius: '12px',
-                color: 'var(--color-text-primary)',
-                outline: 'none',
-                textAlign: 'center',
-                letterSpacing: showPassword ? 'normal' : '0.4em',
-                transition: 'all 0.3s ease',
-              }}
-              onFocus={(e) => {
-                if (!error) e.target.style.borderColor = 'var(--color-accent-gold)';
-              }}
-              onBlur={(e) => {
-                if (!error) e.target.style.borderColor = 'rgba(255, 255, 255, 0.15)';
-              }}
+              className={[
+                'w-full rounded-[var(--radius-md)] border-2 bg-surface-sunk',
+                'py-5 pl-6 pr-16 text-center font-sans text-body-lg text-ink',
+                'outline-none transition-colors placeholder:text-ink-faint',
+                'focus:border-saffron',
+                error ? 'border-kumkum' : 'border-line-strong',
+              ].join(' ')}
+              style={{ letterSpacing: showPassword ? 'normal' : '0.4em' }}
             />
-            {/* Show/Hide password toggle */}
             <button
               type="button"
-              onClick={() => setShowPassword(!showPassword)}
+              onClick={() => setShowPassword((v) => !v)}
               disabled={isSuccess}
-              style={{
-                position: 'absolute',
-                right: '16px',
-                top: '50%',
-                transform: 'translateY(-50%)',
-                color: 'var(--color-text-secondary)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                padding: 0,
-                opacity: 0.7,
-                transition: 'opacity 0.2s',
-              }}
-              onMouseEnter={(e) => e.currentTarget.style.opacity = 1}
-              onMouseLeave={(e) => e.currentTarget.style.opacity = 0.7}
+              aria-label={showPassword ? 'Hide passcode' : 'Show passcode'}
+              className="absolute right-2 top-1/2 grid h-14 w-14 -translate-y-1/2 place-items-center rounded-full text-ink-muted transition-colors hover:bg-surface-tint"
             >
-              {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
+              {showPassword ? <EyeOff size={24} /> : <Eye size={24} />}
             </button>
           </div>
 
-          {/* Error Message */}
           <AnimatePresence>
             {error && (
-              <motion.div
-                initial={{ opacity: 0, y: -10 }}
+              <motion.p
+                initial={{ opacity: 0, y: -8 }}
                 animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -10 }}
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  gap: '8px',
-                  color: 'var(--color-accent-red)',
-                  fontSize: '0.9rem',
-                  fontWeight: '500',
-                }}
+                exit={{ opacity: 0, y: -8 }}
+                role="alert"
+                className="flex items-center justify-center gap-2 font-sans text-body text-kumkum"
               >
-                <AlertCircle size={16} />
-                <span>{error}</span>
-              </motion.div>
+                <AlertCircle size={20} aria-hidden="true" />
+                {error}
+              </motion.p>
             )}
           </AnimatePresence>
 
-          {/* Touchscreen Virtual Keypad */}
-          <div style={{
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '12px',
-            alignItems: 'center',
-            marginTop: '8px',
-          }}>
-            {/* Keypad Grid */}
-            <div style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(3, 1fr)',
-              gap: '12px',
-            }}>
-              {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((num) => (
-                <KeypadButton
-                  key={num}
-                  val={num}
-                  onClick={() => handleKeyPress(num.toString())}
-                />
-              ))}
-
-              <KeypadButton
-                val="C"
-                onClick={handleClear}
-                label="C"
-              />
-              <KeypadButton
-                val={0}
-                onClick={() => handleKeyPress('0')}
-              />
-              <KeypadButton
-                val="del"
-                onClick={handleBackspace}
-                label="⌫"
-              />
-            </div>
+          <div className="grid grid-cols-3 justify-items-center gap-4">
+            {keys.map(({ key, label, onClick, ariaLabel }) => (
+              <motion.button
+                key={key}
+                type="button"
+                whileTap={{ scale: 0.94 }}
+                onClick={onClick}
+                aria-label={ariaLabel}
+                className="grid h-[88px] w-[88px] place-items-center rounded-full border border-line-strong bg-surface-sunk font-serif text-title font-semibold text-ink transition-colors hover:bg-surface-tint"
+              >
+                {label}
+              </motion.button>
+            ))}
           </div>
 
-          {/* Submit / Unlock Button */}
-          <motion.button
-            whileHover={{ scale: isSuccess ? 1 : 1.02 }}
-            whileTap={{ scale: isSuccess ? 1 : 0.98 }}
+          <TouchButton
             type="submit"
+            size="lg"
+            variant={isSuccess ? 'secondary' : 'primary'}
             disabled={isSuccess}
-            style={{
-              width: '100%',
-              backgroundColor: isSuccess ? '#10b981' : 'var(--color-accent-gold)',
-              color: '#1e1e1e',
-              padding: '16px',
-              borderRadius: '12px',
-              fontSize: '1.1rem',
-              fontWeight: '700',
-              fontFamily: 'var(--font-heading)',
-              boxShadow: isSuccess
-                ? '0 4px 14px rgba(16, 185, 129, 0.4)'
-                : '0 4px 14px rgba(245, 158, 11, 0.3)',
-              cursor: isSuccess ? 'default' : 'pointer',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              gap: '10px',
-              transition: 'background-color 0.3s, box-shadow 0.3s',
-              marginTop: '12px',
-            }}
+            className="w-full"
           >
-            {isSuccess ? (
-              <span>Unlocked! Welcome</span>
-            ) : (
-              <>
-                <span>Unlock Kiosk</span>
-              </>
-            )}
-          </motion.button>
+            {isSuccess ? 'Unlocked — welcome' : 'Unlock kiosk'}
+          </TouchButton>
         </form>
       </motion.div>
     </div>
