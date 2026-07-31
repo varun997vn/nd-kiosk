@@ -1,4 +1,5 @@
-import { createContext, useCallback, useContext, useEffect, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
+import { KioskSettingsContext } from './kioskSettings';
 
 /**
  * Kiosk-wide display settings.
@@ -8,8 +9,6 @@ import { createContext, useCallback, useContext, useEffect, useState } from 'rea
  * previous person is a support call. InactivityManager resets it along with
  * everything else when the screen returns to the attract loop.
  */
-const KioskSettingsContext = createContext(null);
-
 export function KioskSettingsProvider({ children }) {
   const [highContrast, setHighContrast] = useState(false);
 
@@ -27,19 +26,14 @@ export function KioskSettingsProvider({ children }) {
   const toggleHighContrast = useCallback(() => setHighContrast((v) => !v), []);
   const resetSettings = useCallback(() => setHighContrast(false), []);
 
+  const value = useMemo(
+    () => ({ highContrast, toggleHighContrast, resetSettings }),
+    [highContrast, toggleHighContrast, resetSettings]
+  );
+
   return (
-    <KioskSettingsContext.Provider
-      value={{ highContrast, toggleHighContrast, resetSettings }}
-    >
+    <KioskSettingsContext.Provider value={value}>
       {children}
     </KioskSettingsContext.Provider>
   );
-}
-
-export function useKioskSettings() {
-  const ctx = useContext(KioskSettingsContext);
-  if (!ctx) {
-    throw new Error('useKioskSettings must be used inside KioskSettingsProvider');
-  }
-  return ctx;
 }

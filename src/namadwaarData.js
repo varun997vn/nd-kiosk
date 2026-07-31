@@ -1,3 +1,16 @@
+/**
+ * Namadwaar centres worldwide. `coords` are [longitude, latitude].
+ *
+ * International entries carry an explicit `country`, which GlobalPresenceHub
+ * groups by. It used to infer the country from the display name — checking
+ * whether it contained the substring "(USA)" and so on — which quietly failed
+ * for every entry that did not follow that naming convention.
+ *
+ * NOTE: the Fiji centre's address is unknown. What was recorded here was
+ * Sydney's address verbatim, followed by an author's parenthetical questioning
+ * it, and the whole string was rendering on the public screen. It is null until
+ * the real address is supplied.
+ */
 export const namadwaarData = {
   india: [
     { id: 'kalyanasrinivasa', name: 'Sri Kalyanasrinivasa Perumal Koil', address: 'Maharanyam Village, Malaipattu, Tamil Nadu 601301', coords: [80.0, 12.9] },
@@ -47,17 +60,17 @@ export const namadwaarData = {
     { id: 'virudhunagar', name: 'Virudhunagar', address: 'Railway Feeder Road Lane opposite to Ramar Koil, Virudhunagar 626001', coords: [77.9, 9.5] },
   ],
   international: [
-    { id: 'atlanta', name: 'Atlanta (USA)', address: '239 Atlanta Road, Cumming, GA 30040', coords: [-84.1, 34.2] },
-    { id: 'dallas', name: 'Dallas (USA)', address: '1881 Apollo Road, Garland, TX', coords: [-96.6, 32.9] },
-    { id: 'edmonton', name: 'Edmonton (Canada)', address: '24337, Township Rd 512, Edmonton, AB T6W 1A6', coords: [-113.4, 53.5] },
-    { id: 'fiji', name: 'Fiji', address: '44, Oakes Road, Winston Hills, New South Wales (wait, this address is Sydney?)', coords: [178.4, -18.1] },
-    { id: 'houston', name: 'Houston (USA)', address: '3642 Bailey Avenue, Manvel, TX 77578', coords: [-95.3, 29.4] },
-    { id: 'malaysia', name: 'Malaysia', address: '59 A Jalan USJ 21/11, UEP, Subang Jaya, 47600 Selangor, Malaysia', coords: [101.5, 3.0] },
-    { id: 'melbourne', name: 'Melbourne (Australia)', address: 'Unit 12 No 7, Samantha Court, Knoxfield, Melbourne, Victoria', coords: [145.2, -37.8] },
-    { id: 'nz', name: 'New Zealand', address: '21A Huntingtree Avenue, Sandringham, Auckland 1041', coords: [174.7, -36.8] },
-    { id: 'seattle', name: 'Seattle (USA)', address: '33404 SE Redmond Fall City Rd, #120, Fall City, Washington 9802', coords: [-121.8, 47.5] },
-    { id: 'singapore', name: 'Singapore', address: '448 Serangoon road, Level #02 - 01, Singapore 218138', coords: [103.8, 1.3] },
-    { id: 'sydney', name: 'Sydney (Australia)', address: '44, Oakes Road, Winston Hills, New South Wales', coords: [150.9, -33.7] },
-    { id: 'virginia', name: 'Virginia (USA)', address: '22495 Landora Bridge Rd, Ruther Glen, Virginia 22546', coords: [-77.4, 37.9] },
+    { id: 'atlanta', country: 'USA', name: 'Atlanta (USA)', address: '239 Atlanta Road, Cumming, GA 30040', coords: [-84.1, 34.2] },
+    { id: 'dallas', country: 'USA', name: 'Dallas (USA)', address: '1881 Apollo Road, Garland, TX', coords: [-96.6, 32.9] },
+    { id: 'edmonton', country: 'Canada', name: 'Edmonton (Canada)', address: '24337, Township Rd 512, Edmonton, AB T6W 1A6', coords: [-113.4, 53.5] },
+    { id: 'fiji', country: 'Fiji', name: 'Fiji', address: null, coords: [178.4, -18.1] },
+    { id: 'houston', country: 'USA', name: 'Houston (USA)', address: '3642 Bailey Avenue, Manvel, TX 77578', coords: [-95.3, 29.4] },
+    { id: 'malaysia', country: 'Malaysia', name: 'Malaysia', address: '59 A Jalan USJ 21/11, UEP, Subang Jaya, 47600 Selangor, Malaysia', coords: [101.5, 3.0] },
+    { id: 'melbourne', country: 'Australia', name: 'Melbourne (Australia)', address: 'Unit 12 No 7, Samantha Court, Knoxfield, Melbourne, Victoria', coords: [145.2, -37.8] },
+    { id: 'nz', country: 'New Zealand', name: 'New Zealand', address: '21A Huntingtree Avenue, Sandringham, Auckland 1041', coords: [174.7, -36.8] },
+    { id: 'seattle', country: 'USA', name: 'Seattle (USA)', address: '33404 SE Redmond Fall City Rd, #120, Fall City, Washington 9802', coords: [-121.8, 47.5] },
+    { id: 'singapore', country: 'Singapore', name: 'Singapore', address: '448 Serangoon road, Level #02 - 01, Singapore 218138', coords: [103.8, 1.3] },
+    { id: 'sydney', country: 'Australia', name: 'Sydney (Australia)', address: '44, Oakes Road, Winston Hills, New South Wales', coords: [150.9, -33.7] },
+    { id: 'virginia', country: 'USA', name: 'Virginia (USA)', address: '22495 Landora Bridge Rd, Ruther Glen, Virginia 22546', coords: [-77.4, 37.9] },
   ]
 };

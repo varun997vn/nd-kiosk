@@ -1,7 +1,7 @@
 import { useLocation, useNavigate } from 'react-router-dom';
 import { ArrowLeft, Contrast, Home } from 'lucide-react';
 import TouchButton from './ui/TouchButton';
-import { useKioskSettings } from '../context/KioskSettingsContext';
+import { useKioskSettings } from '../context/kioskSettings';
 
 /**
  * The persistent bottom bar.

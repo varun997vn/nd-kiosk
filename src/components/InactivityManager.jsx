@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
-import { useKioskSettings } from '../context/KioskSettingsContext';
+import { useKioskSettings } from '../context/kioskSettings';
 
 const NUDGE_AFTER = 60_000;
 const RESET_AFTER = 90_000;
@@ -22,8 +22,9 @@ export default function InactivityManager({ children }) {
   const nudgeTimer = useRef(null);
   const resetTimer = useRef(null);
 
-  const restart = useCallback(() => {
-    setNudging(false);
+  // Arming the timers is kept free of state updates so it can also run on
+  // mount; only a genuine interaction dismisses a nudge that is already up.
+  const arm = useCallback(() => {
     clearTimeout(nudgeTimer.current);
     clearTimeout(resetTimer.current);
 
@@ -38,16 +39,23 @@ export default function InactivityManager({ children }) {
   }, [location.pathname, navigate, resetSettings]);
 
   useEffect(() => {
+    const onInteraction = () => {
+      setNudging(false);
+      arm();
+    };
+
     const events = ['touchstart', 'mousemove', 'mousedown', 'keydown', 'scroll'];
-    events.forEach((e) => window.addEventListener(e, restart, { passive: true }));
-    restart();
+    events.forEach((e) =>
+      window.addEventListener(e, onInteraction, { passive: true })
+    );
+    arm();
 
     return () => {
-      events.forEach((e) => window.removeEventListener(e, restart));
+      events.forEach((e) => window.removeEventListener(e, onInteraction));
       clearTimeout(nudgeTimer.current);
       clearTimeout(resetTimer.current);
     };
-  }, [restart]);
+  }, [arm]);
 
   return (
     <>
