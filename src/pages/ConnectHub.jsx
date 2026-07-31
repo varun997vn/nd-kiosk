@@ -1,183 +1,166 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import { Mail, MapPin, Phone } from 'lucide-react';
+import PageShell from '../components/ui/PageShell';
+import PageHeader from '../components/ui/PageHeader';
+import Panel from '../components/ui/Panel';
+import QRTile from '../components/ui/QRTile';
+import EdgeFadeScroll from '../components/ui/EdgeFadeScroll';
+import { KolamMark, KolamRule } from '../components/ui/Kolam';
+import { connectLinks, contact, publications, trusts } from '../connectData';
 
-const qrCodes = [
-  { id: 'fb', name: 'Facebook', url: 'facebook.com' },
-  { id: 'ig', name: 'Instagram', url: 'instagram.com' },
-  { id: 'yt', name: 'YouTube', url: 'youtube.com' },
-  { id: 'store', name: 'Madhuram Stores', url: 'madhuramstores.com' }
-];
-
-function StylizedQRCode({ color = '#1e293b' }) {
+function SectionHeading({ children }) {
   return (
-    <svg viewBox="0 0 100 100" style={{ width: '100%', height: '100%' }}>
-      {/* Outer corner squares */}
-      <rect x="10" y="10" width="25" height="25" fill="none" stroke={color} strokeWidth="6" rx="2" />
-      <rect x="16" y="16" width="13" height="13" fill={color} rx="1" />
-      
-      <rect x="65" y="10" width="25" height="25" fill="none" stroke={color} strokeWidth="6" rx="2" />
-      <rect x="71" y="16" width="13" height="13" fill={color} rx="1" />
-      
-      <rect x="10" y="65" width="25" height="25" fill="none" stroke={color} strokeWidth="6" rx="2" />
-      <rect x="16" y="71" width="13" height="13" fill={color} rx="1" />
-      
-      {/* Small alignment pattern */}
-      <rect x="65" y="65" width="8" height="8" fill={color} rx="1" />
-      <rect x="77" y="77" width="8" height="8" fill={color} rx="1" />
-      <rect x="65" y="77" width="8" height="8" fill={color} rx="1" />
-      <rect x="77" y="65" width="8" height="8" fill={color} rx="1" />
-      
-      {/* Some random data pixels */}
-      <rect x="40" y="10" width="6" height="6" fill={color} rx="1" />
-      <rect x="48" y="16" width="6" height="12" fill={color} rx="1" />
-      <rect x="40" y="28" width="12" height="6" fill={color} rx="1" />
-      <rect x="52" y="10" width="6" height="6" fill={color} rx="1" />
-      
-      <rect x="10" y="40" width="6" height="6" fill={color} rx="1" />
-      <rect x="16" y="48" width="12" height="6" fill={color} rx="1" />
-      <rect x="28" y="40" width="6" height="12" fill={color} rx="1" />
-      
-      <rect x="40" y="40" width="12" height="12" fill={color} rx="1.5" />
-      <rect x="52" y="52" width="12" height="12" fill={color} rx="1.5" />
-      
-      <rect x="40" y="65" width="6" height="12" fill={color} rx="1" />
-      <rect x="48" y="77" width="12" height="6" fill={color} rx="1" />
-      
-      <rect x="65" y="40" width="12" height="6" fill={color} rx="1" />
-      <rect x="77" y="48" width="6" height="12" fill={color} rx="1" />
-    </svg>
+    <div className="mb-5 flex items-center gap-3">
+      <KolamMark size={24} />
+      <h2 className="font-serif text-headline text-ink">{children}</h2>
+    </div>
   );
 }
 
 export default function ConnectHub() {
   return (
-    <motion.div
-      initial={{ opacity: 0, x: 100 }}
-      animate={{ opacity: 1, x: 0 }}
-      exit={{ opacity: 0, x: -100 }}
-      transition={{ duration: 0.5, ease: 'easeOut' }}
-      style={{
-        width: '100%',
-        height: '100vh',
-        padding: '5vh 4vw',
-        paddingBottom: 'calc(var(--nav-height) + 2vh)',
-        display: 'flex',
-        flexDirection: 'column',
-        overflow: 'hidden'
-      }}
-    >
-      <header style={{ marginBottom: '3vh', flexShrink: 0 }}>
-        <h1 style={{ fontSize: 'clamp(2.5rem, 6vh, 4rem)', color: 'var(--color-accent-gold)', margin: 0 }}>Connect & Support</h1>
-        <p style={{ fontSize: 'clamp(1rem, 2vh, 1.5rem)', color: 'var(--color-text-secondary)' }}>
-          Publications, Contributions, and Social Outreach
-        </p>
-      </header>
+    <PageShell>
+      <PageHeader
+        title="Connect &amp; Support"
+        subtitle="Publications, registered trusts, and how to reach us."
+      />
 
-      <div style={{
-        display: 'grid',
-        gridTemplateColumns: '1fr 1fr',
-        gap: '2vw',
-        flex: 1,
-        minHeight: 0
-      }}>
-        {/* Left Column */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '2vh' }}>
-          {/* Publications */}
-          <div className="glass-panel" style={{ padding: '3vh 2vw' }}>
-            <h2 style={{ fontSize: 'clamp(1.5rem, 3.5vh, 2.5rem)', marginBottom: '1.5vh' }}>Publications</h2>
-            <div style={{ display: 'flex', gap: '1.5vw', alignItems: 'center' }}>
-              <div style={{ 
-                width: '12vh', 
-                height: '16vh', 
-                backgroundImage: `url('./assets/images/unnamed (67).jpg')`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                borderRadius: '8px', 
-                boxShadow: '0 4px 12px rgba(0,0,0,0.5)',
-                border: '1px solid rgba(255,255,255,0.1)',
-                flexShrink: 0 
-              }} />
-              <div>
-                <h3 style={{ fontSize: 'clamp(1.2rem, 2.5vh, 1.5rem)', color: 'var(--color-accent-gold)' }}>Madhuramurali Magazine</h3>
-                <p style={{ color: 'var(--color-text-secondary)', lineHeight: 1.4, marginTop: '1vh', fontSize: 'clamp(0.9rem, 1.8vh, 1.1rem)' }}>
-                  Our monthly journal in English and Tamil, spreading the glory of the Divine Name.
-                </p>
+      <div className="mt-8 grid min-h-0 flex-1 grid-cols-[1fr_1fr] gap-10">
+        <EdgeFadeScroll className="min-h-0">
+          <div className="flex flex-col gap-8 pr-2">
+            <section>
+              <SectionHeading>Publications &amp; Stores</SectionHeading>
+              <div className="grid grid-cols-2 gap-6">
+                {publications.map((item) => (
+                  <Panel key={item.id} tone="raised" className="overflow-hidden">
+                    <div className="photo-frame h-[190px]">
+                      <img
+                        src={item.image}
+                        alt=""
+                        className="h-full w-full object-cover"
+                      />
+                    </div>
+                    <div className="border-t border-line p-6">
+                      <p className="font-sans text-label font-bold uppercase tracking-[0.08em] text-saffron-ink">
+                        {item.subtitle}
+                      </p>
+                      <h3 className="mt-1 font-serif text-title text-ink">
+                        {item.title}
+                      </h3>
+                      <p className="mt-2 font-sans text-body text-ink-muted">
+                        {item.body}
+                      </p>
+                    </div>
+                  </Panel>
+                ))}
               </div>
-            </div>
-          </div>
+            </section>
 
-          {/* Contributions */}
-          <div className="glass-panel" style={{ padding: '3vh 2vw', flex: 1, overflow: 'hidden' }}>
-            <h2 style={{ fontSize: 'clamp(1.5rem, 3.5vh, 2.5rem)', marginBottom: '1.5vh' }}>Contribution</h2>
-            <p style={{ color: 'var(--color-text-secondary)', marginBottom: '1vh', fontSize: 'clamp(0.9rem, 1.6vh, 1.1rem)' }}>Your magnanimous contributions may please be sent to our registered trusts:</p>
-            <ul style={{ listStyle: 'none', padding: 0, margin: 0, fontSize: 'clamp(0.85rem, 1.6vh, 1rem)', lineHeight: 1.6, color: 'var(--color-text-primary)' }}>
-              <li>• Sri Sandeepani Gurukula Trust <span style={{color: 'var(--color-accent-gold)', fontSize: '0.9em'}}>(80G / FCRA)</span></li>
-              <li>• Chaitanya Mahaprabhu Nama Bhiksha Kendra <span style={{color: 'var(--color-accent-gold)', fontSize: '0.9em'}}>(80G)</span></li>
-              <li>• Global Organisation for Divinity India Trust <span style={{color: 'var(--color-accent-gold)', fontSize: '0.9em'}}>(80G / FCRA)</span></li>
-              <li>• Mukhya Prana Seva Trust <span style={{color: 'var(--color-accent-gold)', fontSize: '0.9em'}}>(80G)</span></li>
-              <li>• Sri Sandeepani Gurukula Seva Trust, AP <span style={{color: 'var(--color-accent-gold)', fontSize: '0.9em'}}>(80G)</span></li>
-              <li>• Senganoor Kshetra Upasana Samiti <span style={{color: 'var(--color-accent-gold)', fontSize: '0.9em'}}>(80G)</span></li>
-              <li>• Jaya Hanuman Seva Trust <span style={{color: 'var(--color-accent-gold)', fontSize: '0.9em'}}>(FCRA)</span></li>
-            </ul>
+            <section>
+              <SectionHeading>Contribution</SectionHeading>
+              <Panel tone="raised" className="p-8">
+                <p className="font-sans text-body text-ink-muted">
+                  Contributions may be sent to any of our registered trusts.
+                </p>
+                <KolamRule className="my-5 opacity-60" width={240} />
+                <ul className="flex flex-col gap-4">
+                  {trusts.map((trust) => (
+                    <li
+                      key={trust.name}
+                      className="flex items-baseline justify-between gap-5 border-b border-line pb-4 last:border-b-0 last:pb-0"
+                    >
+                      <span className="font-sans text-body text-ink">
+                        {trust.name}
+                      </span>
+                      <span className="flex shrink-0 gap-2">
+                        {trust.tags.map((tag) => (
+                          <span
+                            key={tag}
+                            className="rounded-full border border-line-strong px-3 py-1 font-sans text-label font-bold text-saffron-ink"
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+            </Panel>
+          </section>
           </div>
-        </div>
+        </EdgeFadeScroll>
 
-        {/* Right Column */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '2vh' }}>
-          {/* Contact Info */}
-          <div className="glass-panel" style={{ padding: '3vh 2vw', background: 'var(--color-bg-card)' }}>
-            <h2 style={{ fontSize: 'clamp(1.5rem, 3.5vh, 2.5rem)', marginBottom: '1.5vh' }}>Contact Us</h2>
-            <p style={{ fontSize: 'clamp(0.9rem, 1.8vh, 1.2rem)', lineHeight: 1.6, color: 'var(--color-text-secondary)' }}>
-              <strong>Central Office:</strong><br/>
-              Plot No 11, Door No 4/11, Netaji Nagar Main Road<br/>
-              Jafferkhanpet, Chennai - 600083, India<br/><br/>
-              <strong>Phone:</strong> +91-44-24895875 / +91-7305985875<br/>
-              <strong>Email:</strong> contact@namadwaar.org
+        {/* This column deliberately does not scroll. The QR codes are the
+            payoff of the screen, and EdgeFadeScroll's gradient mask would fade
+            the modules of whichever tile sat at a scroll boundary — enough to
+            stop a phone reading it. */}
+        <div className="flex min-h-0 flex-col gap-8">
+          <section className="shrink-0">
+            <SectionHeading>Contact Us</SectionHeading>
+            <Panel tone="raised" ornament className="p-8">
+                <p className="font-sans text-label font-bold uppercase tracking-[0.08em] text-saffron-ink">
+                  {contact.office}
+                </p>
+                <address className="mt-4 flex flex-col gap-4 not-italic">
+                  <span className="flex gap-4">
+                    <MapPin
+                      size={26}
+                      aria-hidden="true"
+                      className="mt-1 shrink-0 text-ink-faint"
+                    />
+                    <span className="font-sans text-body-lg text-ink">
+                      {contact.address.map((line) => (
+                        <span key={line} className="block">
+                          {line}
+                        </span>
+                      ))}
+                    </span>
+                  </span>
+                  <span className="flex gap-4">
+                    <Phone
+                      size={26}
+                      aria-hidden="true"
+                      className="mt-1 shrink-0 text-ink-faint"
+                    />
+                    <span className="font-sans text-body-lg text-ink">
+                      {contact.phone.map((number) => (
+                        <span key={number} className="block">
+                          {number}
+                        </span>
+                      ))}
+                    </span>
+                  </span>
+                  <span className="flex gap-4">
+                    <Mail
+                      size={26}
+                      aria-hidden="true"
+                      className="mt-1 shrink-0 text-ink-faint"
+                    />
+                    <span className="font-sans text-body-lg text-ink">
+                      {contact.email}
+                    </span>
+                  </span>
+                </address>
+            </Panel>
+          </section>
+
+          <section className="flex min-h-0 flex-1 flex-col">
+            <SectionHeading>Scan to Connect</SectionHeading>
+            <p className="mb-5 font-sans text-body text-ink-muted">
+              Point your phone&rsquo;s camera at a code to open it there.
             </p>
-          </div>
-
-          {/* QR Codes */}
-          <div className="glass-panel" style={{ padding: '3vh 2vw', flex: 1, overflow: 'hidden' }}>
-            <h2 style={{ fontSize: 'clamp(1.5rem, 3.5vh, 2.5rem)', marginBottom: '0.5vh' }}>Scan to Connect</h2>
-            <p style={{ color: 'var(--color-accent-gold)', marginBottom: '1.5vh', fontSize: 'clamp(0.9rem, 1.6vh, 1.1rem)' }}>Point your smartphone camera at a code below:</p>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5vw' }}>
-              {qrCodes.map((qr, index) => (
-                <div key={qr.id} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1vh' }}>
-                  <motion.div style={{ 
-                    width: '11vh', 
-                    height: '11vh', 
-                    background: 'white', 
-                    padding: '0.8vh', 
-                    borderRadius: '12px',
-                    border: '2px solid rgba(255, 255, 255, 0.2)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center'
-                  }}
-                  animate={{ 
-                    scale: [1, 1.05, 1],
-                    boxShadow: [
-                      '0 4px 15px rgba(0,0,0,0.3)', 
-                      '0 4px 25px rgba(245, 158, 11, 0.5)', 
-                      '0 4px 15px rgba(0,0,0,0.3)'
-                    ]
-                  }}
-                  transition={{ 
-                    repeat: Infinity, 
-                    duration: 3, 
-                    ease: "easeInOut",
-                    delay: index * 0.5 
-                  }}
-                  >
-                    <StylizedQRCode color="#0f172a" />
-                  </motion.div>
-                  <span style={{ fontSize: 'clamp(0.85rem, 1.7vh, 1.1rem)', fontWeight: 550 }}>{qr.name}</span>
-                </div>
+            <div className="grid grid-cols-4 gap-5">
+              {connectLinks.map((link) => (
+                <QRTile
+                  key={link.id}
+                  url={link.url}
+                  name={link.name}
+                  caption={link.caption}
+                />
               ))}
             </div>
-          </div>
+          </section>
         </div>
       </div>
-    </motion.div>
+    </PageShell>
   );
 }
