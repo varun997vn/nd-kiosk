@@ -84,16 +84,19 @@ export default function ConnectHub() {
                     </li>
                   ))}
                 </ul>
-              </Panel>
-            </section>
+            </Panel>
+          </section>
           </div>
         </EdgeFadeScroll>
 
-        <EdgeFadeScroll className="min-h-0">
-          <div className="flex flex-col gap-8 pr-2">
-            <section>
-              <SectionHeading>Contact Us</SectionHeading>
-              <Panel tone="raised" ornament className="p-8">
+        {/* This column deliberately does not scroll. The QR codes are the
+            payoff of the screen, and EdgeFadeScroll's gradient mask would fade
+            the modules of whichever tile sat at a scroll boundary — enough to
+            stop a phone reading it. */}
+        <div className="flex min-h-0 flex-col gap-8">
+          <section className="shrink-0">
+            <SectionHeading>Contact Us</SectionHeading>
+            <Panel tone="raised" ornament className="p-8">
                 <p className="font-sans text-label font-bold uppercase tracking-[0.08em] text-saffron-ink">
                   {contact.office}
                 </p>
@@ -137,27 +140,26 @@ export default function ConnectHub() {
                     </span>
                   </span>
                 </address>
-              </Panel>
-            </section>
+            </Panel>
+          </section>
 
-            <section>
-              <SectionHeading>Scan to Connect</SectionHeading>
-              <p className="mb-5 font-sans text-body text-ink-muted">
-                Point your phone&rsquo;s camera at a code to open it there.
-              </p>
-              <div className="grid grid-cols-2 gap-6">
-                {connectLinks.map((link) => (
-                  <QRTile
-                    key={link.id}
-                    url={link.url}
-                    name={link.name}
-                    caption={link.caption}
-                  />
-                ))}
-              </div>
-            </section>
-          </div>
-        </EdgeFadeScroll>
+          <section className="flex min-h-0 flex-1 flex-col">
+            <SectionHeading>Scan to Connect</SectionHeading>
+            <p className="mb-5 font-sans text-body text-ink-muted">
+              Point your phone&rsquo;s camera at a code to open it there.
+            </p>
+            <div className="grid grid-cols-4 gap-5">
+              {connectLinks.map((link) => (
+                <QRTile
+                  key={link.id}
+                  url={link.url}
+                  name={link.name}
+                  caption={link.caption}
+                />
+              ))}
+            </div>
+          </section>
+        </div>
       </div>
     </PageShell>
   );

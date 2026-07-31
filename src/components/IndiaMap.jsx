@@ -97,7 +97,7 @@ export default function IndiaMap({
                 y="-24"
                 textAnchor="middle"
                 className="font-sans font-semibold"
-                style={{ fontSize: 19, fill: 'var(--color-ink)' }}
+                style={{ fontSize: 20, fill: 'var(--color-ink)' }}
               >
                 {place.shortName ?? place.name}
               </text>

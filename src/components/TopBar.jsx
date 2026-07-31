@@ -19,7 +19,7 @@ export default function TopBar() {
       <span className="font-serif text-title font-semibold text-saffron-ink">
         In the Path of Love
       </span>
-      <span className="ml-auto font-sans text-label uppercase tracking-[0.08em] text-ink-faint">
+      <span className="ml-auto font-sans text-label uppercase tracking-[0.08em] text-ink-muted">
         Namadwaar
       </span>
     </header>

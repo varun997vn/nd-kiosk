@@ -9,7 +9,7 @@ import { motion } from 'framer-motion';
  */
 const VARIANTS = {
   primary:
-    'bg-saffron text-on-saffron shadow-[var(--shadow-2)] hc:border-2 hc:border-ink',
+    'bg-saffron-deep text-on-saffron shadow-[var(--shadow-2)] hc:border-2 hc:border-ink',
   secondary:
     'bg-surface-raised text-ink border border-line-strong shadow-[var(--shadow-1)]',
   ghost: 'bg-transparent text-ink-muted hover:bg-surface-tint',

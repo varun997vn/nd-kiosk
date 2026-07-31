@@ -21,7 +21,7 @@ export function Directory({ title, count, storageKey, className = '', children }
             {title}
           </h2>
           {count != null && (
-            <span className="font-sans text-label text-ink-faint">{count}</span>
+            <span className="font-sans text-label text-ink-muted">{count}</span>
           )}
         </div>
       )}

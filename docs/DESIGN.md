@@ -35,22 +35,29 @@ Against grey they would read as brand chrome.
 | `surface-tint` | `#F7EAD6` | hovered / selected rows |
 | `line` | `#E3D3B6` | hairline dividers |
 | `line-strong` | `#C9AE84` | card borders, photo frames |
-| `ink` | `#2B1A0E` | primary text — **15.2:1** on surface |
-| `ink-muted` | `#6B4E32` | secondary text — **7.4:1** |
-| `ink-faint` | `#8C7355` | captions and decoration — large sizes only |
-| `saffron` | `#E8871E` | fills, pins, large display type |
-| `saffron-deep` | `#B4560B` | text-safe at ≥24px |
-| `saffron-ink` | `#7A3906` | text-safe at any size — **9.0:1** |
-| `kumkum` | `#C42A21` | vermilion accent, badges, the active map pin |
+| `ink` | `#2B1A0E` | primary text — **13.4:1** |
+| `ink-muted` | `#5F4429` | secondary text — **7.2:1** |
+| `ink-faint` | `#6B533C` | decoration and icons — **5.8:1**, never prose |
+| `saffron` | `#E8871E` | pins and ornament — **a fill, never text** |
+| `saffron-deep` | `#8A3F06` | primary button fill; ivory on it is **7.1:1** |
+| `saffron-ink` | `#6E3305` | text on any ivory surface — **7.7:1** |
+| `kumkum` | `#A01D16` | vermilion accent, badges, the active map pin |
 | `gold` | `#B08A2E` | kolam line work — decorative only, never text |
 | `tulsi` | `#4F6B2A` | secondary accent |
 | `indigo` | `#253559` | map landmass |
 | `on-saffron` | `#FFF8EC` | text on saffron fills |
 
-**Contrast rule.** Body text targets ≥7:1, display type ≥4.5:1. Saffron has three steps for exactly
-this reason: `saffron` is a *fill*, `saffron-deep` is safe for headings, and only `saffron-ink` is
-safe for body-size text. Reaching for `saffron` as a text colour is the easiest way to break the
-system.
+**Contrast rule.** Body text targets ≥7:1, display type (≥24px) ≥4.5:1. Every ratio above is measured
+against `surface-sunk` — the *darkest* surface a token can land on — so nothing passes on paper and
+then fails inside a directory rail.
+
+Saffron has three steps for exactly this reason. `saffron` is a **fill only**: ivory on it is 2.5:1,
+so using it behind or as text is the fastest way to break the system. `saffron-deep` is the button
+fill. `saffron-ink` is the only saffron safe as text.
+
+`scripts/audit.mjs` enforces all of this in a real browser — it walks every screen, samples each text
+node against its computed background, and fails on anything under the threshold, under 18px, or under
+a 64px touch target. Run it before shipping a palette change.
 
 ## Typography
 

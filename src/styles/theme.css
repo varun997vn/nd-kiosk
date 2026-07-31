@@ -16,19 +16,24 @@
   --color-line-strong: #c9ae84; /* card borders, framing rules      */
 
   /* --- Ink ------------------------------------------------------------- */
-  --color-ink: #2b1a0e; /* ~15:1 on surface                 */
-  --color-ink-muted: #6b4e32; /* ~7.4:1 — secondary text          */
-  --color-ink-faint: #8c7355; /* large / decorative text only     */
+  /* Ratios are measured against the *darkest* surface a token can land on
+     (surface-sunk), not the lightest, so nothing passes on paper and fails in
+     a directory rail. scripts/audit.mjs enforces this. */
+  --color-ink: #2b1a0e; /* 13.4:1 on sunk — body and headings */
+  --color-ink-muted: #5f4429; /* 7.2:1 on sunk — secondary text     */
+  --color-ink-faint: #6b533c; /* 5.8:1 — decoration, never prose    */
 
   /* --- Pigments -------------------------------------------------------- */
-  --color-saffron: #e8871e; /* fills and large display type     */
-  --color-saffron-deep: #b4560b; /* text-safe at >=24px              */
-  --color-saffron-ink: #7a3906; /* ~9:1 — text-safe at any size     */
-  --color-kumkum: #c42a21; /* vermilion accent, active pins    */
-  --color-gold: #b08a2e; /* kolam line work (decorative)     */
-  --color-tulsi: #4f6b2a; /* secondary accent                 */
-  --color-indigo: #253559; /* map landmass                     */
-  --color-on-saffron: #fff8ec; /* text on saffron fills            */
+  /* The rule that keeps this legible: --color-saffron is a FILL. Only the
+     -deep and -ink steps may carry or sit behind text. */
+  --color-saffron: #e8871e; /* pins, ornament, non-text fills     */
+  --color-saffron-deep: #8a3f06; /* button fill — ivory on it is 7.1:1 */
+  --color-saffron-ink: #6e3305; /* 7.7:1 on sunk — text on ivory      */
+  --color-kumkum: #a01d16; /* vermilion — badges, active pins    */
+  --color-gold: #b08a2e; /* kolam line work — never text       */
+  --color-tulsi: #4f6b2a; /* secondary accent                   */
+  --color-indigo: #253559; /* map landmass                       */
+  --color-on-saffron: #fff8ec; /* text on saffron-deep fills         */
 
   /* Scrim used wherever text must sit on a photograph. */
   --color-scrim: rgb(43 26 14 / 0.78);

@@ -137,7 +137,7 @@ export default function GlobalPresenceHub() {
             <h2 className="font-sans text-label font-bold uppercase tracking-[0.08em] text-ink-muted">
               Directory
             </h2>
-            <span className="font-sans text-label text-ink-faint">
+            <span className="font-sans text-label text-ink-muted">
               {ALL_LOCATIONS.length} centres
             </span>
           </div>
@@ -264,17 +264,17 @@ export default function GlobalPresenceHub() {
                     >
                       <g className="cursor-pointer">
                         <circle
-                          r={20 * s}
+                          r={24 * s}
                           fill="var(--color-saffron)"
                           stroke="var(--color-surface-raised)"
                           strokeWidth={2.5 * s}
                         />
                         <text
                           textAnchor="middle"
-                          y={5 * s}
+                          y={7 * s}
                           style={{
                             fill: 'var(--color-on-saffron)',
-                            fontSize: `${13 * s}px`,
+                            fontSize: `${19 * s}px`,
                             fontWeight: 700,
                           }}
                         >
@@ -282,10 +282,10 @@ export default function GlobalPresenceHub() {
                         </text>
                         <text
                           textAnchor="middle"
-                          y={34 * s}
+                          y={40 * s}
                           style={{
                             fill: 'var(--color-ink)',
-                            fontSize: `${13 * s}px`,
+                            fontSize: `${20 * s}px`,
                             fontWeight: 600,
                           }}
                         >
@@ -333,11 +333,11 @@ export default function GlobalPresenceHub() {
                       {isActive && (
                         <text
                           textAnchor="middle"
-                          y={-18 * s}
+                          y={-22 * s}
                           className="pointer-events-none"
                           style={{
                             fill: 'var(--color-ink)',
-                            fontSize: `${12 * s}px`,
+                            fontSize: `${20 * s}px`,
                             fontWeight: 700,
                           }}
                         >

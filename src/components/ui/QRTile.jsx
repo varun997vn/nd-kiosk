@@ -13,9 +13,9 @@ import { KolamFrame } from './Kolam';
  * ivory or dropping ornament into the margin is exactly what makes codes fail
  * to read under hall lighting.
  */
-export default function QRTile({ url, name, caption, size = 190 }) {
+export default function QRTile({ url, name, caption, size = 132 }) {
   return (
-    <div className="relative flex flex-col items-center gap-4 rounded-[var(--radius-lg)] border border-line bg-surface-raised px-6 py-7 shadow-[var(--shadow-1)]">
+    <div className="relative flex flex-col items-center gap-3 rounded-[var(--radius-lg)] border border-line bg-surface-raised px-4 py-5 shadow-[var(--shadow-1)]">
       <KolamFrame inset={8} size={22} />
 
       <div className="rounded-[var(--radius-md)] bg-white p-3 shadow-[var(--shadow-1)]">
@@ -31,7 +31,7 @@ export default function QRTile({ url, name, caption, size = 190 }) {
       </div>
 
       <div className="text-center">
-        <p className="font-serif text-title leading-tight text-ink">{name}</p>
+        <p className="font-serif text-body-lg font-semibold leading-tight text-ink">{name}</p>
         {caption && (
           <p className="mt-0.5 font-sans text-label text-ink-muted">{caption}</p>
         )}
