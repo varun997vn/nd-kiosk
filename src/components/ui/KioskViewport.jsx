@@ -40,7 +40,7 @@ export default function KioskViewport({ children }) {
           transform: `scale(${scale})`,
           transformOrigin: 'center',
         }}
-        className="relative shrink-0 overflow-hidden bg-surface"
+        className="pulli relative shrink-0 overflow-hidden bg-surface"
       >
         {children}
       </div>

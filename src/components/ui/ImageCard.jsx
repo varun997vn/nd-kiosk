@@ -42,15 +42,17 @@ export default function ImageCard({
         />
       </div>
 
-      <div className="shrink-0 border-t border-line bg-surface-raised px-7 py-5">
+      <div className="shrink-0 border-t border-line bg-surface-raised px-7 py-4">
         {eyebrow && (
-          <p className="mb-1 font-sans text-label font-bold uppercase tracking-[0.08em] text-saffron-ink">
+          <p className="font-sans text-label font-bold uppercase tracking-[0.08em] text-saffron-ink">
             {eyebrow}
           </p>
         )}
-        <h3 className="font-serif text-title leading-tight text-ink">{title}</h3>
+        <h3 className="mt-0.5 font-serif text-title leading-tight text-ink">
+          {title}
+        </h3>
         {subtitle && (
-          <p className="mt-1 font-sans text-body text-ink-muted">{subtitle}</p>
+          <p className="font-sans text-body text-ink-muted">{subtitle}</p>
         )}
       </div>
     </motion.button>

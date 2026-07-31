@@ -1,126 +1,96 @@
-import React, { useEffect, useRef } from 'react';
-import { motion } from 'framer-motion';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { AnimatePresence, motion } from 'framer-motion';
+import PageShell from '../components/ui/PageShell';
+import PageHeader from '../components/ui/PageHeader';
+import { Directory, DirectoryRow } from '../components/ui/Directory';
+import { KolamRule } from '../components/ui/Kolam';
+import IndiaMap from '../components/IndiaMap';
+import { institutionsData } from '../data';
 
-const institutions = [
-  { id: 'madhurapuri', name: 'Madhurapuri Ashram', location: 'Maharanyam, Chennai' },
-  { id: 'kalyanasrinivasa', name: 'Sri Kalyanasrinivasa Perumal Temple', location: 'Maharanyam, Chennai' },
-  { id: 'govindapuram', name: 'Chaitanya Kuteeram', location: 'Govindapuram' },
-  { id: 'sundara', name: 'Sri Sundara Anjaneya Swami Temple', location: 'Bengaluru' },
-  { id: 'premika', name: 'Premika Vidya Kendra', location: 'Gurugram' },
-  { id: 'keerthanavali', name: 'Keerthanavali Mandapam', location: 'Kanchipuram' },
-  { id: 'janmasthan', name: 'Sri Premika Janmasthan', location: 'Senganoor' },
-  { id: 'niketan', name: 'Sri Niketan', location: 'Vrindavan' },
-  { id: 'vanararajasimhan', name: 'Sri Vanararajasimhan Namadwaar', location: 'Kangeyam' }
-];
+// Derived from the data rather than restated. This page used to carry its own
+// hardcoded copy of the list, which could drift from data.js silently.
+const INSTITUTIONS = Object.values(institutionsData);
 
 export default function InstitutionsHub() {
   const navigate = useNavigate();
-  const listRef = useRef(null);
-
-  useEffect(() => {
-    const savedScroll = sessionStorage.getItem('scroll-institutions');
-    if (savedScroll && listRef.current) {
-      const timer = setTimeout(() => {
-        listRef.current.scrollTop = parseInt(savedScroll, 10);
-      }, 50);
-      return () => clearTimeout(timer);
-    }
-  }, []);
-
-  const handleScroll = (e) => {
-    sessionStorage.setItem('scroll-institutions', e.target.scrollTop);
-  };
+  const [focused, setFocused] = useState(INSTITUTIONS[0].id);
+  const preview = institutionsData[focused];
 
   return (
-    <motion.div
-      initial={{ opacity: 0, x: 100 }}
-      animate={{ opacity: 1, x: 0 }}
-      exit={{ opacity: 0, x: -100 }}
-      transition={{ duration: 0.5, ease: 'easeOut' }}
-      style={{
-        width: '100%',
-        height: '100%',
-        display: 'flex',
-        paddingBottom: 'var(--nav-height)'
-      }}
-    >
-      {/* Left side: Scrolling List */}
-      <div style={{
-        width: '500px',
-        background: 'var(--color-bg-base)',
-        borderRight: 'var(--border-glass)',
-        display: 'flex',
-        flexDirection: 'column',
-        padding: '40px 0'
-      }}>
-        <h2 style={{ padding: '0 40px', fontSize: '2rem', marginBottom: '20px', color: 'var(--color-accent-gold)' }}>Directory</h2>
-        
-        <div 
-          ref={listRef}
-          onScroll={handleScroll}
-          style={{
-            flex: 1,
-            overflowY: 'auto',
-            padding: '0 40px',
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '16px'
-          }}
-        >
-          {institutions.map((inst) => (
-            <motion.button
-              key={inst.id}
-              onClick={() => navigate(`/institutions/${inst.id}`)}
-              whileHover={{ scale: 1.02, backgroundColor: 'rgba(255,255,255,0.1)' }}
-              whileTap={{ scale: 0.98 }}
-              style={{
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'flex-start',
-                padding: '24px',
-                borderRadius: 'var(--border-radius-md)',
-                background: 'var(--color-bg-card)',
-                border: '1px solid rgba(255,255,255,0.05)',
-                color: 'var(--color-text-primary)',
-                textAlign: 'left'
-              }}
-            >
-              <span style={{ fontSize: '1.5rem', fontWeight: 600, color: 'var(--color-accent-gold)', marginBottom: '4px' }}>
-                {inst.name}
-              </span>
-              <span style={{ fontSize: '1.1rem', color: 'var(--color-text-secondary)' }}>
-                {inst.location}
-              </span>
-            </motion.button>
-          ))}
-        </div>
-      </div>
+    <PageShell>
+      <PageHeader
+        title="Institutions"
+        subtitle="Ashrams, temples and mandapams across India. Touch a name to explore, or touch a pin on the map."
+      />
 
-      {/* Right side: Stylized Map/Image View */}
-      <div style={{
-        flex: 1,
-        backgroundImage: `url('./assets/images/unnamed (1).jpg')`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        position: 'relative'
-      }}>
-        <div style={{
-          position: 'absolute',
-          top: 0, left: 0, right: 0, bottom: 0,
-          background: 'linear-gradient(90deg, rgba(15,23,42,0.8) 0%, rgba(15,23,42,0.2) 100%)',
-          padding: '60px'
-        }}>
-          <h1 style={{ fontSize: '4rem', color: 'var(--color-accent-gold)' }}>Institutions</h1>
-          <p style={{ fontSize: '1.5rem', maxWidth: '600px', lineHeight: 1.6 }}>
-            Explore the spiritual centers, ashrams, and temples established to nurture devotion and preserve traditional heritage.
-          </p>
+      <div className="mt-8 grid min-h-0 flex-1 grid-cols-[640px_1fr] gap-10">
+        <Directory
+          title="Directory"
+          count={`${INSTITUTIONS.length} centres`}
+          storageKey="scroll-institutions"
+        >
+          {INSTITUTIONS.map((institution) => (
+            <DirectoryRow
+              key={institution.id}
+              label={institution.name}
+              meta={institution.location}
+              selected={institution.id === focused}
+              onPointerEnter={() => setFocused(institution.id)}
+              onSelect={() => navigate(`/institutions/${institution.id}`)}
+            />
+          ))}
+        </Directory>
+
+        <div className="relative grid min-h-0 grid-cols-[1fr_auto] overflow-hidden rounded-[var(--radius-lg)] border border-line bg-surface-sunk pulli">
+          {/* The map is tall and narrow, so its panel always has horizontal
+              slack. Rather than leave it empty, it previews whatever the
+              directory is pointing at. */}
+          <div className="flex min-h-0 flex-col justify-center gap-6 p-10">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={preview.id}
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -12 }}
+                transition={{ duration: 0.25 }}
+              >
+                <div className="photo-frame h-[260px] rounded-[var(--radius-lg)]">
+                  <img
+                    src={preview.heroImage}
+                    alt=""
+                    className="h-full w-full object-cover"
+                  />
+                </div>
+                <p className="mt-6 font-sans text-label font-bold uppercase tracking-[0.08em] text-saffron-ink">
+                  {preview.location}
+                </p>
+                <h3 className="mt-1 font-serif text-headline leading-tight text-ink">
+                  {preview.name}
+                </h3>
+                <KolamRule className="mt-4 opacity-70" width={220} />
+                <p className="mt-4 line-clamp-3 font-sans text-body text-ink-muted">
+                  {preview.description}
+                </p>
+              </motion.div>
+            </AnimatePresence>
+          </div>
+
+          <div className="relative w-[560px] min-h-0">
+            <IndiaMap
+              places={INSTITUTIONS}
+              selectedId={focused}
+              onSelect={(id) => navigate(`/institutions/${id}`)}
+            />
+            <p
+              aria-hidden="true"
+              className="absolute bottom-6 right-8 font-serif text-title text-ink-faint/60"
+            >
+              Bh&#257;rat
+            </p>
+          </div>
         </div>
-        
-        {/* Mock Glowing Pins */}
-        <div style={{ position: 'absolute', top: '40%', left: '40%', width: '20px', height: '20px', background: 'var(--color-accent-gold)', borderRadius: '50%', boxShadow: '0 0 20px var(--color-accent-gold)' }} />
-        <div style={{ position: 'absolute', top: '60%', left: '50%', width: '20px', height: '20px', background: 'var(--color-accent-gold)', borderRadius: '50%', boxShadow: '0 0 20px var(--color-accent-gold)' }} />
       </div>
-    </motion.div>
+    </PageShell>
   );
 }

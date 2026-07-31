@@ -1,6 +1,17 @@
+/**
+ * The nine institutions, and the single source of truth for the list —
+ * InstitutionsHub used to keep its own hardcoded copy alongside this one.
+ *
+ * `coords` are [longitude, latitude] for the India map pins. They are town
+ * centroids rather than surveyed campus positions; each ashram sits within a
+ * few kilometres of its town, which is well inside a pin's footprint at this
+ * scale. Worth confirming against the trust's own records if precision ever
+ * matters.
+ */
 export const institutionsData = {
   madhurapuri: {
     id: 'madhurapuri',
+    coords: [80, 12.82],
     name: 'Madhurapuri Ashram',
     location: 'Maharanyam, Chennai',
     heroImage: './assets/images/unnamed (2).jpg',
@@ -19,6 +30,7 @@ export const institutionsData = {
   },
   kalyanasrinivasa: {
     id: 'kalyanasrinivasa',
+    coords: [80, 12.9],
     name: 'Sri Kalyanasrinivasa Perumal Temple',
     location: 'Maharanyam, Chennai',
     heroImage: './assets/images/unnamed (9).jpg',
@@ -36,6 +48,7 @@ export const institutionsData = {
   },
   govindapuram: {
     id: 'govindapuram',
+    coords: [79.37, 10.98],
     name: 'Chaitanya Kuteeram',
     location: 'Govindapuram',
     heroImage: './assets/images/unnamed (13).jpg',
@@ -53,6 +66,7 @@ export const institutionsData = {
   },
   sundara: {
     id: 'sundara',
+    coords: [77.58, 12.93],
     name: 'Sri Sundara Anjaneya Swami Temple',
     location: 'Bengaluru',
     heroImage: './assets/images/unnamed (23).jpg',
@@ -70,6 +84,7 @@ export const institutionsData = {
   },
   premika: {
     id: 'premika',
+    coords: [77.03, 28.46],
     name: 'Premika Vidya Kendra',
     location: 'Gurugram',
     heroImage: './assets/images/unnamed (20).jpg',
@@ -86,6 +101,7 @@ export const institutionsData = {
   },
   keerthanavali: {
     id: 'keerthanavali',
+    coords: [79.7, 12.84],
     name: 'Keerthanavali Mandapam',
     location: 'Kanchipuram',
     heroImage: './assets/images/unnamed (17).jpg',
@@ -102,6 +118,7 @@ export const institutionsData = {
   },
   janmasthan: {
     id: 'janmasthan',
+    coords: [79.15, 10.9],
     name: 'Sri Premika Janmasthan',
     location: 'Senganoor',
     heroImage: './assets/images/unnamed (21).jpg',
@@ -118,6 +135,7 @@ export const institutionsData = {
   },
   niketan: {
     id: 'niketan',
+    coords: [77.69, 27.58],
     name: 'Sri Niketan',
     location: 'Vrindavan',
     heroImage: './assets/images/unnamed (27).jpg',
@@ -133,9 +151,10 @@ export const institutionsData = {
   },
   vanararajasimhan: {
     id: 'vanararajasimhan',
+    coords: [77.56, 11.01],
     name: 'Sri Vanararajasimhan Namadwaar',
     location: 'Kangeyam',
-    heroImage: './assets/images/unnamed (28).jpg',
+    heroImage: './assets/images/unnamed (33).jpg',
     description: 'A unique Namadwaar where the presiding deity is Hanumanji, denoting the immense glory of the "King of Vanaras".',
     tabs: {
       routine: 'Functions primarily as an active center for continuous Mahamantra chanting.',
@@ -143,7 +162,7 @@ export const institutionsData = {
       festivals: 'Organizes social and cultural events for the local community.'
     },
     images: [
-      './assets/images/unnamed (12).jpg'
+      './assets/images/unnamed (32).jpg'
     ]
   }
 };
